@@ -1,0 +1,8 @@
+body {
+  background-image:
+    radial-gradient(ellipse at 4% 0%, rgba(97, 187, 70, .075), transparent 38%),
+    radial-gradient(ellipse at 29% 0%, rgba(253, 184, 39, .05), transparent 36%),
+    radial-gradient(ellipse at 52% 0%, rgba(245, 130, 31, .05), transparent 38%),
+    radial-gradient(ellipse at 75% 0%, rgba(224, 58, 62, .045), transparent 38%),
+    radial-gradient(ellipse at 100% 0%, rgba(150, 61, 151, .07), transparent 40%);
+}
