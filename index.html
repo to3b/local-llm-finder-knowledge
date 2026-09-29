@@ -3,15 +3,20 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#17181a">
+  <meta name="theme-color" content="#151719">
   <meta name="robots" content="noindex,follow">
-  <meta name="description" content="A preview of the Local LLM Finder knowledge reference: model requirements, quantization, context and practical hardware guides.">
+  <meta name="description" content="Local LLM Finder Knowledge: practical model, quantization, context and hardware reference pages in development.">
   <link rel="canonical" href="https://knowledge.localllmfinder.com/">
-  <title>Knowledge Preview — Local LLM Finder</title>
+  <title>Knowledge — Local LLM Finder</title>
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="https://localllmfinder.com/dist/styles.css?v=20260929d">
-  <link rel="stylesheet" href="https://localllmfinder.com/dist/docs.css?v=20260929a">
-  <link rel="stylesheet" href="https://localllmfinder.com/dist/palette.css?v=20260929d" data-local-llm-palette>
+  <link rel="stylesheet" href="https://localllmfinder.com/dist/docs.css?v=20260929b">
+  <link rel="stylesheet" href="https://localllmfinder.com/dist/palette.css?v=20260929f">
+  <style>
+    .upcoming-label{display:inline-flex;align-items:center;margin-bottom:8px;padding:3px 7px;border:1px solid #6f8298;border-radius:999px;color:#dce8ff;background:rgba(156,191,255,.10);font-size:.64rem;font-weight:650;letter-spacing:.02em}
+    .preview-card{position:relative}
+    .preview-card small{margin-bottom:5px}
+  </style>
 </head>
 <body>
   <main class="docs-shell">
@@ -26,27 +31,27 @@
 
     <section class="doc-hero" aria-labelledby="page-heading">
       <p class="eyebrow">Knowledge</p>
-      <h1 id="page-heading">A reference layer for the Finder.</h1>
-      <p class="doc-lede">Model and hardware pages are being built from the same catalogue that powers Local LLM Finder. They’ll explain requirements, quantization sizes, context limits and sourced model details without turning the site into a pile of empty template pages.</p>
-      <div class="doc-meta"><span class="doc-chip">In development</span><span>Small, reviewed batches rather than empty directory pages</span></div>
-      <div class="doc-actions"><a class="doc-button primary" href="https://localllmfinder.com/">Use the Finder</a><a class="doc-button secondary" href="https://localllmfinder.com/dist/methodology.html">Read the methodology</a></div>
+      <h1 id="page-heading">Understand model and hardware requirements</h1>
+      <p class="doc-lede">Practical reference pages are being prepared for the models, quantization choices, context limits and hardware trade-offs that appear in Local LLM Finder.</p>
+      <div class="doc-meta"><span class="doc-chip">Coming soon</span><span>First model and hardware references are in progress</span></div>
+      <div class="doc-actions"><a class="doc-button primary" href="https://localllmfinder.com/">Use the Finder</a><a class="doc-button secondary" href="https://localllmfinder.com/dist/methodology.html">How estimates work</a></div>
     </section>
 
     <section class="preview-section" aria-labelledby="first-pages-heading">
-      <h2 id="first-pages-heading">First pages</h2>
-      <p>The initial set is deliberately small. Pages will be published when they have enough useful information to stand on their own.</p>
+      <h2 id="first-pages-heading">Coming first</h2>
+      <p>These are the first topics being prepared. Published reference pages will be linked and visually distinct as they go live.</p>
       <div class="preview-grid">
-        <article class="preview-card"><small>Models</small><strong>Qwen3 8B</strong><p>Quant sizes, context, memory estimates and hardware fit.</p></article>
-        <article class="preview-card"><small>Models</small><strong>Qwen2.5-Coder 14B</strong><p>Coding-focused profile, quantization choices and practical memory requirements.</p></article>
-        <article class="preview-card"><small>Models</small><strong>gpt-oss-20b</strong><p>Architecture, active parameters and what the model’s memory footprint means locally.</p></article>
-        <article class="preview-card"><small>Hardware</small><strong>RTX 3060 12 GB</strong><p>A practical VRAM-tier guide tied back to live Finder results.</p></article>
-        <article class="preview-card"><small>Guide</small><strong>Q4 vs Q5</strong><p>A plain-English explanation of the size/quality trade-off.</p></article>
-        <article class="preview-card"><small>Guide</small><strong>Context length</strong><p>Why longer context changes memory use even when the model file stays the same.</p></article>
+        <article class="preview-card"><span class="upcoming-label">Coming soon</span><small>Model</small><strong>Qwen3 8B</strong><p>Quant sizes, context, memory estimates and practical hardware fit.</p></article>
+        <article class="preview-card"><span class="upcoming-label">Coming soon</span><small>Model</small><strong>Qwen2.5-Coder 14B</strong><p>Coding-focused profile, quantization choices and practical memory requirements.</p></article>
+        <article class="preview-card"><span class="upcoming-label">Coming soon</span><small>Model</small><strong>gpt-oss-20b</strong><p>Architecture, active parameters and what its local memory footprint means.</p></article>
+        <article class="preview-card"><span class="upcoming-label">Coming soon</span><small>Hardware</small><strong>RTX 3060 12 GB</strong><p>What this VRAM tier can realistically support and where its limits appear.</p></article>
+        <article class="preview-card"><span class="upcoming-label">Coming soon</span><small>Guide</small><strong>Q4 vs Q5</strong><p>A plain-English explanation of the size and quality trade-off.</p></article>
+        <article class="preview-card"><span class="upcoming-label">Coming soon</span><small>Guide</small><strong>Context length</strong><p>Why longer context increases memory use even when the model file does not change.</p></article>
       </div>
-      <div class="doc-callout"><strong>The Finder stays primary</strong><p>The Finder remains the live product while Knowledge grows. No empty model pages are being indexed just to fill out a directory.</p></div>
+      <div class="doc-callout"><strong>Need an answer now?</strong><p>The Finder already compares current catalogue models against your hardware and workload. Knowledge will add the supporting explanations behind those results.</p></div>
     </section>
 
-    <footer class="doc-footer"><span>Local LLM Finder</span><nav aria-label="Footer"><a href="https://localllmfinder.com/dist/methodology.html">Methodology</a><a href="https://localllmfinder.com/dist/privacy.html">Privacy</a><a href="https://localllmfinder.com/dist/terms.html">Terms</a></nav></footer>
+    <footer class="doc-footer"><span>Local LLM Finder</span><nav aria-label="Footer"><a href="https://localllmfinder.com/">Finder</a><a href="https://localllmfinder.com/dist/methodology.html">Methodology</a><a href="https://localllmfinder.com/dist/privacy.html">Privacy</a><a href="https://localllmfinder.com/dist/terms.html">Terms</a></nav></footer>
   </main>
 </body>
 </html>
