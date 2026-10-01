@@ -10,7 +10,8 @@ const output=path.join(temporary,'site'), csv=path.join(temporary,'articles.csv'
 const headers=['Enabled','Type','Slug','Title','Summary','Body Markdown','Meta Title','Meta Description','Author','Date Published','Date Modified','Status','Canonical URL','Source URLs','Entity IDs','Related Articles'];
 const article=(Type,Slug,Status='Published',extra={})=>({Enabled:'TRUE',Type,Slug,Title:Slug,Summary:'Article summary','Body Markdown':'## Memory\n\nUseful article body.','Meta Title':Slug,'Meta Description':'Article description',Author:'Local LLM Finder','Date Published':'2026-10-01','Date Modified':'2026-10-01',Status,'Canonical URL':`https://knowledge.localllmfinder.com/${{Model:'models',Guide:'guides'}[Type]}/${Slug}/`,'Source URLs':'https://huggingface.co/Qwen/Qwen3-8B',...extra});
 const model=article('Model','example','Published',{'Entity IDs':'model-7','Related Articles':'guides/quant, guides/draft','Body Markdown':'## Memory\n\n[Compare hardware](https://localllmfinder.com/#d=gpu&g=rtx-3060&v=12) [[guides/quant|Quantization]] [[guides/draft|Draft guide]]'});
-const rows=[model,article('Guide','quant'),article('Guide','draft','Draft')];
+const draft=article('Guide','draft','Draft',{'Date Published':''});
+const rows=[model,article('Guide','quant'),draft,article('Guide','held','Hold'),article('Guide','disabled','Draft',{Enabled:'FALSE'})];
 async function build(records){
   const lines=[headers,...records.map(row=>headers.map(key=>row[key]||''))].map(row=>row.map(value=>'"'+String(value).replaceAll('"','""')+'"').join(','));
   await writeFile(csv,lines.join('\n')+'\n');
@@ -24,15 +25,35 @@ try {
   assert.ok(html.includes('href="https://localllmfinder.com/#d=gpu&amp;g=rtx-3060&amp;v=12"'),'Finder hash parameters must be escaped exactly once');
   assert.ok(!html.includes('&amp;amp;'),'URLs must not be double escaped');
   assert.ok(html.includes('href="https://knowledge.localllmfinder.com/guides/quant/"'));
-  assert.ok(!html.includes('href="https://knowledge.localllmfinder.com/guides/draft/"'));
-  assert.equal(JSON.parse(referenceText).articles.length,2);
+  assert.ok(html.includes('href="https://knowledge.localllmfinder.com/guides/draft/"'));
+  const references=JSON.parse(referenceText);
+  assert.equal(references.articles.length,3);
+  assert.equal(references.articles.find(a=>a.slug==='draft').status,'Draft');
+  const draftHtml=await readFile(path.join(output,'guides/draft/index.html'),'utf8');
+  assert.ok(draftHtml.includes('<meta name="robots" content="noindex,follow">'));
+  assert.ok(draftHtml.includes('Draft reference'));
+  assert.ok(draftHtml.includes('Edit this draft'));
+  assert.ok(draftHtml.includes('range=A4:Q4'),'Draft editor must target the actual Sheet row');
+  assert.ok(!draftHtml.includes('application/ld+json'),'Drafts must not claim published Article metadata');
+  assert.ok(html.includes('<meta name="robots" content="index,follow">'));
+  assert.ok(html.includes('application/ld+json'));
   assert.ok(!(await readFile(path.join(output,'sitemap.xml'),'utf8')).includes('/guides/draft/'));
-  await assert.rejects(access(path.join(output,'guides/draft/index.html')));
-  for(const invalid of [article('Guide','invalid','Published',{'Body Markdown':''}),article('Model','duplicate','Published',{'Entity IDs':'model-7'})]){
+  await assert.rejects(access(path.join(output,'guides/held/index.html')));
+  await assert.rejects(access(path.join(output,'guides/disabled/index.html')));
+  for(const invalid of [article('Guide','invalid','Published',{'Body Markdown':''}),article('Model','duplicate','Draft',{'Entity IDs':'model-7'}),article('Guide','invalid-draft','Draft',{'Body Markdown':''})]){
     run=await build([...rows,invalid]);
     assert.notEqual(run.status,0,'Invalid publication must fail');
     assert.equal(await readFile(path.join(output,'models/example/index.html'),'utf8'),html,'Failed validation must preserve existing article pages');
     assert.equal(await readFile(path.join(output,'references.json'),'utf8'),referenceText,'Failed validation must preserve the deployed registry');
   }
-  console.log('Article build passed: Finder deep links, draft exclusion and transactional validation.');
+  run=await build([article('Guide','draft-only','Draft',{'Date Published':''})]);
+  assert.equal(run.status,0,run.stderr);
+  assert.ok((await readFile(path.join(output,'index.html'),'utf8')).includes('content="noindex,follow"'));
+  assert.ok(!(await readFile(path.join(output,'sitemap.xml'),'utf8')).includes('<url>'));
+  run=await build([article('Guide','draft-only','Published')]);
+  assert.equal(run.status,0,run.stderr);
+  assert.ok((await readFile(path.join(output,'guides/draft-only/index.html'),'utf8')).includes('content="index,follow"'));
+  assert.ok(!(await readFile(path.join(output,'guides/draft-only/index.html'),'utf8')).includes('Draft reference'));
+  assert.ok((await readFile(path.join(output,'sitemap.xml'),'utf8')).includes('/guides/draft-only/'));
+  console.log('Article build passed: public noindex drafts, status promotion, held/disabled exclusion, exact editor rows, Finder links and transactional validation.');
 } finally {await rm(temporary,{recursive:true,force:true});}

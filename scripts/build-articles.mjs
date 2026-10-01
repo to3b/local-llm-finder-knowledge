@@ -37,7 +37,7 @@ function parseCsv(text) {
     else if (ch === ',') { row.push(cell); cell = ''; }
     else if (ch === '\n') {
       row.push(cell.replace(/\r$/, ''));
-      if (row.some(value => value.trim() !== '')) rows.push(row);
+      rows.push(row);
       row = [];
       cell = '';
     } else cell += ch;
@@ -57,7 +57,7 @@ function recordsFromCsv(text) {
   for (const column of REQUIRED) {
     if (!headers.includes(column)) throw new Error(`Knowledge Articles is missing required column: ${column}`);
   }
-  return rows.slice(1).map(values => Object.fromEntries(headers.map((header, index) => [header, values[index] ?? ''])));
+  return rows.slice(1).map((values, index) => ({...Object.fromEntries(headers.map((header, column) => [header, values[column] ?? ''])), '_Sheet Row': index + 2}));
 }
 
 function enabled(value) {
@@ -154,14 +154,17 @@ function articlePath(row) {
 
 function validateArticle(row) {
   const { directory, slug } = articlePath(row);
-  const requiredForPublish = ['Title', 'Summary', 'Body Markdown', 'Meta Title', 'Meta Description', 'Author', 'Date Published', 'Date Modified', 'Canonical URL'];
-  for (const field of requiredForPublish) {
-    if (!String(row[field] || '').trim()) throw new Error(`Published article ${slug} is missing ${field}.`);
+  const published = /^published$/i.test(String(row.Status).trim());
+  const required = ['Title', 'Summary', 'Body Markdown', 'Meta Title', 'Meta Description', 'Author', 'Date Modified', 'Canonical URL'];
+  if (published) required.push('Date Published');
+  for (const field of required) {
+    if (!String(row[field] || '').trim()) throw new Error(`Available article ${slug} is missing ${field}.`);
   }
   const expected = `${SITE_ORIGIN}/${directory}/${slug}/`;
   const canonical = safeUrl(row['Canonical URL']);
   if (canonical !== expected) throw new Error(`Canonical URL for ${slug} must be ${expected}`);
   for (const field of ['Date Published', 'Date Modified']) {
+    if (!published && field === 'Date Published' && !String(row[field] || '').trim()) continue;
     if (!/^\d{4}-\d{2}-\d{2}$/.test(String(row[field]).trim())) throw new Error(`${field} for ${slug} must use YYYY-MM-DD.`);
   }
 }
@@ -184,6 +187,9 @@ function renderArticle(row) {
   const author = String(row.Author).trim();
   const published = String(row['Date Published']).trim();
   const modified = String(row['Date Modified']).trim();
+  const isPublished = /^published$/i.test(String(row.Status).trim());
+  const editUrl = `https://docs.google.com/spreadsheets/d/1IQvICIAWzzbTO_hTJMb-HxEYzyDQQmtvGXgY-np9Cbg/edit#gid=323200577&range=A${row['_Sheet Row']}:Q${row['_Sheet Row']}`;
+  const draftNotice = isPublished ? '' : `<aside class="draft-notice"><strong>Draft reference</strong><p>Catalogue details and planning guidance are awaiting source review.</p><a href="${esc(editUrl)}">Edit this draft</a></aside>`;
   const sources = sourceList(row);
   const body = markdownToHtml(row['Body Markdown']);
   const sourcesHtml = sources.length ? `
@@ -209,7 +215,7 @@ function renderArticle(row) {
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#151719">
-  <meta name="robots" content="index,follow">
+  <meta name="robots" content="${isPublished ? 'index' : 'noindex'},follow">
   <meta name="description" content="${esc(metaDescription)}">
   <link rel="canonical" href="${esc(canonical)}">
   <title>${esc(metaTitle)}</title>
@@ -227,7 +233,7 @@ function renderArticle(row) {
     .article-body a,.article-sources a{color:#dddcd7;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
     .article-body code{padding:2px 5px;border:1px solid var(--line);border-radius:4px;background:var(--surface);color:#dddcd7;font-size:.82em}
   </style>
-  <script type="application/ld+json">${structured}</script>
+  ${isPublished ? `<script type="application/ld+json">${structured}</script>` : ''}
 <link rel="stylesheet" href="../../sandbox-refine.css?v=cleanup-2"></head>
 <body>
   <main class="docs-shell">
@@ -245,7 +251,8 @@ function renderArticle(row) {
         <p class="eyebrow">${esc(row.Type)} reference</p>
         <h1>${esc(title)}</h1>
         <p class="doc-lede">${esc(summary)}</p>
-        <div class="doc-meta"><span class="doc-chip">Published</span><span>Updated ${esc(modified)}</span></div>
+        <div class="doc-meta"><span class="doc-chip">${isPublished ? 'Published' : 'Draft'}</span><span>Updated ${esc(modified)}</span></div>
+        ${draftNotice}
       </header>
       <div class="doc-body article-body">${body}</div>${sourcesHtml}
       <div class="doc-actions"><a class="doc-button primary" href="https://localllmfinder.com/">Use the Finder</a><a class="doc-button secondary" href="/">Back to Knowledge</a></div>
@@ -292,18 +299,19 @@ async function main() {
   const csv = process.env.ARTICLES_CSV ? await readFile(process.env.ARTICLES_CSV, 'utf8') : await (async () => { const response = await fetch(sheetUrl(ARTICLES_GID), { redirect: 'follow' }); if (!response.ok) throw new Error(`Google Sheets returned HTTP ${response.status}.`); return response.text(); })();
   const records = recordsFromCsv(csv);
   const published = records.filter(row => enabled(row.Enabled) && /^published$/i.test(String(row.Status || '').trim()));
+  const available = records.filter(row => enabled(row.Enabled) && /^(published|draft)$/i.test(String(row.Status || '').trim()));
 
   const seen = new Set();
-  for (const row of published) {
+  for (const row of available) {
     const { relative } = articlePath(row);
-    if (seen.has(relative)) throw new Error(`Duplicate published article path: ${relative}`);
+    if (seen.has(relative)) throw new Error(`Duplicate available article path: ${relative}`);
     seen.add(relative);
     validateArticle(row);
   }
 
-  const references = registry(published);
+  const references = registry(available);
   for (const directory of OWNED_DIRECTORIES) await rm(join(SITE_ROOT, directory), { recursive: true, force: true });
-  for (const row of published) {
+  for (const row of available) {
     const { relative } = articlePath(row);
     await writeRelative(relative, enhanceArticle(renderArticle(row), row, references));
   }
@@ -311,7 +319,7 @@ async function main() {
   await writeRelative('sitemap.xml', sitemapXml(published));
   await writeRelative('references.json', JSON.stringify(references, null, 2) + '\n');
   await writeRelative('index.html', renderIndex(references));
-  console.log(`Built ${published.length} published Knowledge article(s).`);
+  console.log(`Built ${available.length} available Knowledge articles: ${published.length} published, ${available.length - published.length} drafts.`);
 }
 
 await main();
