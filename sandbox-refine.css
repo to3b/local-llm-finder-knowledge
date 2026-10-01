@@ -387,5 +387,43 @@ body { background-image: none; overflow-x: visible; }
 .task-choices label:hover > input:checked + span,
 .memory-choices label:hover > input:checked + span { background: var(--selected-bg); }
 @media (max-width: 700px) {
- .site-nav a[aria-current="page"] { display: inline-flex; }
+.site-nav a[aria-current="page"] { display: inline-flex; }
 }
+
+/* Square panels and choice groups; only small action/input controls retain 2px. */
+.journey-option,
+.device-choices,
+.memory-choices label > span,
+.task-choices label > span,
+.priority-steps,
+.speed-choices,
+.speed-choice,
+.stage-section,
+.decision-card,
+.decision-summary,
+.upgrade-milestone,
+.model-row,
+.estimate-context,
+.catalog,
+.content-section,
+.resource-card,
+.info-grid article,
+.disclaimer-panel,
+.doc-summary-card,
+.doc-callout,
+.preview-card,
+.form-error { border-radius: 0; }
+
+.secondary-button,
+.text-control,
+.device-input > select,
+.device-input > input,
+.field input,
+.field select,
+.gpu-entry select,
+.gpu-search input,
+.current-model-control input,
+.current-model-control select,
+.catalog-body input,
+.doc-button,
+.doc-section code { border-radius: 2px; }
