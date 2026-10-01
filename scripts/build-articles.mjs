@@ -224,7 +224,7 @@ function renderArticle(row) {
     .article-body code{padding:2px 5px;border:1px solid var(--line);border-radius:4px;background:var(--surface);color:#dddcd7;font-size:.82em}
   </style>
   <script type="application/ld+json">${structured}</script>
-</head>
+<link rel="stylesheet" href="../../sandbox-refine.css?v=cleanup-1"></head>
 <body>
   <main class="docs-shell">
     <header class="site-topbar">
