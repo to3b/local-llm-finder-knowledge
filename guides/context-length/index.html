@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#151719">
+  <meta name="robots" content="index,follow">
+  <meta name="description" content="Learn why longer LLM context needs more memory, how KV cache differs from model weights, and how to verify model, runtime and hardware limits.">
+  <link rel="canonical" href="https://knowledge.localllmfinder.com/guides/context-length/">
+  <title>LLM Context Length &amp; VRAM Explained | Local LLM Finder</title>
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="https://localllmfinder.com/dist/styles.css?v=20260929d">
+  <link rel="stylesheet" href="https://localllmfinder.com/dist/docs.css?v=20260929b">
+  <link rel="stylesheet" href="https://localllmfinder.com/dist/palette.css?v=20260929f">
+  <link rel="stylesheet" href="../../docs.css">
+  <style>
+    .article-body{padding-top:8px}
+    .article-body h2{margin:30px 0 9px;font-size:1.12rem;line-height:1.3;letter-spacing:-.015em;font-weight:620}
+    .article-body h3{margin:23px 0 7px;font-size:.98rem;line-height:1.35;font-weight:610}
+    .article-body p,.article-body li{max-width:735px;color:#c0c0bc;font-size:.88rem;line-height:1.68}
+    .article-body p{margin:0}.article-body p+p{margin-top:11px}.article-body ul{margin:9px 0 0;padding-left:21px}
+    .article-body a,.article-sources a{color:#dddcd7;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+    .article-body code{padding:2px 5px;border:1px solid var(--line);border-radius:4px;background:var(--surface);color:#dddcd7;font-size:.82em}
+  </style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Context length","description":"Learn why longer LLM context needs more memory, how KV cache differs from model weights, and how to verify model, runtime and hardware limits.","datePublished":"2026-10-01","dateModified":"2026-10-01","author":{"@type":"Organization","name":"Local LLM Finder"},"publisher":{"@type":"Organization","name":"Local LLM Finder","url":"https://localllmfinder.com/"},"mainEntityOfPage":"https://knowledge.localllmfinder.com/guides/context-length/"}</script>
+<link rel="stylesheet" href="../../sandbox-refine.css?v=cleanup-2"><link rel="stylesheet" href="../../wiki.css?v=1"></head>
+<body>
+  <main class="docs-shell">
+    <header class="site-topbar">
+      <a class="site-brand" href="https://localllmfinder.com/">Local LLM Finder</a>
+      <nav class="site-nav" aria-label="Site">
+        <a href="https://localllmfinder.com/">Finder</a>
+        <a class="knowledge-nav" href="../../">Knowledge</a>
+        <a href="https://localllmfinder.com/dist/methodology.html">Methodology</a>
+      </nav>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="../../">Knowledge</a><span> / </span><a href="../../#guides">Guide references</a><span> / Context length</span></nav><article>
+      <header class="doc-hero">
+        <p class="eyebrow">Guide reference</p>
+        <h1>Context length</h1>
+        <p class="doc-lede">Why longer context increases runtime memory, how KV caches differ from weights, and how to check a useful local context limit.</p>
+        <div class="doc-meta"><span class="doc-chip">Published</span><span>Updated 2026-10-01</span></div>
+      </header>
+      <nav class="article-contents" aria-label="On this page"><strong>On this page</strong><ul><li><a href="#section-1">What context length includes</a></li><li><a href="#section-2">Three limits to check</a></li><li><a href="#section-3">Why the same file needs more memory</a></li><li><a href="#section-4">An illustrative memory budget</a></li><li><a href="#section-5">Weight quantization and cache quantization are separate</a></li><li><a href="#section-6">Set a useful context and verify it</a></li><li><a href="#section-7">Sources</a></li></ul></nav><div class="doc-body article-body"><h2 id="section-1">What context length includes</h2>
+<p>A model&#39;s context window is the token budget available for the conversation it processes. It includes instructions, chat history, pasted documents, tool results and generated output. Reasoning output can consume that budget too.</p>
+<p>Tokens are pieces of encoded text, not a fixed number of words. Leave room for the reply instead of filling the entire window with input. A conversation that approaches the limit may be truncated, rejected or handled with a runtime-specific shifting mechanism.</p>
+<h2 id="section-2">Three limits to check</h2>
+<p>There are three separate questions:</p>
+<ul>
+<li>What context does the model publisher document?</li>
+<li>What context does the downloaded artifact and runtime support and configure?</li>
+<li>What context can your hardware hold at the selected quant and workload?</li>
+</ul>
+<p>For example, <a href="https://knowledge.localllmfinder.com/models/qwen3-8b/">Qwen3 8B</a> documents 32,768 tokens natively and an extended 131,072 with YaRN. A higher slider value does not itself implement that scaling.</p>
+<p><a href="https://knowledge.localllmfinder.com/models/gpt-oss-20b/">gpt-oss-20b</a> also has a published long-context ceiling, but the local memory budget and runtime configuration still need to be checked. Local LLM Finder&#39;s catalogue limit is an estimate input, not proof that a particular app implements the full model limit.</p>
+<h2 id="section-3">Why the same file needs more memory</h2>
+<p>During autoregressive generation, attention uses a key/value cache so the model can reuse information from earlier tokens. The <a href="https://huggingface.co/docs/transformers/en/kv_cache">Hugging Face cache documentation</a> describes cache strategies and their memory trade-offs.</p>
+<p>For ordinary full-attention layers, a useful first approximation is that KV-cache storage increases with the number of cached tokens, layer count, key/value heads, head size and bytes per cache value. Grouped-query attention changes the head count that matters.</p>
+<p>Models with sliding-window attention, compressed caches or other architectures can behave differently. Batching and simultaneous conversations also change the memory budget. A simple per-token estimate is therefore guidance, not a universal allocation formula.</p>
+<p>The weights file stays the same size when you raise context. The cache and other runtime allocations are what change.</p>
+<h2 id="section-4">An illustrative memory budget</h2>
+<p>Consider a hypothetical setup with 5 GB of weights, 0.5 GB of other allocations and a full-attention cache that uses 0.75 GB at 4K tokens:</p>
+<ul>
+<li>At 4K, the example totals 6.25 GB.</li>
+<li>At 16K, four times as many cached tokens would use about 3 GB of cache.</li>
+<li>The example then totals 8.5 GB, while the weights remain 5 GB.</li>
+</ul>
+<p>These numbers explain the relationship; they are not measurements of Qwen3, gpt-oss or an RTX 3060. Real runtimes can allocate buffers differently or reserve the configured cache up front.</p>
+<h2 id="section-5">Weight quantization and cache quantization are separate</h2>
+<p>Choosing Q4_K_M instead of Q5_K_M primarily changes stored weights. It does not automatically lower the KV-cache precision. <a href="https://github.com/ggml-org/llama.cpp/blob/master/tools/server/README.md">llama.cpp&#39;s server documentation</a> exposes context and key/value cache controls separately.</p>
+<p>Cache quantization or offload can reduce device-memory pressure in supported configurations, but may affect performance or output. Verify support for your model and backend before changing those controls.</p>
+<p><a href="https://knowledge.localllmfinder.com/guides/q4-vs-q5/">Q4 vs Q5</a> covers the weight trade-off. Keeping a useful context can matter more to your task than spending the last available memory on a larger quant.</p>
+<h2 id="section-6">Set a useful context and verify it</h2>
+<p>For an initial local test, 4K is a manageable starting point when your task fits. Increase it for longer conversations or documents after checking memory, the model limit and the runtime&#39;s configuration.</p>
+<p>In Ollama, the <a href="https://docs.ollama.com/context-length">context-length documentation</a> explains configuration and checking the allocated context with <code>ollama ps</code>. Other runtimes have their own logs and controls. Defaults can change, so check the allocation rather than assuming it matches the publisher&#39;s maximum.</p>
+<ul>
+<li>Choose a representative prompt and reserve reply space.</li>
+<li>Record quant, context and CPU/GPU offload.</li>
+<li>Test a longer prompt, not only an empty conversation.</li>
+<li>Reduce context or shorten the retained history if you exceed memory.</li>
+<li>Compare time to a useful answer as well as whether the model loads.</li>
+</ul>
+<p>On an <a href="https://knowledge.localllmfinder.com/hardware/rtx-3060-12gb/">RTX 3060 12 GB</a>, this check can make the difference between a practical configuration and an allocation failure. <a href="https://localllmfinder.com/">Use the Finder to compare context estimates</a>, then confirm them in your runtime.</p></div>
+    <section class="doc-section article-sources">
+      <h2 id="section-7">Sources</h2>
+      <ul><li><a href="https://huggingface.co/docs/transformers/en/kv_cache" rel="noopener">https://huggingface.co/docs/transformers/en/kv_cache</a></li><li><a href="https://github.com/ggml-org/llama.cpp/blob/master/tools/server/README.md" rel="noopener">https://github.com/ggml-org/llama.cpp/blob/master/tools/server/README.md</a></li><li><a href="https://docs.ollama.com/context-length" rel="noopener">https://docs.ollama.com/context-length</a></li><li><a href="https://huggingface.co/Qwen/Qwen3-8B" rel="noopener">https://huggingface.co/Qwen/Qwen3-8B</a></li><li><a href="https://huggingface.co/openai/gpt-oss-20b" rel="noopener">https://huggingface.co/openai/gpt-oss-20b</a></li></ul>
+    </section>
+      <section class="doc-section"><h2>Related references</h2><ul><li><a href="https://knowledge.localllmfinder.com/guides/q4-vs-q5/">Q4 vs Q5</a></li><li><a href="https://knowledge.localllmfinder.com/models/qwen3-8b/">Qwen3 8B</a></li><li><a href="https://knowledge.localllmfinder.com/models/qwen2-5-coder-14b/">Qwen2.5-Coder 14B</a></li><li><a href="https://knowledge.localllmfinder.com/models/gpt-oss-20b/">gpt-oss-20b</a></li><li><a href="https://knowledge.localllmfinder.com/hardware/rtx-3060-12gb/">RTX 3060 12 GB</a></li></ul></section><section class="doc-section"><h2>Referenced by</h2><ul><li><a href="https://knowledge.localllmfinder.com/models/qwen3-8b/">Qwen3 8B</a></li><li><a href="https://knowledge.localllmfinder.com/models/qwen2-5-coder-14b/">Qwen2.5-Coder 14B</a></li><li><a href="https://knowledge.localllmfinder.com/models/gpt-oss-20b/">gpt-oss-20b</a></li><li><a href="https://knowledge.localllmfinder.com/hardware/rtx-3060-12gb/">RTX 3060 12 GB</a></li><li><a href="https://knowledge.localllmfinder.com/guides/q4-vs-q5/">Q4 vs Q5</a></li></ul></section><div class="doc-actions"><a class="doc-button primary" href="https://localllmfinder.com/">Use the Finder</a><a class="doc-button secondary" href="../../">Back to Knowledge</a></div>
+    </article>
+
+    <footer class="doc-footer"><span>Local LLM Finder</span><nav aria-label="Footer"><a href="https://localllmfinder.com/">Finder</a><a href="../../">Knowledge</a><a href="https://localllmfinder.com/dist/privacy.html">Privacy</a><a href="https://localllmfinder.com/dist/terms.html">Terms</a></nav></footer>
+  </main>
+</body>
+</html>

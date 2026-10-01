@@ -2,6 +2,36 @@
   "version": 1,
   "articles": [
     {
+      "key": "models/qwen3-8b",
+      "type": "Model",
+      "slug": "qwen3-8b",
+      "title": "Qwen3 8B",
+      "summary": "Official Q4/Q5/Q8 download sizes, native and extended context, and practical memory planning for Qwen3 8B.",
+      "url": "https://knowledge.localllmfinder.com/models/qwen3-8b/",
+      "entityIds": [
+        "model-7"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length",
+        "hardware/rtx-3060-12gb",
+        "models/qwen2-5-coder-14b"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length",
+        "hardware/rtx-3060-12gb",
+        "models/qwen2-5-coder-14b"
+      ],
+      "backlinks": [
+        "models/gpt-oss-20b",
+        "hardware/rtx-3060-12gb",
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ]
+    },
+    {
       "key": "models/qwen2-5-coder-14b",
       "type": "Model",
       "slug": "qwen2-5-coder-14b",
@@ -22,7 +52,136 @@
         "guides/context-length",
         "hardware/rtx-3060-12gb"
       ],
-      "backlinks": []
+      "backlinks": [
+        "models/qwen3-8b",
+        "hardware/rtx-3060-12gb",
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ]
+    },
+    {
+      "key": "models/gpt-oss-20b",
+      "type": "Model",
+      "slug": "gpt-oss-20b",
+      "title": "gpt-oss-20b",
+      "summary": "Understand total versus active parameters, MXFP4 checkpoint size, Harmony support and local memory requirements.",
+      "url": "https://knowledge.localllmfinder.com/models/gpt-oss-20b/",
+      "entityIds": [
+        "extra-gpt-oss-20b"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/context-length",
+        "guides/q4-vs-q5",
+        "models/qwen3-8b",
+        "hardware/rtx-3060-12gb"
+      ],
+      "outgoing": [
+        "guides/context-length",
+        "guides/q4-vs-q5",
+        "models/qwen3-8b",
+        "hardware/rtx-3060-12gb"
+      ],
+      "backlinks": [
+        "hardware/rtx-3060-12gb",
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ]
+    },
+    {
+      "key": "hardware/rtx-3060-12gb",
+      "type": "Hardware",
+      "slug": "rtx-3060-12gb",
+      "title": "RTX 3060 12 GB",
+      "summary": "Local LLM capacity planning for the desktop 12 GB RTX 3060, with model examples, context trade-offs and offload checks.",
+      "url": "https://knowledge.localllmfinder.com/hardware/rtx-3060-12gb/",
+      "entityIds": [
+        "rtx-3060"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "models/qwen3-8b",
+        "models/qwen2-5-coder-14b",
+        "models/gpt-oss-20b",
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "models/qwen3-8b",
+        "models/qwen2-5-coder-14b",
+        "models/gpt-oss-20b",
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": [
+        "models/qwen3-8b",
+        "models/qwen2-5-coder-14b",
+        "models/gpt-oss-20b",
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ]
+    },
+    {
+      "key": "guides/q4-vs-q5",
+      "type": "Guide",
+      "slug": "q4-vs-q5",
+      "title": "Q4 vs Q5",
+      "summary": "Choose between Q4_K_M and Q5_K_M using real file sizes, memory headroom, context needs and a practical quality comparison.",
+      "url": "https://knowledge.localllmfinder.com/guides/q4-vs-q5/",
+      "entityIds": [],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/context-length",
+        "models/qwen3-8b",
+        "models/qwen2-5-coder-14b",
+        "models/gpt-oss-20b",
+        "hardware/rtx-3060-12gb"
+      ],
+      "outgoing": [
+        "guides/context-length",
+        "models/qwen3-8b",
+        "models/qwen2-5-coder-14b",
+        "models/gpt-oss-20b",
+        "hardware/rtx-3060-12gb"
+      ],
+      "backlinks": [
+        "models/qwen3-8b",
+        "models/qwen2-5-coder-14b",
+        "models/gpt-oss-20b",
+        "hardware/rtx-3060-12gb",
+        "guides/context-length"
+      ]
+    },
+    {
+      "key": "guides/context-length",
+      "type": "Guide",
+      "slug": "context-length",
+      "title": "Context length",
+      "summary": "Why longer context increases runtime memory, how KV caches differ from weights, and how to check a useful local context limit.",
+      "url": "https://knowledge.localllmfinder.com/guides/context-length/",
+      "entityIds": [],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "models/qwen3-8b",
+        "models/qwen2-5-coder-14b",
+        "models/gpt-oss-20b",
+        "hardware/rtx-3060-12gb"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "models/qwen3-8b",
+        "models/qwen2-5-coder-14b",
+        "models/gpt-oss-20b",
+        "hardware/rtx-3060-12gb"
+      ],
+      "backlinks": [
+        "models/qwen3-8b",
+        "models/qwen2-5-coder-14b",
+        "models/gpt-oss-20b",
+        "hardware/rtx-3060-12gb",
+        "guides/q4-vs-q5"
+      ]
     }
   ]
 }

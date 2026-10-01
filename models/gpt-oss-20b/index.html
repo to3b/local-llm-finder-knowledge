@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#151719">
+  <meta name="robots" content="index,follow">
+  <meta name="description" content="Understand gpt-oss-20b local requirements: total versus active parameters, MXFP4 size, 16 GB deployment claims, context and Harmony runtime support.">
+  <link rel="canonical" href="https://knowledge.localllmfinder.com/models/gpt-oss-20b/">
+  <title>gpt-oss-20b Memory, MXFP4 &amp; Context | Local LLM Finder</title>
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="https://localllmfinder.com/dist/styles.css?v=20260929d">
+  <link rel="stylesheet" href="https://localllmfinder.com/dist/docs.css?v=20260929b">
+  <link rel="stylesheet" href="https://localllmfinder.com/dist/palette.css?v=20260929f">
+  <link rel="stylesheet" href="../../docs.css">
+  <style>
+    .article-body{padding-top:8px}
+    .article-body h2{margin:30px 0 9px;font-size:1.12rem;line-height:1.3;letter-spacing:-.015em;font-weight:620}
+    .article-body h3{margin:23px 0 7px;font-size:.98rem;line-height:1.35;font-weight:610}
+    .article-body p,.article-body li{max-width:735px;color:#c0c0bc;font-size:.88rem;line-height:1.68}
+    .article-body p{margin:0}.article-body p+p{margin-top:11px}.article-body ul{margin:9px 0 0;padding-left:21px}
+    .article-body a,.article-sources a{color:#dddcd7;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+    .article-body code{padding:2px 5px;border:1px solid var(--line);border-radius:4px;background:var(--surface);color:#dddcd7;font-size:.82em}
+  </style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"gpt-oss-20b","description":"Understand gpt-oss-20b local requirements: total versus active parameters, MXFP4 size, 16 GB deployment claims, context and Harmony runtime support.","datePublished":"2026-10-01","dateModified":"2026-10-01","author":{"@type":"Organization","name":"Local LLM Finder"},"publisher":{"@type":"Organization","name":"Local LLM Finder","url":"https://localllmfinder.com/"},"mainEntityOfPage":"https://knowledge.localllmfinder.com/models/gpt-oss-20b/"}</script>
+<link rel="stylesheet" href="../../sandbox-refine.css?v=cleanup-2"><link rel="stylesheet" href="../../wiki.css?v=1"></head>
+<body>
+  <main class="docs-shell">
+    <header class="site-topbar">
+      <a class="site-brand" href="https://localllmfinder.com/">Local LLM Finder</a>
+      <nav class="site-nav" aria-label="Site">
+        <a href="https://localllmfinder.com/">Finder</a>
+        <a class="knowledge-nav" href="../../">Knowledge</a>
+        <a href="https://localllmfinder.com/dist/methodology.html">Methodology</a>
+      </nav>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="../../">Knowledge</a><span> / </span><a href="../../#models">Model references</a><span> / gpt-oss-20b</span></nav><article>
+      <header class="doc-hero">
+        <p class="eyebrow">Model reference</p>
+        <h1>gpt-oss-20b</h1>
+        <p class="doc-lede">Understand total versus active parameters, MXFP4 checkpoint size, Harmony support and local memory requirements.</p>
+        <div class="doc-meta"><span class="doc-chip">Published</span><span>Updated 2026-10-01</span></div>
+      </header>
+      <nav class="article-contents" aria-label="On this page"><strong>On this page</strong><ul><li><a href="#section-1">What gpt-oss-20b is</a></li><li><a href="#section-2">Checkpoint size and MXFP4</a></li><li><a href="#section-3">Practical memory planning</a></li><li><a href="#section-4">Context and reasoning effort</a></li><li><a href="#section-5">Use a compatible chat format</a></li><li><a href="#section-6">Sources</a></li></ul></nav><div class="doc-body article-body"><h2 id="section-1">What gpt-oss-20b is</h2>
+<p>gpt-oss-20b is OpenAI&#39;s open-weight, text-only reasoning model. It uses a mixture-of-experts architecture rather than activating all its parameters for every token.</p>
+<p>The <a href="https://deploymentsafety.openai.com/gpt-oss/a2">OpenAI model card</a> lists about 20.9 billion total parameters and 3.6 billion active parameters per token. The active count describes which parameters participate in a forward pass. It does not mean only that many weights need to be stored.</p>
+<p>That distinction matters when comparing it with a dense model such as <a href="https://knowledge.localllmfinder.com/models/qwen3-8b/">Qwen3 8B</a>. A lower active count can reduce some computation, but it is not a shortcut for predicting total RAM, VRAM or tokens per second.</p>
+<h2 id="section-2">Checkpoint size and MXFP4</h2>
+<p>The model card lists a checkpoint size of 12.8 GiB, approximately 13.7 decimal GB. Checkpoint size is separate from runtime memory.</p>
+<p>The <a href="https://huggingface.co/openai/gpt-oss-20b">official Hugging Face page</a> explains that the expert weights use MXFP4 quantization and that the model can run within 16 GB of memory in supported configurations. This is a publisher deployment claim, not a guarantee for every backend, context setting or 16 GB computer.</p>
+<p>MXFP4 is not the same format as a GGUF Q4_K_M conversion. Do not assume any download with a “4-bit” label preserves the publisher&#39;s memory footprint or execution path. Check the exact artifact and your runtime&#39;s gpt-oss support.</p>
+<p>The <a href="https://knowledge.localllmfinder.com/guides/q4-vs-q5/">quantization guide</a> explains why precision labels alone cannot settle a hardware comparison.</p>
+<h2 id="section-3">Practical memory planning</h2>
+<p>Treat 16 GB as a starting tier to investigate with a compatible runtime and modest context. Reserve space for cache and buffers, and remember that installed system or unified memory is also shared with the operating system.</p>
+<p>A 12 GB GPU has less capacity than the published checkpoint size alone. This reference therefore does not promise full GPU residency on an <a href="https://knowledge.localllmfinder.com/hardware/rtx-3060-12gb/">RTX 3060 12 GB</a>. Some runtimes can distribute work across CPU and GPU memory; actual speed and allocation need to be checked.</p>
+<p>Local LLM Finder uses a general planning model for quantization and context. Its Q4/Q5 choices for this catalogue entry should not be read as certification that a matching native MXFP4 artifact exists or has the same requirements. Verify the available format before downloading or buying hardware.</p>
+<p><a href="https://localllmfinder.com/#f=GPT-OSS">Explore your hardware in the Finder</a>, then confirm the proposed setup in the runtime you intend to use.</p>
+<h2 id="section-4">Context and reasoning effort</h2>
+<p>OpenAI documents a context window of up to 131,072 tokens. The local application&#39;s supported and configured context can be lower, and sufficient memory is a separate requirement.</p>
+<p>The catalogue currently uses 64K for planning. A model&#39;s published ceiling is not a recommendation to reserve the maximum context for every conversation. Start with a smaller allocation, test your workload, and increase it when needed. See <a href="https://knowledge.localllmfinder.com/guides/context-length/">context length and memory</a>.</p>
+<p>The model supports low, medium and high reasoning effort. A higher setting can spend more tokens before delivering the answer. Compare time to a useful answer as well as visible generation speed.</p>
+<h2 id="section-5">Use a compatible chat format</h2>
+<p>OpenAI specifies the Harmony conversation format for gpt-oss. Use a runtime that applies the appropriate template and correctly handles reasoning and final-answer channels. Feeding it a generic chat template can produce misleading results even when the weights load.</p>
+<p>Download through the <a href="https://huggingface.co/openai/gpt-oss-20b">official model page</a>, follow the runtime&#39;s supported setup, and test ordinary chat and your intended task before integrating tools. Tool descriptions do not execute functions by themselves; your application supplies that integration.</p>
+<p>Memory and speed guidance here is for planning. It is not an RTX 3060, Mac or CPU benchmark.</p></div>
+    <section class="doc-section article-sources">
+      <h2 id="section-6">Sources</h2>
+      <ul><li><a href="https://deploymentsafety.openai.com/gpt-oss/a2" rel="noopener">https://deploymentsafety.openai.com/gpt-oss/a2</a></li><li><a href="https://huggingface.co/openai/gpt-oss-20b" rel="noopener">https://huggingface.co/openai/gpt-oss-20b</a></li><li><a href="https://openai.com/index/introducing-gpt-oss/" rel="noopener">https://openai.com/index/introducing-gpt-oss/</a></li></ul>
+    </section>
+      <section class="doc-section"><h2>Related references</h2><ul><li><a href="https://knowledge.localllmfinder.com/guides/context-length/">Context length</a></li><li><a href="https://knowledge.localllmfinder.com/guides/q4-vs-q5/">Q4 vs Q5</a></li><li><a href="https://knowledge.localllmfinder.com/models/qwen3-8b/">Qwen3 8B</a></li><li><a href="https://knowledge.localllmfinder.com/hardware/rtx-3060-12gb/">RTX 3060 12 GB</a></li></ul></section><section class="doc-section"><h2>Referenced by</h2><ul><li><a href="https://knowledge.localllmfinder.com/hardware/rtx-3060-12gb/">RTX 3060 12 GB</a></li><li><a href="https://knowledge.localllmfinder.com/guides/q4-vs-q5/">Q4 vs Q5</a></li><li><a href="https://knowledge.localllmfinder.com/guides/context-length/">Context length</a></li></ul></section><div class="doc-actions"><a class="doc-button primary" href="https://localllmfinder.com/">Use the Finder</a><a class="doc-button secondary" href="../../">Back to Knowledge</a></div>
+    </article>
+
+    <footer class="doc-footer"><span>Local LLM Finder</span><nav aria-label="Footer"><a href="https://localllmfinder.com/">Finder</a><a href="../../">Knowledge</a><a href="https://localllmfinder.com/dist/privacy.html">Privacy</a><a href="https://localllmfinder.com/dist/terms.html">Terms</a></nav></footer>
+  </main>
+</body>
+</html>
