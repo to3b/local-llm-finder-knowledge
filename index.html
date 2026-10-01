@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#151719">
   <meta name="robots" content="noindex,follow">
-  <meta name="description" content="Local LLM Finder Knowledge: practical model, quantization, context and hardware reference pages in development.">
+  <meta name="description" content="Local LLM Finder Knowledge: practical model, quantization, context and hardware reference pages.">
   <link rel="canonical" href="https://knowledge.localllmfinder.com/">
   <title>Knowledge — Local LLM Finder</title>
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
@@ -16,9 +16,10 @@
     .upcoming-label{display:inline-flex;align-items:center;margin-bottom:8px;padding:3px 7px;border:1px solid #6f8298;border-radius:999px;color:#dce8ff;background:rgba(156,191,255,.10);font-size:.64rem;font-weight:650;letter-spacing:.02em}
     .preview-card{position:relative}
     .preview-card small{margin-bottom:5px}
+    .knowledge-card-title{display:block;color:inherit;font-weight:700;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
   </style>
 </head>
-<body>
+<body data-knowledge-source="bundled">
   <main class="docs-shell">
     <header class="site-topbar">
       <a class="site-brand" href="https://localllmfinder.com/">Local LLM Finder</a>
@@ -30,17 +31,17 @@
     </header>
 
     <section class="doc-hero" aria-labelledby="page-heading">
-      <p class="eyebrow">Knowledge</p>
-      <h1 id="page-heading">Understand model and hardware requirements</h1>
-      <p class="doc-lede">Practical reference pages are being prepared for the models, quantization choices, context limits and hardware trade-offs that appear in Local LLM Finder.</p>
-      <div class="doc-meta"><span class="doc-chip">Coming soon</span><span>First model and hardware references are in progress</span></div>
-      <div class="doc-actions"><a class="doc-button primary" href="https://localllmfinder.com/">Use the Finder</a><a class="doc-button secondary" href="https://localllmfinder.com/dist/methodology.html">How estimates work</a></div>
+      <p class="eyebrow" data-copy-key="eyebrow">Knowledge</p>
+      <h1 id="page-heading" data-copy-key="hero_heading">Understand model and hardware requirements</h1>
+      <p class="doc-lede" data-copy-key="hero_lede">Practical reference pages for the models, quantization choices, context limits and hardware trade-offs that appear in Local LLM Finder.</p>
+      <div class="doc-meta"><span class="doc-chip" data-copy-key="meta_chip">Coming soon</span><span data-copy-key="meta_text">First model and hardware references are in progress</span></div>
+      <div class="doc-actions"><a class="doc-button primary" href="https://localllmfinder.com/" data-copy-key="primary_cta_label" data-copy-href-key="primary_cta_url">Use the Finder</a><a class="doc-button secondary" href="https://localllmfinder.com/dist/methodology.html" data-copy-key="secondary_cta_label" data-copy-href-key="secondary_cta_url">How estimates work</a></div>
     </section>
 
     <section class="preview-section" aria-labelledby="first-pages-heading">
-      <h2 id="first-pages-heading">Coming first</h2>
-      <p>These are the first topics being prepared. Published reference pages will be linked and visually distinct as they go live.</p>
-      <div class="preview-grid">
+      <h2 id="first-pages-heading" data-copy-key="section_heading">Coming first</h2>
+      <p data-copy-key="section_intro">These are the first topics being prepared. Published reference pages will be linked and visually distinct as they go live.</p>
+      <div class="preview-grid" data-knowledge-pages>
         <article class="preview-card"><span class="upcoming-label">Coming soon</span><small>Model</small><strong>Qwen3 8B</strong><p>Quant sizes, context, memory estimates and practical hardware fit.</p></article>
         <article class="preview-card"><span class="upcoming-label">Coming soon</span><small>Model</small><strong>Qwen2.5-Coder 14B</strong><p>Coding-focused profile, quantization choices and practical memory requirements.</p></article>
         <article class="preview-card"><span class="upcoming-label">Coming soon</span><small>Model</small><strong>gpt-oss-20b</strong><p>Architecture, active parameters and what its local memory footprint means.</p></article>
@@ -48,10 +49,11 @@
         <article class="preview-card"><span class="upcoming-label">Coming soon</span><small>Guide</small><strong>Q4 vs Q5</strong><p>A plain-English explanation of the size and quality trade-off.</p></article>
         <article class="preview-card"><span class="upcoming-label">Coming soon</span><small>Guide</small><strong>Context length</strong><p>Why longer context increases memory use even when the model file does not change.</p></article>
       </div>
-      <div class="doc-callout"><strong>Need an answer now?</strong><p>The Finder already compares current catalogue models against your hardware and workload. Knowledge will add the supporting explanations behind those results.</p></div>
+      <div class="doc-callout"><strong data-copy-key="callout_title">Need an answer now?</strong><p data-copy-key="callout_body">The Finder already compares current catalogue models against your hardware and workload. Knowledge adds the supporting explanations behind those results.</p></div>
     </section>
 
     <footer class="doc-footer"><span>Local LLM Finder</span><nav aria-label="Footer"><a href="https://localllmfinder.com/">Finder</a><a href="https://localllmfinder.com/dist/methodology.html">Methodology</a><a href="https://localllmfinder.com/dist/privacy.html">Privacy</a><a href="https://localllmfinder.com/dist/terms.html">Terms</a></nav></footer>
   </main>
+  <script type="module" src="./knowledge-data.js"></script>
 </body>
 </html>
