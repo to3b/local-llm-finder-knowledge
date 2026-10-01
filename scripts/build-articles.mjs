@@ -2,7 +2,9 @@ import { mkdir, readFile, rm, writeFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-const SITE_ROOT = fileURLToPath(new URL('../', import.meta.url));
+import {registry, enhanceArticle, renderIndex} from './wiki.mjs';
+
+const SITE_ROOT = process.env.SITE_ROOT || fileURLToPath(new URL('../', import.meta.url));
 const SITE_ORIGIN = 'https://knowledge.localllmfinder.com';
 const SHEET_BASE = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQrzDgQUmV8FDdt8HDHgg0YzpyJmR28TKqxRGhkg4kW2LK7-ncnt1z_nEKgg8MJecNxt0MGLcm0syD1/pub';
 const ARTICLES_GID = '323200577';
@@ -285,9 +287,8 @@ async function setHomepageIndexable(hasPublishedArticles) {
 }
 
 async function main() {
-  const response = await fetch(sheetUrl(ARTICLES_GID), { redirect: 'follow' });
-  if (!response.ok) throw new Error(`Google Sheets returned HTTP ${response.status}.`);
-  const records = recordsFromCsv(await response.text());
+  const csv = process.env.ARTICLES_CSV ? await readFile(process.env.ARTICLES_CSV, 'utf8') : await (async () => { const response = await fetch(sheetUrl(ARTICLES_GID), { redirect: 'follow' }); if (!response.ok) throw new Error(`Google Sheets returned HTTP ${response.status}.`); return response.text(); })();
+  const records = recordsFromCsv(csv);
   const published = records.filter(row => enabled(row.Enabled) && /^published$/i.test(String(row.Status || '').trim()));
 
   const seen = new Set();
@@ -298,14 +299,16 @@ async function main() {
     validateArticle(row);
   }
 
+  const references = registry(published);
   for (const directory of OWNED_DIRECTORIES) await rm(join(SITE_ROOT, directory), { recursive: true, force: true });
   for (const row of published) {
     const { relative } = articlePath(row);
-    await writeRelative(relative, renderArticle(row));
+    await writeRelative(relative, enhanceArticle(renderArticle(row), row, references));
   }
 
   await writeRelative('sitemap.xml', sitemapXml(published));
-  await setHomepageIndexable(published.length > 0);
+  await writeRelative('references.json', JSON.stringify(references, null, 2) + '\n');
+  await writeRelative('index.html', renderIndex(references));
   console.log(`Built ${published.length} published Knowledge article(s).`);
 }
 

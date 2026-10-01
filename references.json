@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "articles": [
+    {
+      "key": "models/qwen2-5-coder-14b",
+      "type": "Model",
+      "slug": "qwen2-5-coder-14b",
+      "title": "Qwen2.5-Coder 14B",
+      "summary": "Quantized download sizes, context limits and practical memory planning for Qwen2.5-Coder-14B-Instruct.",
+      "url": "https://knowledge.localllmfinder.com/models/qwen2-5-coder-14b/",
+      "entityIds": [
+        "model-11"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length",
+        "hardware/rtx-3060-12gb"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length",
+        "hardware/rtx-3060-12gb"
+      ],
+      "backlinks": []
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+import assert from 'node:assert/strict';
+import {registry,enhanceArticle,renderIndex} from '../scripts/wiki.mjs';
+const article=(Type,Slug,ids='',related='',body='')=>({Type,Slug,Title:Slug,Summary:'summary','Canonical URL':`https://knowledge.localllmfinder.com/${{Model:'models',Guide:'guides',Hardware:'hardware'}[Type]}/${Slug}/`,'Entity IDs':ids,'Related Articles':related,'Body Markdown':body});
+const rows=[article('Model','coder','model-11','guides/quant','[[guides/quant|Quantization]] [[models/unpublished|Draft]]'),article('Guide','quant')];
+const data=registry(rows);
+assert.deepEqual(data.articles[1].backlinks,['models/coder']);
+const html=enhanceArticle('<head></head><article><h2>Memory</h2><div class="doc-body article-body">[[guides/quant|Quantization]] [[models/unpublished|Draft]]</div><div class="doc-actions"></div></article>',rows[0],data);
+assert.match(html,/href="https:\/\/knowledge.localllmfinder.com\/guides\/quant\/"/);
+assert.ok(!html.includes('href="https://knowledge.localllmfinder.com/models/unpublished/"'));
+assert.match(html,/id="section-1"/);assert.match(html,/Related references/);
+assert.throws(()=>registry([rows[0],article('Model','other','model-11')]));
+assert.throws(()=>registry([article('Model','x','','bad-path')]));
+assert.ok(renderIndex(data).includes('Find a reference'));
+assert.ok(!renderIndex(data).includes('Coming soon'));
+console.log('Published reference relationships, draft hiding, duplicate IDs and index passed.');
