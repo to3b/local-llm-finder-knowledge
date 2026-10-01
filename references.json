@@ -8,6 +8,7 @@
       "title": "Qwen3 8B",
       "summary": "Official Q4/Q5/Q8 download sizes, native and extended context, and practical memory planning for Qwen3 8B.",
       "url": "https://knowledge.localllmfinder.com/models/qwen3-8b/",
+      "status": "Published",
       "entityIds": [
         "model-7"
       ],
@@ -38,6 +39,7 @@
       "title": "Qwen2.5-Coder 14B",
       "summary": "Quantized download sizes, context limits and practical memory planning for Qwen2.5-Coder-14B-Instruct.",
       "url": "https://knowledge.localllmfinder.com/models/qwen2-5-coder-14b/",
+      "status": "Published",
       "entityIds": [
         "model-11"
       ],
@@ -66,6 +68,7 @@
       "title": "gpt-oss-20b",
       "summary": "Understand total versus active parameters, MXFP4 checkpoint size, Harmony support and local memory requirements.",
       "url": "https://knowledge.localllmfinder.com/models/gpt-oss-20b/",
+      "status": "Published",
       "entityIds": [
         "extra-gpt-oss-20b"
       ],
@@ -95,6 +98,7 @@
       "title": "RTX 3060 12 GB",
       "summary": "Local LLM capacity planning for the desktop 12 GB RTX 3060, with model examples, context trade-offs and offload checks.",
       "url": "https://knowledge.localllmfinder.com/hardware/rtx-3060-12gb/",
+      "status": "Published",
       "entityIds": [
         "rtx-3060"
       ],
@@ -128,6 +132,7 @@
       "title": "Q4 vs Q5",
       "summary": "Choose between Q4_K_M and Q5_K_M using real file sizes, memory headroom, context needs and a practical quality comparison.",
       "url": "https://knowledge.localllmfinder.com/guides/q4-vs-q5/",
+      "status": "Published",
       "entityIds": [],
       "modified": "2026-10-01",
       "related": [
@@ -159,6 +164,7 @@
       "title": "Context length",
       "summary": "Why longer context increases runtime memory, how KV caches differ from weights, and how to check a useful local context limit.",
       "url": "https://knowledge.localllmfinder.com/guides/context-length/",
+      "status": "Published",
       "entityIds": [],
       "modified": "2026-10-01",
       "related": [
@@ -182,6 +188,6034 @@
         "hardware/rtx-3060-12gb",
         "guides/q4-vs-q5"
       ]
+    },
+    {
+      "key": "models/qwen3-0-6b",
+      "type": "Model",
+      "slug": "qwen3-0-6b",
+      "title": "Qwen3 0.6B",
+      "summary": "Catalogue details and a memory-planning starting point for Qwen3 0.6B. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/qwen3-0-6b/",
+      "status": "Draft",
+      "entityIds": [
+        "model-1"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/gemma-3-1b",
+      "type": "Model",
+      "slug": "gemma-3-1b",
+      "title": "Gemma 3 1B",
+      "summary": "Catalogue details and a memory-planning starting point for Gemma 3 1B. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/gemma-3-1b/",
+      "status": "Draft",
+      "entityIds": [
+        "model-2"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/qwen3-1-7b",
+      "type": "Model",
+      "slug": "qwen3-1-7b",
+      "title": "Qwen3 1.7B",
+      "summary": "Catalogue details and a memory-planning starting point for Qwen3 1.7B. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/qwen3-1-7b/",
+      "status": "Draft",
+      "entityIds": [
+        "model-3"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/smollm2-1-7b-instruct",
+      "type": "Model",
+      "slug": "smollm2-1-7b-instruct",
+      "title": "SmolLM2 1.7B Instruct",
+      "summary": "Catalogue details and a memory-planning starting point for SmolLM2 1.7B Instruct. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/smollm2-1-7b-instruct/",
+      "status": "Draft",
+      "entityIds": [
+        "model-4"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/llama-3-2-3b-instruct",
+      "type": "Model",
+      "slug": "llama-3-2-3b-instruct",
+      "title": "Llama 3.2 3B Instruct",
+      "summary": "Catalogue details and a memory-planning starting point for Llama 3.2 3B Instruct. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/llama-3-2-3b-instruct/",
+      "status": "Draft",
+      "entityIds": [
+        "model-5"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/qwen3-4b",
+      "type": "Model",
+      "slug": "qwen3-4b",
+      "title": "Qwen3 4B",
+      "summary": "Catalogue details and a memory-planning starting point for Qwen3 4B. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/qwen3-4b/",
+      "status": "Draft",
+      "entityIds": [
+        "model-6"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/qwen3-14b",
+      "type": "Model",
+      "slug": "qwen3-14b",
+      "title": "Qwen3 14B",
+      "summary": "Catalogue details and a memory-planning starting point for Qwen3 14B. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/qwen3-14b/",
+      "status": "Draft",
+      "entityIds": [
+        "model-8"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/qwen3-32b",
+      "type": "Model",
+      "slug": "qwen3-32b",
+      "title": "Qwen3 32B",
+      "summary": "Catalogue details and a memory-planning starting point for Qwen3 32B. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/qwen3-32b/",
+      "status": "Draft",
+      "entityIds": [
+        "model-9"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/qwen2-5-coder-7b",
+      "type": "Model",
+      "slug": "qwen2-5-coder-7b",
+      "title": "Qwen2.5-Coder 7B",
+      "summary": "Catalogue details and a memory-planning starting point for Qwen2.5-Coder 7B. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/qwen2-5-coder-7b/",
+      "status": "Draft",
+      "entityIds": [
+        "model-10"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/qwen2-5-coder-32b",
+      "type": "Model",
+      "slug": "qwen2-5-coder-32b",
+      "title": "Qwen2.5-Coder 32B",
+      "summary": "Catalogue details and a memory-planning starting point for Qwen2.5-Coder 32B. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/qwen2-5-coder-32b/",
+      "status": "Draft",
+      "entityIds": [
+        "model-12"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/llama-3-1-8b-instruct",
+      "type": "Model",
+      "slug": "llama-3-1-8b-instruct",
+      "title": "Llama 3.1 8B Instruct",
+      "summary": "Catalogue details and a memory-planning starting point for Llama 3.1 8B Instruct. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/llama-3-1-8b-instruct/",
+      "status": "Draft",
+      "entityIds": [
+        "model-13"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/llama-3-3-70b-instruct",
+      "type": "Model",
+      "slug": "llama-3-3-70b-instruct",
+      "title": "Llama 3.3 70B Instruct",
+      "summary": "Catalogue details and a memory-planning starting point for Llama 3.3 70B Instruct. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/llama-3-3-70b-instruct/",
+      "status": "Draft",
+      "entityIds": [
+        "model-14"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/gemma-3-4b",
+      "type": "Model",
+      "slug": "gemma-3-4b",
+      "title": "Gemma 3 4B",
+      "summary": "Catalogue details and a memory-planning starting point for Gemma 3 4B. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/gemma-3-4b/",
+      "status": "Draft",
+      "entityIds": [
+        "model-15"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/gemma-3-12b",
+      "type": "Model",
+      "slug": "gemma-3-12b",
+      "title": "Gemma 3 12B",
+      "summary": "Catalogue details and a memory-planning starting point for Gemma 3 12B. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/gemma-3-12b/",
+      "status": "Draft",
+      "entityIds": [
+        "model-16"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/gemma-3-27b",
+      "type": "Model",
+      "slug": "gemma-3-27b",
+      "title": "Gemma 3 27B",
+      "summary": "Catalogue details and a memory-planning starting point for Gemma 3 27B. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/gemma-3-27b/",
+      "status": "Draft",
+      "entityIds": [
+        "model-17"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/mistral-nemo-12b",
+      "type": "Model",
+      "slug": "mistral-nemo-12b",
+      "title": "Mistral NeMo 12B",
+      "summary": "Catalogue details and a memory-planning starting point for Mistral NeMo 12B. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/mistral-nemo-12b/",
+      "status": "Draft",
+      "entityIds": [
+        "model-18"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/deepseek-r1-distill-qwen-7b",
+      "type": "Model",
+      "slug": "deepseek-r1-distill-qwen-7b",
+      "title": "DeepSeek-R1-Distill-Qwen-7B",
+      "summary": "Catalogue details and a memory-planning starting point for DeepSeek-R1-Distill-Qwen-7B. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/deepseek-r1-distill-qwen-7b/",
+      "status": "Draft",
+      "entityIds": [
+        "model-19"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/deepseek-r1-distill-qwen-14b",
+      "type": "Model",
+      "slug": "deepseek-r1-distill-qwen-14b",
+      "title": "DeepSeek-R1-Distill-Qwen-14B",
+      "summary": "Catalogue details and a memory-planning starting point for DeepSeek-R1-Distill-Qwen-14B. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/deepseek-r1-distill-qwen-14b/",
+      "status": "Draft",
+      "entityIds": [
+        "model-20"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/deepseek-r1-distill-qwen-32b",
+      "type": "Model",
+      "slug": "deepseek-r1-distill-qwen-32b",
+      "title": "DeepSeek-R1-Distill-Qwen-32B",
+      "summary": "Catalogue details and a memory-planning starting point for DeepSeek-R1-Distill-Qwen-32B. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/deepseek-r1-distill-qwen-32b/",
+      "status": "Draft",
+      "entityIds": [
+        "model-21"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/phi-4-mini-instruct",
+      "type": "Model",
+      "slug": "phi-4-mini-instruct",
+      "title": "Phi-4-mini-instruct",
+      "summary": "Catalogue details and a memory-planning starting point for Phi-4-mini-instruct. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/phi-4-mini-instruct/",
+      "status": "Draft",
+      "entityIds": [
+        "model-22"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/phi-4",
+      "type": "Model",
+      "slug": "phi-4",
+      "title": "Phi-4",
+      "summary": "Catalogue details and a memory-planning starting point for Phi-4. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/phi-4/",
+      "status": "Draft",
+      "entityIds": [
+        "model-23"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/ministral-8b",
+      "type": "Model",
+      "slug": "ministral-8b",
+      "title": "Ministral 8B",
+      "summary": "Catalogue details and a memory-planning starting point for Ministral 8B. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/ministral-8b/",
+      "status": "Draft",
+      "entityIds": [
+        "model-24"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/granite-3-3-8b-instruct",
+      "type": "Model",
+      "slug": "granite-3-3-8b-instruct",
+      "title": "Granite 3.3 8B Instruct",
+      "summary": "Catalogue details and a memory-planning starting point for Granite 3.3 8B Instruct. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/granite-3-3-8b-instruct/",
+      "status": "Draft",
+      "entityIds": [
+        "model-25"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/qwen2-5-72b-instruct",
+      "type": "Model",
+      "slug": "qwen2-5-72b-instruct",
+      "title": "Qwen2.5 72B Instruct",
+      "summary": "Catalogue details and a memory-planning starting point for Qwen2.5 72B Instruct. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/qwen2-5-72b-instruct/",
+      "status": "Draft",
+      "entityIds": [
+        "model-26"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/deepseek-r1-distill-llama-70b",
+      "type": "Model",
+      "slug": "deepseek-r1-distill-llama-70b",
+      "title": "DeepSeek-R1-Distill-Llama-70B",
+      "summary": "Catalogue details and a memory-planning starting point for DeepSeek-R1-Distill-Llama-70B. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/deepseek-r1-distill-llama-70b/",
+      "status": "Draft",
+      "entityIds": [
+        "model-27"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/mistral-large-2-123b",
+      "type": "Model",
+      "slug": "mistral-large-2-123b",
+      "title": "Mistral Large 2 123B",
+      "summary": "Catalogue details and a memory-planning starting point for Mistral Large 2 123B. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/mistral-large-2-123b/",
+      "status": "Draft",
+      "entityIds": [
+        "model-28"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/smollm2-135m-instruct",
+      "type": "Model",
+      "slug": "smollm2-135m-instruct",
+      "title": "SmolLM2 135M Instruct",
+      "summary": "Catalogue details and a memory-planning starting point for SmolLM2 135M Instruct. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/smollm2-135m-instruct/",
+      "status": "Draft",
+      "entityIds": [
+        "model-29"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/smollm2-360m-instruct",
+      "type": "Model",
+      "slug": "smollm2-360m-instruct",
+      "title": "SmolLM2 360M Instruct",
+      "summary": "Catalogue details and a memory-planning starting point for SmolLM2 360M Instruct. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/smollm2-360m-instruct/",
+      "status": "Draft",
+      "entityIds": [
+        "model-30"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/gemma-3-270m-it",
+      "type": "Model",
+      "slug": "gemma-3-270m-it",
+      "title": "Gemma 3 270M IT",
+      "summary": "Catalogue details and a memory-planning starting point for Gemma 3 270M IT. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/gemma-3-270m-it/",
+      "status": "Draft",
+      "entityIds": [
+        "model-31"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/qwen2-5-0-5b-instruct",
+      "type": "Model",
+      "slug": "qwen2-5-0-5b-instruct",
+      "title": "Qwen2.5 0.5B Instruct",
+      "summary": "Catalogue details and a memory-planning starting point for Qwen2.5 0.5B Instruct. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/qwen2-5-0-5b-instruct/",
+      "status": "Draft",
+      "entityIds": [
+        "model-32"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/qwen2-5-1-5b-instruct",
+      "type": "Model",
+      "slug": "qwen2-5-1-5b-instruct",
+      "title": "Qwen2.5 1.5B Instruct",
+      "summary": "Catalogue details and a memory-planning starting point for Qwen2.5 1.5B Instruct. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/qwen2-5-1-5b-instruct/",
+      "status": "Draft",
+      "entityIds": [
+        "model-33"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/qwen2-5-3b-instruct",
+      "type": "Model",
+      "slug": "qwen2-5-3b-instruct",
+      "title": "Qwen2.5 3B Instruct",
+      "summary": "Catalogue details and a memory-planning starting point for Qwen2.5 3B Instruct. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/qwen2-5-3b-instruct/",
+      "status": "Draft",
+      "entityIds": [
+        "model-34"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/qwen2-5-coder-0-5b",
+      "type": "Model",
+      "slug": "qwen2-5-coder-0-5b",
+      "title": "Qwen2.5-Coder 0.5B",
+      "summary": "Catalogue details and a memory-planning starting point for Qwen2.5-Coder 0.5B. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/qwen2-5-coder-0-5b/",
+      "status": "Draft",
+      "entityIds": [
+        "model-35"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/qwen2-5-coder-1-5b",
+      "type": "Model",
+      "slug": "qwen2-5-coder-1-5b",
+      "title": "Qwen2.5-Coder 1.5B",
+      "summary": "Catalogue details and a memory-planning starting point for Qwen2.5-Coder 1.5B. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/qwen2-5-coder-1-5b/",
+      "status": "Draft",
+      "entityIds": [
+        "model-36"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/qwen2-5-coder-3b",
+      "type": "Model",
+      "slug": "qwen2-5-coder-3b",
+      "title": "Qwen2.5-Coder 3B",
+      "summary": "Catalogue details and a memory-planning starting point for Qwen2.5-Coder 3B. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/qwen2-5-coder-3b/",
+      "status": "Draft",
+      "entityIds": [
+        "model-37"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/llama-3-2-1b-instruct",
+      "type": "Model",
+      "slug": "llama-3-2-1b-instruct",
+      "title": "Llama 3.2 1B Instruct",
+      "summary": "Catalogue details and a memory-planning starting point for Llama 3.2 1B Instruct. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/llama-3-2-1b-instruct/",
+      "status": "Draft",
+      "entityIds": [
+        "model-38"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/gemma-2-2b-it",
+      "type": "Model",
+      "slug": "gemma-2-2b-it",
+      "title": "Gemma 2 2B IT",
+      "summary": "Catalogue details and a memory-planning starting point for Gemma 2 2B IT. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/gemma-2-2b-it/",
+      "status": "Draft",
+      "entityIds": [
+        "model-39"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/phi-3-5-mini-instruct",
+      "type": "Model",
+      "slug": "phi-3-5-mini-instruct",
+      "title": "Phi-3.5-mini-instruct",
+      "summary": "Catalogue details and a memory-planning starting point for Phi-3.5-mini-instruct. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/phi-3-5-mini-instruct/",
+      "status": "Draft",
+      "entityIds": [
+        "model-40"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/granite-3-3-2b-instruct",
+      "type": "Model",
+      "slug": "granite-3-3-2b-instruct",
+      "title": "Granite 3.3 2B Instruct",
+      "summary": "Catalogue details and a memory-planning starting point for Granite 3.3 2B Instruct. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/granite-3-3-2b-instruct/",
+      "status": "Draft",
+      "entityIds": [
+        "model-41"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/falcon3-1b-instruct",
+      "type": "Model",
+      "slug": "falcon3-1b-instruct",
+      "title": "Falcon3 1B Instruct",
+      "summary": "Catalogue details and a memory-planning starting point for Falcon3 1B Instruct. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/falcon3-1b-instruct/",
+      "status": "Draft",
+      "entityIds": [
+        "model-42"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/falcon3-3b-instruct",
+      "type": "Model",
+      "slug": "falcon3-3b-instruct",
+      "title": "Falcon3 3B Instruct",
+      "summary": "Catalogue details and a memory-planning starting point for Falcon3 3B Instruct. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/falcon3-3b-instruct/",
+      "status": "Draft",
+      "entityIds": [
+        "model-43"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/smollm3-3b",
+      "type": "Model",
+      "slug": "smollm3-3b",
+      "title": "SmolLM3 3B",
+      "summary": "Catalogue details and a memory-planning starting point for SmolLM3 3B. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/smollm3-3b/",
+      "status": "Draft",
+      "entityIds": [
+        "model-44"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/qwen2-5-7b-instruct",
+      "type": "Model",
+      "slug": "qwen2-5-7b-instruct",
+      "title": "Qwen2.5 7B Instruct",
+      "summary": "Catalogue details and a memory-planning starting point for Qwen2.5 7B Instruct. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/qwen2-5-7b-instruct/",
+      "status": "Draft",
+      "entityIds": [
+        "model-45"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/qwen2-5-14b-instruct",
+      "type": "Model",
+      "slug": "qwen2-5-14b-instruct",
+      "title": "Qwen2.5 14B Instruct",
+      "summary": "Catalogue details and a memory-planning starting point for Qwen2.5 14B Instruct. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/qwen2-5-14b-instruct/",
+      "status": "Draft",
+      "entityIds": [
+        "model-46"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/qwen2-5-32b-instruct",
+      "type": "Model",
+      "slug": "qwen2-5-32b-instruct",
+      "title": "Qwen2.5 32B Instruct",
+      "summary": "Catalogue details and a memory-planning starting point for Qwen2.5 32B Instruct. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/qwen2-5-32b-instruct/",
+      "status": "Draft",
+      "entityIds": [
+        "model-47"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/qwen3-5-0-8b",
+      "type": "Model",
+      "slug": "qwen3-5-0-8b",
+      "title": "Qwen3.5 0.8B",
+      "summary": "Catalogue details and a memory-planning starting point for Qwen3.5 0.8B. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/qwen3-5-0-8b/",
+      "status": "Draft",
+      "entityIds": [
+        "model-48"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/qwen3-5-2b",
+      "type": "Model",
+      "slug": "qwen3-5-2b",
+      "title": "Qwen3.5 2B",
+      "summary": "Catalogue details and a memory-planning starting point for Qwen3.5 2B. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/qwen3-5-2b/",
+      "status": "Draft",
+      "entityIds": [
+        "model-49"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/qwen3-5-4b",
+      "type": "Model",
+      "slug": "qwen3-5-4b",
+      "title": "Qwen3.5 4B",
+      "summary": "Catalogue details and a memory-planning starting point for Qwen3.5 4B. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/qwen3-5-4b/",
+      "status": "Draft",
+      "entityIds": [
+        "model-50"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/qwen3-5-9b",
+      "type": "Model",
+      "slug": "qwen3-5-9b",
+      "title": "Qwen3.5 9B",
+      "summary": "Catalogue details and a memory-planning starting point for Qwen3.5 9B. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/qwen3-5-9b/",
+      "status": "Draft",
+      "entityIds": [
+        "model-51"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/qwen3-5-27b",
+      "type": "Model",
+      "slug": "qwen3-5-27b",
+      "title": "Qwen3.5 27B",
+      "summary": "Catalogue details and a memory-planning starting point for Qwen3.5 27B. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/qwen3-5-27b/",
+      "status": "Draft",
+      "entityIds": [
+        "model-52"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/llama-3-1-70b-instruct",
+      "type": "Model",
+      "slug": "llama-3-1-70b-instruct",
+      "title": "Llama 3.1 70B Instruct",
+      "summary": "Catalogue details and a memory-planning starting point for Llama 3.1 70B Instruct. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/llama-3-1-70b-instruct/",
+      "status": "Draft",
+      "entityIds": [
+        "model-53"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/llama-3-1-405b-instruct",
+      "type": "Model",
+      "slug": "llama-3-1-405b-instruct",
+      "title": "Llama 3.1 405B Instruct",
+      "summary": "Catalogue details and a memory-planning starting point for Llama 3.1 405B Instruct. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/llama-3-1-405b-instruct/",
+      "status": "Draft",
+      "entityIds": [
+        "model-54"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/gemma-2-9b-it",
+      "type": "Model",
+      "slug": "gemma-2-9b-it",
+      "title": "Gemma 2 9B IT",
+      "summary": "Catalogue details and a memory-planning starting point for Gemma 2 9B IT. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/gemma-2-9b-it/",
+      "status": "Draft",
+      "entityIds": [
+        "model-55"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/gemma-2-27b-it",
+      "type": "Model",
+      "slug": "gemma-2-27b-it",
+      "title": "Gemma 2 27B IT",
+      "summary": "Catalogue details and a memory-planning starting point for Gemma 2 27B IT. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/gemma-2-27b-it/",
+      "status": "Draft",
+      "entityIds": [
+        "model-56"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/gemma-4-12b-it",
+      "type": "Model",
+      "slug": "gemma-4-12b-it",
+      "title": "Gemma 4 12B IT",
+      "summary": "Catalogue details and a memory-planning starting point for Gemma 4 12B IT. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/gemma-4-12b-it/",
+      "status": "Draft",
+      "entityIds": [
+        "model-57"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/gemma-4-31b-it",
+      "type": "Model",
+      "slug": "gemma-4-31b-it",
+      "title": "Gemma 4 31B IT",
+      "summary": "Catalogue details and a memory-planning starting point for Gemma 4 31B IT. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/gemma-4-31b-it/",
+      "status": "Draft",
+      "entityIds": [
+        "model-58"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/mistral-7b-instruct-v0-3",
+      "type": "Model",
+      "slug": "mistral-7b-instruct-v0-3",
+      "title": "Mistral 7B Instruct v0.3",
+      "summary": "Catalogue details and a memory-planning starting point for Mistral 7B Instruct v0.3. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/mistral-7b-instruct-v0-3/",
+      "status": "Draft",
+      "entityIds": [
+        "model-59"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/mistral-small-3-2-24b-instruct",
+      "type": "Model",
+      "slug": "mistral-small-3-2-24b-instruct",
+      "title": "Mistral Small 3.2 24B Instruct",
+      "summary": "Catalogue details and a memory-planning starting point for Mistral Small 3.2 24B Instruct. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/mistral-small-3-2-24b-instruct/",
+      "status": "Draft",
+      "entityIds": [
+        "model-60"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/ministral-3-3b-instruct",
+      "type": "Model",
+      "slug": "ministral-3-3b-instruct",
+      "title": "Ministral 3 3B Instruct",
+      "summary": "Catalogue details and a memory-planning starting point for Ministral 3 3B Instruct. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/ministral-3-3b-instruct/",
+      "status": "Draft",
+      "entityIds": [
+        "model-61"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/ministral-3-8b-instruct",
+      "type": "Model",
+      "slug": "ministral-3-8b-instruct",
+      "title": "Ministral 3 8B Instruct",
+      "summary": "Catalogue details and a memory-planning starting point for Ministral 3 8B Instruct. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/ministral-3-8b-instruct/",
+      "status": "Draft",
+      "entityIds": [
+        "model-62"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/ministral-3-14b-instruct",
+      "type": "Model",
+      "slug": "ministral-3-14b-instruct",
+      "title": "Ministral 3 14B Instruct",
+      "summary": "Catalogue details and a memory-planning starting point for Ministral 3 14B Instruct. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/ministral-3-14b-instruct/",
+      "status": "Draft",
+      "entityIds": [
+        "model-63"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/olmo-2-7b-instruct",
+      "type": "Model",
+      "slug": "olmo-2-7b-instruct",
+      "title": "OLMo 2 7B Instruct",
+      "summary": "Catalogue details and a memory-planning starting point for OLMo 2 7B Instruct. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/olmo-2-7b-instruct/",
+      "status": "Draft",
+      "entityIds": [
+        "model-64"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/olmo-2-13b-instruct",
+      "type": "Model",
+      "slug": "olmo-2-13b-instruct",
+      "title": "OLMo 2 13B Instruct",
+      "summary": "Catalogue details and a memory-planning starting point for OLMo 2 13B Instruct. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/olmo-2-13b-instruct/",
+      "status": "Draft",
+      "entityIds": [
+        "model-65"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/olmo-2-32b-instruct",
+      "type": "Model",
+      "slug": "olmo-2-32b-instruct",
+      "title": "OLMo 2 32B Instruct",
+      "summary": "Catalogue details and a memory-planning starting point for OLMo 2 32B Instruct. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/olmo-2-32b-instruct/",
+      "status": "Draft",
+      "entityIds": [
+        "model-66"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/olmo-3-7b-instruct",
+      "type": "Model",
+      "slug": "olmo-3-7b-instruct",
+      "title": "OLMo 3 7B Instruct",
+      "summary": "Catalogue details and a memory-planning starting point for OLMo 3 7B Instruct. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/olmo-3-7b-instruct/",
+      "status": "Draft",
+      "entityIds": [
+        "model-67"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/olmo-3-1-32b-instruct",
+      "type": "Model",
+      "slug": "olmo-3-1-32b-instruct",
+      "title": "OLMo 3.1 32B Instruct",
+      "summary": "Catalogue details and a memory-planning starting point for OLMo 3.1 32B Instruct. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/olmo-3-1-32b-instruct/",
+      "status": "Draft",
+      "entityIds": [
+        "model-68"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/falcon3-7b-instruct",
+      "type": "Model",
+      "slug": "falcon3-7b-instruct",
+      "title": "Falcon3 7B Instruct",
+      "summary": "Catalogue details and a memory-planning starting point for Falcon3 7B Instruct. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/falcon3-7b-instruct/",
+      "status": "Draft",
+      "entityIds": [
+        "model-69"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/falcon3-10b-instruct",
+      "type": "Model",
+      "slug": "falcon3-10b-instruct",
+      "title": "Falcon3 10B Instruct",
+      "summary": "Catalogue details and a memory-planning starting point for Falcon3 10B Instruct. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/falcon3-10b-instruct/",
+      "status": "Draft",
+      "entityIds": [
+        "model-70"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/yi-1-5-6b-chat",
+      "type": "Model",
+      "slug": "yi-1-5-6b-chat",
+      "title": "Yi-1.5 6B Chat",
+      "summary": "Catalogue details and a memory-planning starting point for Yi-1.5 6B Chat. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/yi-1-5-6b-chat/",
+      "status": "Draft",
+      "entityIds": [
+        "model-71"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/yi-1-5-9b-chat",
+      "type": "Model",
+      "slug": "yi-1-5-9b-chat",
+      "title": "Yi-1.5 9B Chat",
+      "summary": "Catalogue details and a memory-planning starting point for Yi-1.5 9B Chat. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/yi-1-5-9b-chat/",
+      "status": "Draft",
+      "entityIds": [
+        "model-72"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/yi-1-5-34b-chat",
+      "type": "Model",
+      "slug": "yi-1-5-34b-chat",
+      "title": "Yi-1.5 34B Chat",
+      "summary": "Catalogue details and a memory-planning starting point for Yi-1.5 34B Chat. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/yi-1-5-34b-chat/",
+      "status": "Draft",
+      "entityIds": [
+        "model-73"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/aya-expanse-8b",
+      "type": "Model",
+      "slug": "aya-expanse-8b",
+      "title": "Aya Expanse 8B",
+      "summary": "Catalogue details and a memory-planning starting point for Aya Expanse 8B. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/aya-expanse-8b/",
+      "status": "Draft",
+      "entityIds": [
+        "model-74"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/aya-expanse-32b",
+      "type": "Model",
+      "slug": "aya-expanse-32b",
+      "title": "Aya Expanse 32B",
+      "summary": "Catalogue details and a memory-planning starting point for Aya Expanse 32B. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/aya-expanse-32b/",
+      "status": "Draft",
+      "entityIds": [
+        "model-75"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/command-r-35b",
+      "type": "Model",
+      "slug": "command-r-35b",
+      "title": "Command R 35B",
+      "summary": "Catalogue details and a memory-planning starting point for Command R 35B. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/command-r-35b/",
+      "status": "Draft",
+      "entityIds": [
+        "model-76"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/command-r-104b",
+      "type": "Model",
+      "slug": "command-r-104b",
+      "title": "Command R+ 104B",
+      "summary": "Catalogue details and a memory-planning starting point for Command R+ 104B. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/command-r-104b/",
+      "status": "Draft",
+      "entityIds": [
+        "model-77"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/deepseek-r1-distill-qwen-1-5b",
+      "type": "Model",
+      "slug": "deepseek-r1-distill-qwen-1-5b",
+      "title": "DeepSeek-R1-Distill-Qwen-1.5B",
+      "summary": "Catalogue details and a memory-planning starting point for DeepSeek-R1-Distill-Qwen-1.5B. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/deepseek-r1-distill-qwen-1-5b/",
+      "status": "Draft",
+      "entityIds": [
+        "model-78"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/deepseek-r1-distill-llama-8b",
+      "type": "Model",
+      "slug": "deepseek-r1-distill-llama-8b",
+      "title": "DeepSeek-R1-Distill-Llama-8B",
+      "summary": "Catalogue details and a memory-planning starting point for DeepSeek-R1-Distill-Llama-8B. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/deepseek-r1-distill-llama-8b/",
+      "status": "Draft",
+      "entityIds": [
+        "model-79"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/phi-4-mini-reasoning",
+      "type": "Model",
+      "slug": "phi-4-mini-reasoning",
+      "title": "Phi-4-mini-reasoning",
+      "summary": "Catalogue details and a memory-planning starting point for Phi-4-mini-reasoning. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/phi-4-mini-reasoning/",
+      "status": "Draft",
+      "entityIds": [
+        "model-80"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/phi-4-reasoning",
+      "type": "Model",
+      "slug": "phi-4-reasoning",
+      "title": "Phi-4-reasoning",
+      "summary": "Catalogue details and a memory-planning starting point for Phi-4-reasoning. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/phi-4-reasoning/",
+      "status": "Draft",
+      "entityIds": [
+        "model-81"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/ministral-3-3b-reasoning",
+      "type": "Model",
+      "slug": "ministral-3-3b-reasoning",
+      "title": "Ministral 3 3B Reasoning",
+      "summary": "Catalogue details and a memory-planning starting point for Ministral 3 3B Reasoning. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/ministral-3-3b-reasoning/",
+      "status": "Draft",
+      "entityIds": [
+        "model-82"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/ministral-3-8b-reasoning",
+      "type": "Model",
+      "slug": "ministral-3-8b-reasoning",
+      "title": "Ministral 3 8B Reasoning",
+      "summary": "Catalogue details and a memory-planning starting point for Ministral 3 8B Reasoning. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/ministral-3-8b-reasoning/",
+      "status": "Draft",
+      "entityIds": [
+        "model-83"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/ministral-3-14b-reasoning",
+      "type": "Model",
+      "slug": "ministral-3-14b-reasoning",
+      "title": "Ministral 3 14B Reasoning",
+      "summary": "Catalogue details and a memory-planning starting point for Ministral 3 14B Reasoning. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/ministral-3-14b-reasoning/",
+      "status": "Draft",
+      "entityIds": [
+        "model-84"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/devstral-small-2-24b",
+      "type": "Model",
+      "slug": "devstral-small-2-24b",
+      "title": "Devstral Small 2 24B",
+      "summary": "Catalogue details and a memory-planning starting point for Devstral Small 2 24B. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/devstral-small-2-24b/",
+      "status": "Draft",
+      "entityIds": [
+        "model-85"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/devstral-2-123b",
+      "type": "Model",
+      "slug": "devstral-2-123b",
+      "title": "Devstral 2 123B",
+      "summary": "Catalogue details and a memory-planning starting point for Devstral 2 123B. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/devstral-2-123b/",
+      "status": "Draft",
+      "entityIds": [
+        "model-86"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/codestral-22b",
+      "type": "Model",
+      "slug": "codestral-22b",
+      "title": "Codestral 22B",
+      "summary": "Catalogue details and a memory-planning starting point for Codestral 22B. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/codestral-22b/",
+      "status": "Draft",
+      "entityIds": [
+        "model-87"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/starcoder2-15b-instruct",
+      "type": "Model",
+      "slug": "starcoder2-15b-instruct",
+      "title": "StarCoder2 15B Instruct",
+      "summary": "Catalogue details and a memory-planning starting point for StarCoder2 15B Instruct. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/starcoder2-15b-instruct/",
+      "status": "Draft",
+      "entityIds": [
+        "model-88"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/yi-coder-1-5b-chat",
+      "type": "Model",
+      "slug": "yi-coder-1-5b-chat",
+      "title": "Yi-Coder 1.5B Chat",
+      "summary": "Catalogue details and a memory-planning starting point for Yi-Coder 1.5B Chat. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/yi-coder-1-5b-chat/",
+      "status": "Draft",
+      "entityIds": [
+        "model-89"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/yi-coder-9b-chat",
+      "type": "Model",
+      "slug": "yi-coder-9b-chat",
+      "title": "Yi-Coder 9B Chat",
+      "summary": "Catalogue details and a memory-planning starting point for Yi-Coder 9B Chat. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/yi-coder-9b-chat/",
+      "status": "Draft",
+      "entityIds": [
+        "model-90"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/mistral-medium-3-5-128b",
+      "type": "Model",
+      "slug": "mistral-medium-3-5-128b",
+      "title": "Mistral Medium 3.5 128B",
+      "summary": "Catalogue details and a memory-planning starting point for Mistral Medium 3.5 128B. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/mistral-medium-3-5-128b/",
+      "status": "Draft",
+      "entityIds": [
+        "model-91"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/gpt-oss-120b",
+      "type": "Model",
+      "slug": "gpt-oss-120b",
+      "title": "gpt-oss-120b",
+      "summary": "Catalogue details and a memory-planning starting point for gpt-oss-120b. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/gpt-oss-120b/",
+      "status": "Draft",
+      "entityIds": [
+        "extra-gpt-oss-120b"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/qwen3-30b-a3b-instruct",
+      "type": "Model",
+      "slug": "qwen3-30b-a3b-instruct",
+      "title": "Qwen3 30B-A3B Instruct",
+      "summary": "Catalogue details and a memory-planning starting point for Qwen3 30B-A3B Instruct. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/qwen3-30b-a3b-instruct/",
+      "status": "Draft",
+      "entityIds": [
+        "extra-qwen3-30b-a3b"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/qwen3-235b-a22b-instruct-2507",
+      "type": "Model",
+      "slug": "qwen3-235b-a22b-instruct-2507",
+      "title": "Qwen3 235B-A22B Instruct 2507",
+      "summary": "Catalogue details and a memory-planning starting point for Qwen3 235B-A22B Instruct 2507. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/qwen3-235b-a22b-instruct-2507/",
+      "status": "Draft",
+      "entityIds": [
+        "extra-qwen3-235b-a22b-2507"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/qwen3-coder-30b-a3b-instruct",
+      "type": "Model",
+      "slug": "qwen3-coder-30b-a3b-instruct",
+      "title": "Qwen3-Coder 30B-A3B Instruct",
+      "summary": "Catalogue details and a memory-planning starting point for Qwen3-Coder 30B-A3B Instruct. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/qwen3-coder-30b-a3b-instruct/",
+      "status": "Draft",
+      "entityIds": [
+        "extra-qwen3-coder-30b-a3b"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/qwen3-coder-480b-a35b-instruct",
+      "type": "Model",
+      "slug": "qwen3-coder-480b-a35b-instruct",
+      "title": "Qwen3-Coder 480B-A35B Instruct",
+      "summary": "Catalogue details and a memory-planning starting point for Qwen3-Coder 480B-A35B Instruct. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/qwen3-coder-480b-a35b-instruct/",
+      "status": "Draft",
+      "entityIds": [
+        "extra-qwen3-coder-480b-a35b"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/deepseek-r1-0528-qwen3-8b",
+      "type": "Model",
+      "slug": "deepseek-r1-0528-qwen3-8b",
+      "title": "DeepSeek-R1-0528-Qwen3-8B",
+      "summary": "Catalogue details and a memory-planning starting point for DeepSeek-R1-0528-Qwen3-8B. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/deepseek-r1-0528-qwen3-8b/",
+      "status": "Draft",
+      "entityIds": [
+        "extra-deepseek-r1-0528-qwen3-8b"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/deepseek-r1-0528",
+      "type": "Model",
+      "slug": "deepseek-r1-0528",
+      "title": "DeepSeek-R1-0528",
+      "summary": "Catalogue details and a memory-planning starting point for DeepSeek-R1-0528. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/deepseek-r1-0528/",
+      "status": "Draft",
+      "entityIds": [
+        "extra-deepseek-r1-0528"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/deepseek-v3-0324",
+      "type": "Model",
+      "slug": "deepseek-v3-0324",
+      "title": "DeepSeek-V3-0324",
+      "summary": "Catalogue details and a memory-planning starting point for DeepSeek-V3-0324. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/deepseek-v3-0324/",
+      "status": "Draft",
+      "entityIds": [
+        "extra-deepseek-v3-0324"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/glm-4-5-air",
+      "type": "Model",
+      "slug": "glm-4-5-air",
+      "title": "GLM-4.5-Air",
+      "summary": "Catalogue details and a memory-planning starting point for GLM-4.5-Air. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/glm-4-5-air/",
+      "status": "Draft",
+      "entityIds": [
+        "extra-glm-4.5-air"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/glm-4-5",
+      "type": "Model",
+      "slug": "glm-4-5",
+      "title": "GLM-4.5",
+      "summary": "Catalogue details and a memory-planning starting point for GLM-4.5. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/glm-4-5/",
+      "status": "Draft",
+      "entityIds": [
+        "extra-glm-4.5"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/minimax-m2",
+      "type": "Model",
+      "slug": "minimax-m2",
+      "title": "MiniMax-M2",
+      "summary": "Catalogue details and a memory-planning starting point for MiniMax-M2. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/minimax-m2/",
+      "status": "Draft",
+      "entityIds": [
+        "extra-minimax-m2"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/llama-4-scout-17b-16e-instruct",
+      "type": "Model",
+      "slug": "llama-4-scout-17b-16e-instruct",
+      "title": "Llama 4 Scout 17B-16E Instruct",
+      "summary": "Catalogue details and a memory-planning starting point for Llama 4 Scout 17B-16E Instruct. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/llama-4-scout-17b-16e-instruct/",
+      "status": "Draft",
+      "entityIds": [
+        "extra-llama4-scout"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/llama-4-maverick-17b-128e-instruct",
+      "type": "Model",
+      "slug": "llama-4-maverick-17b-128e-instruct",
+      "title": "Llama 4 Maverick 17B-128E Instruct",
+      "summary": "Catalogue details and a memory-planning starting point for Llama 4 Maverick 17B-128E Instruct. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/llama-4-maverick-17b-128e-instruct/",
+      "status": "Draft",
+      "entityIds": [
+        "extra-llama4-maverick"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/mistral-small-3-1-24b-instruct",
+      "type": "Model",
+      "slug": "mistral-small-3-1-24b-instruct",
+      "title": "Mistral Small 3.1 24B Instruct",
+      "summary": "Catalogue details and a memory-planning starting point for Mistral Small 3.1 24B Instruct. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/mistral-small-3-1-24b-instruct/",
+      "status": "Draft",
+      "entityIds": [
+        "extra-mistral-small-3.1-24b"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/magistral-small-24b",
+      "type": "Model",
+      "slug": "magistral-small-24b",
+      "title": "Magistral Small 24B",
+      "summary": "Catalogue details and a memory-planning starting point for Magistral Small 24B. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/magistral-small-24b/",
+      "status": "Draft",
+      "entityIds": [
+        "extra-magistral-small-24b"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/mixtral-8x7b-instruct-v0-1",
+      "type": "Model",
+      "slug": "mixtral-8x7b-instruct-v0-1",
+      "title": "Mixtral 8x7B Instruct v0.1",
+      "summary": "Catalogue details and a memory-planning starting point for Mixtral 8x7B Instruct v0.1. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/mixtral-8x7b-instruct-v0-1/",
+      "status": "Draft",
+      "entityIds": [
+        "extra-mixtral-8x7b"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/mixtral-8x22b-instruct-v0-1",
+      "type": "Model",
+      "slug": "mixtral-8x22b-instruct-v0-1",
+      "title": "Mixtral 8x22B Instruct v0.1",
+      "summary": "Catalogue details and a memory-planning starting point for Mixtral 8x22B Instruct v0.1. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/mixtral-8x22b-instruct-v0-1/",
+      "status": "Draft",
+      "entityIds": [
+        "extra-mixtral-8x22b"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/deepseek-coder-v2-lite-instruct",
+      "type": "Model",
+      "slug": "deepseek-coder-v2-lite-instruct",
+      "title": "DeepSeek-Coder-V2-Lite-Instruct",
+      "summary": "Catalogue details and a memory-planning starting point for DeepSeek-Coder-V2-Lite-Instruct. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/deepseek-coder-v2-lite-instruct/",
+      "status": "Draft",
+      "entityIds": [
+        "extra-deepseek-coder-v2-lite"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/deepseek-coder-v2-instruct",
+      "type": "Model",
+      "slug": "deepseek-coder-v2-instruct",
+      "title": "DeepSeek-Coder-V2-Instruct",
+      "summary": "Catalogue details and a memory-planning starting point for DeepSeek-Coder-V2-Instruct. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/deepseek-coder-v2-instruct/",
+      "status": "Draft",
+      "entityIds": [
+        "extra-deepseek-coder-v2"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/jamba-1-5-mini",
+      "type": "Model",
+      "slug": "jamba-1-5-mini",
+      "title": "Jamba 1.5 Mini",
+      "summary": "Catalogue details and a memory-planning starting point for Jamba 1.5 Mini. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/jamba-1-5-mini/",
+      "status": "Draft",
+      "entityIds": [
+        "extra-jamba-1.5-mini"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/jamba-1-5-large",
+      "type": "Model",
+      "slug": "jamba-1-5-large",
+      "title": "Jamba 1.5 Large",
+      "summary": "Catalogue details and a memory-planning starting point for Jamba 1.5 Large. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/jamba-1-5-large/",
+      "status": "Draft",
+      "entityIds": [
+        "extra-jamba-1.5-large"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/gemma-3n-e2b-it",
+      "type": "Model",
+      "slug": "gemma-3n-e2b-it",
+      "title": "Gemma 3n E2B IT",
+      "summary": "Catalogue details and a memory-planning starting point for Gemma 3n E2B IT. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/gemma-3n-e2b-it/",
+      "status": "Draft",
+      "entityIds": [
+        "extra-gemma-3n-e2b"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/gemma-3n-e4b-it",
+      "type": "Model",
+      "slug": "gemma-3n-e4b-it",
+      "title": "Gemma 3n E4B IT",
+      "summary": "Catalogue details and a memory-planning starting point for Gemma 3n E4B IT. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/gemma-3n-e4b-it/",
+      "status": "Draft",
+      "entityIds": [
+        "extra-gemma-3n-e4b"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/lfm2-5-350m",
+      "type": "Model",
+      "slug": "lfm2-5-350m",
+      "title": "LFM2.5 350M",
+      "summary": "Catalogue details and a memory-planning starting point for LFM2.5 350M. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/lfm2-5-350m/",
+      "status": "Draft",
+      "entityIds": [
+        "extra-lfm2-350m"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/lfm2-700m",
+      "type": "Model",
+      "slug": "lfm2-700m",
+      "title": "LFM2 700M",
+      "summary": "Catalogue details and a memory-planning starting point for LFM2 700M. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/lfm2-700m/",
+      "status": "Draft",
+      "entityIds": [
+        "extra-lfm2-700m"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/lfm2-5-1-2b-instruct",
+      "type": "Model",
+      "slug": "lfm2-5-1-2b-instruct",
+      "title": "LFM2.5 1.2B Instruct",
+      "summary": "Catalogue details and a memory-planning starting point for LFM2.5 1.2B Instruct. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/lfm2-5-1-2b-instruct/",
+      "status": "Draft",
+      "entityIds": [
+        "extra-lfm2-1.2b"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/lfm2-5-2-6b",
+      "type": "Model",
+      "slug": "lfm2-5-2-6b",
+      "title": "LFM2.5 2.6B",
+      "summary": "Catalogue details and a memory-planning starting point for LFM2.5 2.6B. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/lfm2-5-2-6b/",
+      "status": "Draft",
+      "entityIds": [
+        "extra-lfm2-2.6b"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/lfm2-5-8b-a1b",
+      "type": "Model",
+      "slug": "lfm2-5-8b-a1b",
+      "title": "LFM2.5 8B-A1B",
+      "summary": "Catalogue details and a memory-planning starting point for LFM2.5 8B-A1B. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/lfm2-5-8b-a1b/",
+      "status": "Draft",
+      "entityIds": [
+        "extra-lfm2-8b-a1b"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/lfm2-24b-a2b",
+      "type": "Model",
+      "slug": "lfm2-24b-a2b",
+      "title": "LFM2 24B-A2B",
+      "summary": "Catalogue details and a memory-planning starting point for LFM2 24B-A2B. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/lfm2-24b-a2b/",
+      "status": "Draft",
+      "entityIds": [
+        "extra-lfm2-24b-a2b"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/exaone-4-0-1-2b",
+      "type": "Model",
+      "slug": "exaone-4-0-1-2b",
+      "title": "EXAONE 4.0 1.2B",
+      "summary": "Catalogue details and a memory-planning starting point for EXAONE 4.0 1.2B. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/exaone-4-0-1-2b/",
+      "status": "Draft",
+      "entityIds": [
+        "extra-exaone-4-1.2b"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/exaone-4-0-32b",
+      "type": "Model",
+      "slug": "exaone-4-0-32b",
+      "title": "EXAONE 4.0 32B",
+      "summary": "Catalogue details and a memory-planning starting point for EXAONE 4.0 32B. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/exaone-4-0-32b/",
+      "status": "Draft",
+      "entityIds": [
+        "extra-exaone-4-32b"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/internlm3-8b-instruct",
+      "type": "Model",
+      "slug": "internlm3-8b-instruct",
+      "title": "InternLM3 8B Instruct",
+      "summary": "Catalogue details and a memory-planning starting point for InternLM3 8B Instruct. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/internlm3-8b-instruct/",
+      "status": "Draft",
+      "entityIds": [
+        "extra-internlm3-8b"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/granite-4-0-350m",
+      "type": "Model",
+      "slug": "granite-4-0-350m",
+      "title": "Granite 4.0 350M",
+      "summary": "Catalogue details and a memory-planning starting point for Granite 4.0 350M. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/granite-4-0-350m/",
+      "status": "Draft",
+      "entityIds": [
+        "extra-granite-4-350m"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/granite-4-0-micro-3b",
+      "type": "Model",
+      "slug": "granite-4-0-micro-3b",
+      "title": "Granite 4.0 Micro 3B",
+      "summary": "Catalogue details and a memory-planning starting point for Granite 4.0 Micro 3B. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/granite-4-0-micro-3b/",
+      "status": "Draft",
+      "entityIds": [
+        "extra-granite-4-micro"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/granite-4-0-h-micro-3b",
+      "type": "Model",
+      "slug": "granite-4-0-h-micro-3b",
+      "title": "Granite 4.0 H Micro 3B",
+      "summary": "Catalogue details and a memory-planning starting point for Granite 4.0 H Micro 3B. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/granite-4-0-h-micro-3b/",
+      "status": "Draft",
+      "entityIds": [
+        "extra-granite-4-h-micro"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/phi-3-mini-3-8b-instruct",
+      "type": "Model",
+      "slug": "phi-3-mini-3-8b-instruct",
+      "title": "Phi-3 Mini 3.8B Instruct",
+      "summary": "Catalogue details and a memory-planning starting point for Phi-3 Mini 3.8B Instruct. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/phi-3-mini-3-8b-instruct/",
+      "status": "Draft",
+      "entityIds": [
+        "extra-phi-3-mini"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/phi-3-medium-14b-instruct",
+      "type": "Model",
+      "slug": "phi-3-medium-14b-instruct",
+      "title": "Phi-3 Medium 14B Instruct",
+      "summary": "Catalogue details and a memory-planning starting point for Phi-3 Medium 14B Instruct. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/phi-3-medium-14b-instruct/",
+      "status": "Draft",
+      "entityIds": [
+        "extra-phi-3-medium"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/solar-10-7b-instruct",
+      "type": "Model",
+      "slug": "solar-10-7b-instruct",
+      "title": "SOLAR 10.7B Instruct",
+      "summary": "Catalogue details and a memory-planning starting point for SOLAR 10.7B Instruct. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/solar-10-7b-instruct/",
+      "status": "Draft",
+      "entityIds": [
+        "extra-solar-10.7b"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/zephyr-7b-beta",
+      "type": "Model",
+      "slug": "zephyr-7b-beta",
+      "title": "Zephyr 7B Beta",
+      "summary": "Catalogue details and a memory-planning starting point for Zephyr 7B Beta. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/zephyr-7b-beta/",
+      "status": "Draft",
+      "entityIds": [
+        "extra-zephyr-7b-beta"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/openchat-3-5-7b",
+      "type": "Model",
+      "slug": "openchat-3-5-7b",
+      "title": "OpenChat 3.5 7B",
+      "summary": "Catalogue details and a memory-planning starting point for OpenChat 3.5 7B. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/openchat-3-5-7b/",
+      "status": "Draft",
+      "entityIds": [
+        "extra-openchat-3.5-7b"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/nous-hermes-3-llama-3-1-8b",
+      "type": "Model",
+      "slug": "nous-hermes-3-llama-3-1-8b",
+      "title": "Nous Hermes 3 Llama 3.1 8B",
+      "summary": "Catalogue details and a memory-planning starting point for Nous Hermes 3 Llama 3.1 8B. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/nous-hermes-3-llama-3-1-8b/",
+      "status": "Draft",
+      "entityIds": [
+        "extra-nous-hermes-3-8b"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/nous-hermes-3-llama-3-1-70b",
+      "type": "Model",
+      "slug": "nous-hermes-3-llama-3-1-70b",
+      "title": "Nous Hermes 3 Llama 3.1 70B",
+      "summary": "Catalogue details and a memory-planning starting point for Nous Hermes 3 Llama 3.1 70B. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/nous-hermes-3-llama-3-1-70b/",
+      "status": "Draft",
+      "entityIds": [
+        "extra-nous-hermes-3-70b"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/dolphin-3-0-llama-3-1-8b",
+      "type": "Model",
+      "slug": "dolphin-3-0-llama-3-1-8b",
+      "title": "Dolphin 3.0 Llama 3.1 8B",
+      "summary": "Catalogue details and a memory-planning starting point for Dolphin 3.0 Llama 3.1 8B. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/dolphin-3-0-llama-3-1-8b/",
+      "status": "Draft",
+      "entityIds": [
+        "extra-dolphin-3-8b"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "models/starling-lm-7b-beta",
+      "type": "Model",
+      "slug": "starling-lm-7b-beta",
+      "title": "Starling LM 7B Beta",
+      "summary": "Catalogue details and a memory-planning starting point for Starling LM 7B Beta. Draft awaiting source review.",
+      "url": "https://knowledge.localllmfinder.com/models/starling-lm-7b-beta/",
+      "status": "Draft",
+      "entityIds": [
+        "extra-starling-7b"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/gtx-1650",
+      "type": "Hardware",
+      "slug": "gtx-1650",
+      "title": "NVIDIA GeForce GTX 1650 (4 GB)",
+      "summary": "Local LLM memory planning for NVIDIA GeForce GTX 1650 with 4 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/gtx-1650/",
+      "status": "Draft",
+      "entityIds": [
+        "gtx-1650"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/rtx-3050",
+      "type": "Hardware",
+      "slug": "rtx-3050",
+      "title": "NVIDIA GeForce RTX 3050 (8 GB)",
+      "summary": "Local LLM memory planning for NVIDIA GeForce RTX 3050 with 8 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/rtx-3050/",
+      "status": "Draft",
+      "entityIds": [
+        "rtx-3050"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/rtx-3070",
+      "type": "Hardware",
+      "slug": "rtx-3070",
+      "title": "NVIDIA GeForce RTX 3070 (8 GB)",
+      "summary": "Local LLM memory planning for NVIDIA GeForce RTX 3070 with 8 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/rtx-3070/",
+      "status": "Draft",
+      "entityIds": [
+        "rtx-3070"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/rtx-4060-ti-8",
+      "type": "Hardware",
+      "slug": "rtx-4060-ti-8",
+      "title": "NVIDIA GeForce RTX 4060 Ti (8 GB)",
+      "summary": "Local LLM memory planning for NVIDIA GeForce RTX 4060 Ti with 8 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/rtx-4060-ti-8/",
+      "status": "Draft",
+      "entityIds": [
+        "rtx-4060-ti-8"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/rtx-4070",
+      "type": "Hardware",
+      "slug": "rtx-4070",
+      "title": "NVIDIA GeForce RTX 4070 (12 GB)",
+      "summary": "Local LLM memory planning for NVIDIA GeForce RTX 4070 with 12 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/rtx-4070/",
+      "status": "Draft",
+      "entityIds": [
+        "rtx-4070"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/rtx-4060-ti-16",
+      "type": "Hardware",
+      "slug": "rtx-4060-ti-16",
+      "title": "NVIDIA GeForce RTX 4060 Ti (16 GB)",
+      "summary": "Local LLM memory planning for NVIDIA GeForce RTX 4060 Ti with 16 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/rtx-4060-ti-16/",
+      "status": "Draft",
+      "entityIds": [
+        "rtx-4060-ti-16"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/rtx-4070-ti-super",
+      "type": "Hardware",
+      "slug": "rtx-4070-ti-super",
+      "title": "NVIDIA GeForce RTX 4070 Ti SUPER (16 GB)",
+      "summary": "Local LLM memory planning for NVIDIA GeForce RTX 4070 Ti SUPER with 16 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/rtx-4070-ti-super/",
+      "status": "Draft",
+      "entityIds": [
+        "rtx-4070-ti-super"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/rtx-4080-super",
+      "type": "Hardware",
+      "slug": "rtx-4080-super",
+      "title": "NVIDIA GeForce RTX 4080 SUPER (16 GB)",
+      "summary": "Local LLM memory planning for NVIDIA GeForce RTX 4080 SUPER with 16 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/rtx-4080-super/",
+      "status": "Draft",
+      "entityIds": [
+        "rtx-4080-super"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/rtx-3090",
+      "type": "Hardware",
+      "slug": "rtx-3090",
+      "title": "NVIDIA GeForce RTX 3090 (24 GB)",
+      "summary": "Local LLM memory planning for NVIDIA GeForce RTX 3090 with 24 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/rtx-3090/",
+      "status": "Draft",
+      "entityIds": [
+        "rtx-3090"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/rtx-4090",
+      "type": "Hardware",
+      "slug": "rtx-4090",
+      "title": "NVIDIA GeForce RTX 4090 (24 GB)",
+      "summary": "Local LLM memory planning for NVIDIA GeForce RTX 4090 with 24 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/rtx-4090/",
+      "status": "Draft",
+      "entityIds": [
+        "rtx-4090"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/rtx-5090",
+      "type": "Hardware",
+      "slug": "rtx-5090",
+      "title": "NVIDIA GeForce RTX 5090 (32 GB)",
+      "summary": "Local LLM memory planning for NVIDIA GeForce RTX 5090 with 32 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/rtx-5090/",
+      "status": "Draft",
+      "entityIds": [
+        "rtx-5090"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/rtx-5060-ti-16",
+      "type": "Hardware",
+      "slug": "rtx-5060-ti-16",
+      "title": "NVIDIA GeForce RTX 5060 Ti (16 GB)",
+      "summary": "Local LLM memory planning for NVIDIA GeForce RTX 5060 Ti with 16 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/rtx-5060-ti-16/",
+      "status": "Draft",
+      "entityIds": [
+        "rtx-5060-ti-16"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/rtx-5070-ti",
+      "type": "Hardware",
+      "slug": "rtx-5070-ti",
+      "title": "NVIDIA GeForce RTX 5070 Ti (16 GB)",
+      "summary": "Local LLM memory planning for NVIDIA GeForce RTX 5070 Ti with 16 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/rtx-5070-ti/",
+      "status": "Draft",
+      "entityIds": [
+        "rtx-5070-ti"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/rtx-5080",
+      "type": "Hardware",
+      "slug": "rtx-5080",
+      "title": "NVIDIA GeForce RTX 5080 (16 GB)",
+      "summary": "Local LLM memory planning for NVIDIA GeForce RTX 5080 with 16 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/rtx-5080/",
+      "status": "Draft",
+      "entityIds": [
+        "rtx-5080"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/rtx-6000-ada",
+      "type": "Hardware",
+      "slug": "rtx-6000-ada",
+      "title": "NVIDIA RTX 6000 Ada (48 GB)",
+      "summary": "Local LLM memory planning for NVIDIA RTX 6000 Ada with 48 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/rtx-6000-ada/",
+      "status": "Draft",
+      "entityIds": [
+        "rtx-6000-ada"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/rtx-pro-6000",
+      "type": "Hardware",
+      "slug": "rtx-pro-6000",
+      "title": "NVIDIA RTX PRO 6000 Blackwell (96 GB)",
+      "summary": "Local LLM memory planning for NVIDIA RTX PRO 6000 Blackwell with 96 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/rtx-pro-6000/",
+      "status": "Draft",
+      "entityIds": [
+        "rtx-pro-6000"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/rx-6600",
+      "type": "Hardware",
+      "slug": "rx-6600",
+      "title": "AMD Radeon RX 6600 (8 GB)",
+      "summary": "Local LLM memory planning for AMD Radeon RX 6600 with 8 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/rx-6600/",
+      "status": "Draft",
+      "entityIds": [
+        "rx-6600"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/rx-7600",
+      "type": "Hardware",
+      "slug": "rx-7600",
+      "title": "AMD Radeon RX 7600 (8 GB)",
+      "summary": "Local LLM memory planning for AMD Radeon RX 7600 with 8 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/rx-7600/",
+      "status": "Draft",
+      "entityIds": [
+        "rx-7600"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/rx-7800-xt",
+      "type": "Hardware",
+      "slug": "rx-7800-xt",
+      "title": "AMD Radeon RX 7800 XT (16 GB)",
+      "summary": "Local LLM memory planning for AMD Radeon RX 7800 XT with 16 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/rx-7800-xt/",
+      "status": "Draft",
+      "entityIds": [
+        "rx-7800-xt"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/rx-7900-xtx",
+      "type": "Hardware",
+      "slug": "rx-7900-xtx",
+      "title": "AMD Radeon RX 7900 XTX (24 GB)",
+      "summary": "Local LLM memory planning for AMD Radeon RX 7900 XTX with 24 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/rx-7900-xtx/",
+      "status": "Draft",
+      "entityIds": [
+        "rx-7900-xtx"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/arc-a750",
+      "type": "Hardware",
+      "slug": "arc-a750",
+      "title": "Intel Arc A750 (8 GB)",
+      "summary": "Local LLM memory planning for Intel Arc A750 with 8 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/arc-a750/",
+      "status": "Draft",
+      "entityIds": [
+        "arc-a750"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/arc-b580",
+      "type": "Hardware",
+      "slug": "arc-b580",
+      "title": "Intel Arc B580 (12 GB)",
+      "summary": "Local LLM memory planning for Intel Arc B580 with 12 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/arc-b580/",
+      "status": "Draft",
+      "entityIds": [
+        "arc-b580"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/arc-a770",
+      "type": "Hardware",
+      "slug": "arc-a770",
+      "title": "Intel Arc A770 (16 GB)",
+      "summary": "Local LLM memory planning for Intel Arc A770 with 16 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/arc-a770/",
+      "status": "Draft",
+      "entityIds": [
+        "arc-a770"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/gtx-1060-6",
+      "type": "Hardware",
+      "slug": "gtx-1060-6",
+      "title": "NVIDIA GeForce GTX 1060 6GB (6 GB)",
+      "summary": "Local LLM memory planning for NVIDIA GeForce GTX 1060 6GB with 6 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/gtx-1060-6/",
+      "status": "Draft",
+      "entityIds": [
+        "gtx-1060-6"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/gtx-1070",
+      "type": "Hardware",
+      "slug": "gtx-1070",
+      "title": "NVIDIA GeForce GTX 1070 (8 GB)",
+      "summary": "Local LLM memory planning for NVIDIA GeForce GTX 1070 with 8 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/gtx-1070/",
+      "status": "Draft",
+      "entityIds": [
+        "gtx-1070"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/gtx-1070-ti",
+      "type": "Hardware",
+      "slug": "gtx-1070-ti",
+      "title": "NVIDIA GeForce GTX 1070 Ti (8 GB)",
+      "summary": "Local LLM memory planning for NVIDIA GeForce GTX 1070 Ti with 8 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/gtx-1070-ti/",
+      "status": "Draft",
+      "entityIds": [
+        "gtx-1070-ti"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/gtx-1080",
+      "type": "Hardware",
+      "slug": "gtx-1080",
+      "title": "NVIDIA GeForce GTX 1080 (8 GB)",
+      "summary": "Local LLM memory planning for NVIDIA GeForce GTX 1080 with 8 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/gtx-1080/",
+      "status": "Draft",
+      "entityIds": [
+        "gtx-1080"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/gtx-1080-ti",
+      "type": "Hardware",
+      "slug": "gtx-1080-ti",
+      "title": "NVIDIA GeForce GTX 1080 Ti (11 GB)",
+      "summary": "Local LLM memory planning for NVIDIA GeForce GTX 1080 Ti with 11 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/gtx-1080-ti/",
+      "status": "Draft",
+      "entityIds": [
+        "gtx-1080-ti"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/titan-xp",
+      "type": "Hardware",
+      "slug": "titan-xp",
+      "title": "NVIDIA TITAN Xp (12 GB)",
+      "summary": "Local LLM memory planning for NVIDIA TITAN Xp with 12 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/titan-xp/",
+      "status": "Draft",
+      "entityIds": [
+        "titan-xp"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/gtx-1650-super",
+      "type": "Hardware",
+      "slug": "gtx-1650-super",
+      "title": "NVIDIA GeForce GTX 1650 SUPER (4 GB)",
+      "summary": "Local LLM memory planning for NVIDIA GeForce GTX 1650 SUPER with 4 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/gtx-1650-super/",
+      "status": "Draft",
+      "entityIds": [
+        "gtx-1650-super"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/gtx-1660",
+      "type": "Hardware",
+      "slug": "gtx-1660",
+      "title": "NVIDIA GeForce GTX 1660 (6 GB)",
+      "summary": "Local LLM memory planning for NVIDIA GeForce GTX 1660 with 6 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/gtx-1660/",
+      "status": "Draft",
+      "entityIds": [
+        "gtx-1660"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/gtx-1660-super",
+      "type": "Hardware",
+      "slug": "gtx-1660-super",
+      "title": "NVIDIA GeForce GTX 1660 SUPER (6 GB)",
+      "summary": "Local LLM memory planning for NVIDIA GeForce GTX 1660 SUPER with 6 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/gtx-1660-super/",
+      "status": "Draft",
+      "entityIds": [
+        "gtx-1660-super"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/gtx-1660-ti",
+      "type": "Hardware",
+      "slug": "gtx-1660-ti",
+      "title": "NVIDIA GeForce GTX 1660 Ti (6 GB)",
+      "summary": "Local LLM memory planning for NVIDIA GeForce GTX 1660 Ti with 6 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/gtx-1660-ti/",
+      "status": "Draft",
+      "entityIds": [
+        "gtx-1660-ti"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/rtx-2060",
+      "type": "Hardware",
+      "slug": "rtx-2060",
+      "title": "NVIDIA GeForce RTX 2060 (6 GB)",
+      "summary": "Local LLM memory planning for NVIDIA GeForce RTX 2060 with 6 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/rtx-2060/",
+      "status": "Draft",
+      "entityIds": [
+        "rtx-2060"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/rtx-2060-super",
+      "type": "Hardware",
+      "slug": "rtx-2060-super",
+      "title": "NVIDIA GeForce RTX 2060 SUPER (8 GB)",
+      "summary": "Local LLM memory planning for NVIDIA GeForce RTX 2060 SUPER with 8 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/rtx-2060-super/",
+      "status": "Draft",
+      "entityIds": [
+        "rtx-2060-super"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/rtx-2070",
+      "type": "Hardware",
+      "slug": "rtx-2070",
+      "title": "NVIDIA GeForce RTX 2070 (8 GB)",
+      "summary": "Local LLM memory planning for NVIDIA GeForce RTX 2070 with 8 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/rtx-2070/",
+      "status": "Draft",
+      "entityIds": [
+        "rtx-2070"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/rtx-2070-super",
+      "type": "Hardware",
+      "slug": "rtx-2070-super",
+      "title": "NVIDIA GeForce RTX 2070 SUPER (8 GB)",
+      "summary": "Local LLM memory planning for NVIDIA GeForce RTX 2070 SUPER with 8 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/rtx-2070-super/",
+      "status": "Draft",
+      "entityIds": [
+        "rtx-2070-super"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/rtx-2080",
+      "type": "Hardware",
+      "slug": "rtx-2080",
+      "title": "NVIDIA GeForce RTX 2080 (8 GB)",
+      "summary": "Local LLM memory planning for NVIDIA GeForce RTX 2080 with 8 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/rtx-2080/",
+      "status": "Draft",
+      "entityIds": [
+        "rtx-2080"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/rtx-2080-super",
+      "type": "Hardware",
+      "slug": "rtx-2080-super",
+      "title": "NVIDIA GeForce RTX 2080 SUPER (8 GB)",
+      "summary": "Local LLM memory planning for NVIDIA GeForce RTX 2080 SUPER with 8 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/rtx-2080-super/",
+      "status": "Draft",
+      "entityIds": [
+        "rtx-2080-super"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/rtx-2080-ti",
+      "type": "Hardware",
+      "slug": "rtx-2080-ti",
+      "title": "NVIDIA GeForce RTX 2080 Ti (11 GB)",
+      "summary": "Local LLM memory planning for NVIDIA GeForce RTX 2080 Ti with 11 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/rtx-2080-ti/",
+      "status": "Draft",
+      "entityIds": [
+        "rtx-2080-ti"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/titan-rtx",
+      "type": "Hardware",
+      "slug": "titan-rtx",
+      "title": "NVIDIA TITAN RTX (24 GB)",
+      "summary": "Local LLM memory planning for NVIDIA TITAN RTX with 24 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/titan-rtx/",
+      "status": "Draft",
+      "entityIds": [
+        "titan-rtx"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/rtx-3050-6",
+      "type": "Hardware",
+      "slug": "rtx-3050-6",
+      "title": "NVIDIA GeForce RTX 3050 6GB (6 GB)",
+      "summary": "Local LLM memory planning for NVIDIA GeForce RTX 3050 6GB with 6 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/rtx-3050-6/",
+      "status": "Draft",
+      "entityIds": [
+        "rtx-3050-6"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/rtx-3060-8",
+      "type": "Hardware",
+      "slug": "rtx-3060-8",
+      "title": "NVIDIA GeForce RTX 3060 8GB (8 GB)",
+      "summary": "Local LLM memory planning for NVIDIA GeForce RTX 3060 8GB with 8 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/rtx-3060-8/",
+      "status": "Draft",
+      "entityIds": [
+        "rtx-3060-8"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/rtx-3060-ti",
+      "type": "Hardware",
+      "slug": "rtx-3060-ti",
+      "title": "NVIDIA GeForce RTX 3060 Ti (8 GB)",
+      "summary": "Local LLM memory planning for NVIDIA GeForce RTX 3060 Ti with 8 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/rtx-3060-ti/",
+      "status": "Draft",
+      "entityIds": [
+        "rtx-3060-ti"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/rtx-3070-ti",
+      "type": "Hardware",
+      "slug": "rtx-3070-ti",
+      "title": "NVIDIA GeForce RTX 3070 Ti (8 GB)",
+      "summary": "Local LLM memory planning for NVIDIA GeForce RTX 3070 Ti with 8 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/rtx-3070-ti/",
+      "status": "Draft",
+      "entityIds": [
+        "rtx-3070-ti"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/rtx-3080-10",
+      "type": "Hardware",
+      "slug": "rtx-3080-10",
+      "title": "NVIDIA GeForce RTX 3080 10GB (10 GB)",
+      "summary": "Local LLM memory planning for NVIDIA GeForce RTX 3080 10GB with 10 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/rtx-3080-10/",
+      "status": "Draft",
+      "entityIds": [
+        "rtx-3080-10"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/rtx-3080-12",
+      "type": "Hardware",
+      "slug": "rtx-3080-12",
+      "title": "NVIDIA GeForce RTX 3080 12GB (12 GB)",
+      "summary": "Local LLM memory planning for NVIDIA GeForce RTX 3080 12GB with 12 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/rtx-3080-12/",
+      "status": "Draft",
+      "entityIds": [
+        "rtx-3080-12"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/rtx-3080-ti",
+      "type": "Hardware",
+      "slug": "rtx-3080-ti",
+      "title": "NVIDIA GeForce RTX 3080 Ti (12 GB)",
+      "summary": "Local LLM memory planning for NVIDIA GeForce RTX 3080 Ti with 12 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/rtx-3080-ti/",
+      "status": "Draft",
+      "entityIds": [
+        "rtx-3080-ti"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/rtx-3090-ti",
+      "type": "Hardware",
+      "slug": "rtx-3090-ti",
+      "title": "NVIDIA GeForce RTX 3090 Ti (24 GB)",
+      "summary": "Local LLM memory planning for NVIDIA GeForce RTX 3090 Ti with 24 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/rtx-3090-ti/",
+      "status": "Draft",
+      "entityIds": [
+        "rtx-3090-ti"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/rtx-4060",
+      "type": "Hardware",
+      "slug": "rtx-4060",
+      "title": "NVIDIA GeForce RTX 4060 (8 GB)",
+      "summary": "Local LLM memory planning for NVIDIA GeForce RTX 4060 with 8 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/rtx-4060/",
+      "status": "Draft",
+      "entityIds": [
+        "rtx-4060"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/rtx-4070-super",
+      "type": "Hardware",
+      "slug": "rtx-4070-super",
+      "title": "NVIDIA GeForce RTX 4070 SUPER (12 GB)",
+      "summary": "Local LLM memory planning for NVIDIA GeForce RTX 4070 SUPER with 12 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/rtx-4070-super/",
+      "status": "Draft",
+      "entityIds": [
+        "rtx-4070-super"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/rtx-4070-ti",
+      "type": "Hardware",
+      "slug": "rtx-4070-ti",
+      "title": "NVIDIA GeForce RTX 4070 Ti (12 GB)",
+      "summary": "Local LLM memory planning for NVIDIA GeForce RTX 4070 Ti with 12 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/rtx-4070-ti/",
+      "status": "Draft",
+      "entityIds": [
+        "rtx-4070-ti"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/rtx-4080",
+      "type": "Hardware",
+      "slug": "rtx-4080",
+      "title": "NVIDIA GeForce RTX 4080 (16 GB)",
+      "summary": "Local LLM memory planning for NVIDIA GeForce RTX 4080 with 16 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/rtx-4080/",
+      "status": "Draft",
+      "entityIds": [
+        "rtx-4080"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/rtx-5050",
+      "type": "Hardware",
+      "slug": "rtx-5050",
+      "title": "NVIDIA GeForce RTX 5050 (8 GB)",
+      "summary": "Local LLM memory planning for NVIDIA GeForce RTX 5050 with 8 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/rtx-5050/",
+      "status": "Draft",
+      "entityIds": [
+        "rtx-5050"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/rtx-5060",
+      "type": "Hardware",
+      "slug": "rtx-5060",
+      "title": "NVIDIA GeForce RTX 5060 (8 GB)",
+      "summary": "Local LLM memory planning for NVIDIA GeForce RTX 5060 with 8 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/rtx-5060/",
+      "status": "Draft",
+      "entityIds": [
+        "rtx-5060"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/rtx-5060-ti-8",
+      "type": "Hardware",
+      "slug": "rtx-5060-ti-8",
+      "title": "NVIDIA GeForce RTX 5060 Ti 8GB (8 GB)",
+      "summary": "Local LLM memory planning for NVIDIA GeForce RTX 5060 Ti 8GB with 8 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/rtx-5060-ti-8/",
+      "status": "Draft",
+      "entityIds": [
+        "rtx-5060-ti-8"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/rtx-5070",
+      "type": "Hardware",
+      "slug": "rtx-5070",
+      "title": "NVIDIA GeForce RTX 5070 (12 GB)",
+      "summary": "Local LLM memory planning for NVIDIA GeForce RTX 5070 with 12 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/rtx-5070/",
+      "status": "Draft",
+      "entityIds": [
+        "rtx-5070"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/rtx-a2000-6",
+      "type": "Hardware",
+      "slug": "rtx-a2000-6",
+      "title": "NVIDIA RTX A2000 6GB (6 GB)",
+      "summary": "Local LLM memory planning for NVIDIA RTX A2000 6GB with 6 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/rtx-a2000-6/",
+      "status": "Draft",
+      "entityIds": [
+        "rtx-a2000-6"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/rtx-a2000-12",
+      "type": "Hardware",
+      "slug": "rtx-a2000-12",
+      "title": "NVIDIA RTX A2000 12GB (12 GB)",
+      "summary": "Local LLM memory planning for NVIDIA RTX A2000 12GB with 12 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/rtx-a2000-12/",
+      "status": "Draft",
+      "entityIds": [
+        "rtx-a2000-12"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/rtx-a4000",
+      "type": "Hardware",
+      "slug": "rtx-a4000",
+      "title": "NVIDIA RTX A4000 (16 GB)",
+      "summary": "Local LLM memory planning for NVIDIA RTX A4000 with 16 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/rtx-a4000/",
+      "status": "Draft",
+      "entityIds": [
+        "rtx-a4000"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/rtx-a4500",
+      "type": "Hardware",
+      "slug": "rtx-a4500",
+      "title": "NVIDIA RTX A4500 (20 GB)",
+      "summary": "Local LLM memory planning for NVIDIA RTX A4500 with 20 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/rtx-a4500/",
+      "status": "Draft",
+      "entityIds": [
+        "rtx-a4500"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/rtx-a5000",
+      "type": "Hardware",
+      "slug": "rtx-a5000",
+      "title": "NVIDIA RTX A5000 (24 GB)",
+      "summary": "Local LLM memory planning for NVIDIA RTX A5000 with 24 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/rtx-a5000/",
+      "status": "Draft",
+      "entityIds": [
+        "rtx-a5000"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/rtx-a5500",
+      "type": "Hardware",
+      "slug": "rtx-a5500",
+      "title": "NVIDIA RTX A5500 (24 GB)",
+      "summary": "Local LLM memory planning for NVIDIA RTX A5500 with 24 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/rtx-a5500/",
+      "status": "Draft",
+      "entityIds": [
+        "rtx-a5500"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/rtx-a6000",
+      "type": "Hardware",
+      "slug": "rtx-a6000",
+      "title": "NVIDIA RTX A6000 (48 GB)",
+      "summary": "Local LLM memory planning for NVIDIA RTX A6000 with 48 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/rtx-a6000/",
+      "status": "Draft",
+      "entityIds": [
+        "rtx-a6000"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/rtx-4000-ada",
+      "type": "Hardware",
+      "slug": "rtx-4000-ada",
+      "title": "NVIDIA RTX 4000 Ada (20 GB)",
+      "summary": "Local LLM memory planning for NVIDIA RTX 4000 Ada with 20 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/rtx-4000-ada/",
+      "status": "Draft",
+      "entityIds": [
+        "rtx-4000-ada"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/rtx-4500-ada",
+      "type": "Hardware",
+      "slug": "rtx-4500-ada",
+      "title": "NVIDIA RTX 4500 Ada (24 GB)",
+      "summary": "Local LLM memory planning for NVIDIA RTX 4500 Ada with 24 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/rtx-4500-ada/",
+      "status": "Draft",
+      "entityIds": [
+        "rtx-4500-ada"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/rtx-5000-ada",
+      "type": "Hardware",
+      "slug": "rtx-5000-ada",
+      "title": "NVIDIA RTX 5000 Ada (32 GB)",
+      "summary": "Local LLM memory planning for NVIDIA RTX 5000 Ada with 32 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/rtx-5000-ada/",
+      "status": "Draft",
+      "entityIds": [
+        "rtx-5000-ada"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/rtx-5880-ada",
+      "type": "Hardware",
+      "slug": "rtx-5880-ada",
+      "title": "NVIDIA RTX 5880 Ada (48 GB)",
+      "summary": "Local LLM memory planning for NVIDIA RTX 5880 Ada with 48 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/rtx-5880-ada/",
+      "status": "Draft",
+      "entityIds": [
+        "rtx-5880-ada"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/tesla-p40",
+      "type": "Hardware",
+      "slug": "tesla-p40",
+      "title": "NVIDIA Tesla P40 (24 GB)",
+      "summary": "Local LLM memory planning for NVIDIA Tesla P40 with 24 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/tesla-p40/",
+      "status": "Draft",
+      "entityIds": [
+        "tesla-p40"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/tesla-p100-16",
+      "type": "Hardware",
+      "slug": "tesla-p100-16",
+      "title": "NVIDIA Tesla P100 16GB (16 GB)",
+      "summary": "Local LLM memory planning for NVIDIA Tesla P100 16GB with 16 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/tesla-p100-16/",
+      "status": "Draft",
+      "entityIds": [
+        "tesla-p100-16"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/tesla-v100-16",
+      "type": "Hardware",
+      "slug": "tesla-v100-16",
+      "title": "NVIDIA Tesla V100 16GB (16 GB)",
+      "summary": "Local LLM memory planning for NVIDIA Tesla V100 16GB with 16 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/tesla-v100-16/",
+      "status": "Draft",
+      "entityIds": [
+        "tesla-v100-16"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/tesla-v100-32",
+      "type": "Hardware",
+      "slug": "tesla-v100-32",
+      "title": "NVIDIA Tesla V100 32GB (32 GB)",
+      "summary": "Local LLM memory planning for NVIDIA Tesla V100 32GB with 32 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/tesla-v100-32/",
+      "status": "Draft",
+      "entityIds": [
+        "tesla-v100-32"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/a10",
+      "type": "Hardware",
+      "slug": "a10",
+      "title": "NVIDIA A10 (24 GB)",
+      "summary": "Local LLM memory planning for NVIDIA A10 with 24 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/a10/",
+      "status": "Draft",
+      "entityIds": [
+        "a10"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/a30",
+      "type": "Hardware",
+      "slug": "a30",
+      "title": "NVIDIA A30 (24 GB)",
+      "summary": "Local LLM memory planning for NVIDIA A30 with 24 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/a30/",
+      "status": "Draft",
+      "entityIds": [
+        "a30"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/a40",
+      "type": "Hardware",
+      "slug": "a40",
+      "title": "NVIDIA A40 (48 GB)",
+      "summary": "Local LLM memory planning for NVIDIA A40 with 48 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/a40/",
+      "status": "Draft",
+      "entityIds": [
+        "a40"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/a100-40",
+      "type": "Hardware",
+      "slug": "a100-40",
+      "title": "NVIDIA A100 40GB PCIe (40 GB)",
+      "summary": "Local LLM memory planning for NVIDIA A100 40GB PCIe with 40 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/a100-40/",
+      "status": "Draft",
+      "entityIds": [
+        "a100-40"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/a100-80",
+      "type": "Hardware",
+      "slug": "a100-80",
+      "title": "NVIDIA A100 80GB PCIe (80 GB)",
+      "summary": "Local LLM memory planning for NVIDIA A100 80GB PCIe with 80 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/a100-80/",
+      "status": "Draft",
+      "entityIds": [
+        "a100-80"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/l4",
+      "type": "Hardware",
+      "slug": "l4",
+      "title": "NVIDIA L4 (24 GB)",
+      "summary": "Local LLM memory planning for NVIDIA L4 with 24 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/l4/",
+      "status": "Draft",
+      "entityIds": [
+        "l4"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/l40",
+      "type": "Hardware",
+      "slug": "l40",
+      "title": "NVIDIA L40 (48 GB)",
+      "summary": "Local LLM memory planning for NVIDIA L40 with 48 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/l40/",
+      "status": "Draft",
+      "entityIds": [
+        "l40"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/l40s",
+      "type": "Hardware",
+      "slug": "l40s",
+      "title": "NVIDIA L40S (48 GB)",
+      "summary": "Local LLM memory planning for NVIDIA L40S with 48 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/l40s/",
+      "status": "Draft",
+      "entityIds": [
+        "l40s"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/h100-pcie",
+      "type": "Hardware",
+      "slug": "h100-pcie",
+      "title": "NVIDIA H100 80GB PCIe (80 GB)",
+      "summary": "Local LLM memory planning for NVIDIA H100 80GB PCIe with 80 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/h100-pcie/",
+      "status": "Draft",
+      "entityIds": [
+        "h100-pcie"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/h100-sxm",
+      "type": "Hardware",
+      "slug": "h100-sxm",
+      "title": "NVIDIA H100 80GB SXM (80 GB)",
+      "summary": "Local LLM memory planning for NVIDIA H100 80GB SXM with 80 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/h100-sxm/",
+      "status": "Draft",
+      "entityIds": [
+        "h100-sxm"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/h200-sxm",
+      "type": "Hardware",
+      "slug": "h200-sxm",
+      "title": "NVIDIA H200 141GB SXM (141 GB)",
+      "summary": "Local LLM memory planning for NVIDIA H200 141GB SXM with 141 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/h200-sxm/",
+      "status": "Draft",
+      "entityIds": [
+        "h200-sxm"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/b200",
+      "type": "Hardware",
+      "slug": "b200",
+      "title": "NVIDIA B200 180GB (180 GB)",
+      "summary": "Local LLM memory planning for NVIDIA B200 180GB with 180 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/b200/",
+      "status": "Draft",
+      "entityIds": [
+        "b200"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/rx-570-8",
+      "type": "Hardware",
+      "slug": "rx-570-8",
+      "title": "AMD Radeon RX 570 8GB (8 GB)",
+      "summary": "Local LLM memory planning for AMD Radeon RX 570 8GB with 8 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/rx-570-8/",
+      "status": "Draft",
+      "entityIds": [
+        "rx-570-8"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/rx-580-8",
+      "type": "Hardware",
+      "slug": "rx-580-8",
+      "title": "AMD Radeon RX 580 8GB (8 GB)",
+      "summary": "Local LLM memory planning for AMD Radeon RX 580 8GB with 8 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/rx-580-8/",
+      "status": "Draft",
+      "entityIds": [
+        "rx-580-8"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/rx-590",
+      "type": "Hardware",
+      "slug": "rx-590",
+      "title": "AMD Radeon RX 590 (8 GB)",
+      "summary": "Local LLM memory planning for AMD Radeon RX 590 with 8 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/rx-590/",
+      "status": "Draft",
+      "entityIds": [
+        "rx-590"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/vega-56",
+      "type": "Hardware",
+      "slug": "vega-56",
+      "title": "AMD Radeon RX Vega 56 (8 GB)",
+      "summary": "Local LLM memory planning for AMD Radeon RX Vega 56 with 8 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/vega-56/",
+      "status": "Draft",
+      "entityIds": [
+        "vega-56"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/vega-64",
+      "type": "Hardware",
+      "slug": "vega-64",
+      "title": "AMD Radeon RX Vega 64 (8 GB)",
+      "summary": "Local LLM memory planning for AMD Radeon RX Vega 64 with 8 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/vega-64/",
+      "status": "Draft",
+      "entityIds": [
+        "vega-64"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/radeon-vii",
+      "type": "Hardware",
+      "slug": "radeon-vii",
+      "title": "AMD Radeon VII (16 GB)",
+      "summary": "Local LLM memory planning for AMD Radeon VII with 16 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/radeon-vii/",
+      "status": "Draft",
+      "entityIds": [
+        "radeon-vii"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/rx-5500-xt-4",
+      "type": "Hardware",
+      "slug": "rx-5500-xt-4",
+      "title": "AMD Radeon RX 5500 XT 4GB (4 GB)",
+      "summary": "Local LLM memory planning for AMD Radeon RX 5500 XT 4GB with 4 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/rx-5500-xt-4/",
+      "status": "Draft",
+      "entityIds": [
+        "rx-5500-xt-4"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/rx-5500-xt-8",
+      "type": "Hardware",
+      "slug": "rx-5500-xt-8",
+      "title": "AMD Radeon RX 5500 XT 8GB (8 GB)",
+      "summary": "Local LLM memory planning for AMD Radeon RX 5500 XT 8GB with 8 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/rx-5500-xt-8/",
+      "status": "Draft",
+      "entityIds": [
+        "rx-5500-xt-8"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/rx-5600-xt",
+      "type": "Hardware",
+      "slug": "rx-5600-xt",
+      "title": "AMD Radeon RX 5600 XT (6 GB)",
+      "summary": "Local LLM memory planning for AMD Radeon RX 5600 XT with 6 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/rx-5600-xt/",
+      "status": "Draft",
+      "entityIds": [
+        "rx-5600-xt"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/rx-5700",
+      "type": "Hardware",
+      "slug": "rx-5700",
+      "title": "AMD Radeon RX 5700 (8 GB)",
+      "summary": "Local LLM memory planning for AMD Radeon RX 5700 with 8 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/rx-5700/",
+      "status": "Draft",
+      "entityIds": [
+        "rx-5700"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/rx-5700-xt",
+      "type": "Hardware",
+      "slug": "rx-5700-xt",
+      "title": "AMD Radeon RX 5700 XT (8 GB)",
+      "summary": "Local LLM memory planning for AMD Radeon RX 5700 XT with 8 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/rx-5700-xt/",
+      "status": "Draft",
+      "entityIds": [
+        "rx-5700-xt"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/rx-6500-xt",
+      "type": "Hardware",
+      "slug": "rx-6500-xt",
+      "title": "AMD Radeon RX 6500 XT (4 GB)",
+      "summary": "Local LLM memory planning for AMD Radeon RX 6500 XT with 4 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/rx-6500-xt/",
+      "status": "Draft",
+      "entityIds": [
+        "rx-6500-xt"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/rx-6600-xt",
+      "type": "Hardware",
+      "slug": "rx-6600-xt",
+      "title": "AMD Radeon RX 6600 XT (8 GB)",
+      "summary": "Local LLM memory planning for AMD Radeon RX 6600 XT with 8 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/rx-6600-xt/",
+      "status": "Draft",
+      "entityIds": [
+        "rx-6600-xt"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/rx-6650-xt",
+      "type": "Hardware",
+      "slug": "rx-6650-xt",
+      "title": "AMD Radeon RX 6650 XT (8 GB)",
+      "summary": "Local LLM memory planning for AMD Radeon RX 6650 XT with 8 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/rx-6650-xt/",
+      "status": "Draft",
+      "entityIds": [
+        "rx-6650-xt"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/rx-6700",
+      "type": "Hardware",
+      "slug": "rx-6700",
+      "title": "AMD Radeon RX 6700 (10 GB)",
+      "summary": "Local LLM memory planning for AMD Radeon RX 6700 with 10 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/rx-6700/",
+      "status": "Draft",
+      "entityIds": [
+        "rx-6700"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/rx-6700-xt",
+      "type": "Hardware",
+      "slug": "rx-6700-xt",
+      "title": "AMD Radeon RX 6700 XT (12 GB)",
+      "summary": "Local LLM memory planning for AMD Radeon RX 6700 XT with 12 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/rx-6700-xt/",
+      "status": "Draft",
+      "entityIds": [
+        "rx-6700-xt"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/rx-6750-xt",
+      "type": "Hardware",
+      "slug": "rx-6750-xt",
+      "title": "AMD Radeon RX 6750 XT (12 GB)",
+      "summary": "Local LLM memory planning for AMD Radeon RX 6750 XT with 12 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/rx-6750-xt/",
+      "status": "Draft",
+      "entityIds": [
+        "rx-6750-xt"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/rx-6800",
+      "type": "Hardware",
+      "slug": "rx-6800",
+      "title": "AMD Radeon RX 6800 (16 GB)",
+      "summary": "Local LLM memory planning for AMD Radeon RX 6800 with 16 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/rx-6800/",
+      "status": "Draft",
+      "entityIds": [
+        "rx-6800"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/rx-6800-xt",
+      "type": "Hardware",
+      "slug": "rx-6800-xt",
+      "title": "AMD Radeon RX 6800 XT (16 GB)",
+      "summary": "Local LLM memory planning for AMD Radeon RX 6800 XT with 16 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/rx-6800-xt/",
+      "status": "Draft",
+      "entityIds": [
+        "rx-6800-xt"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/rx-6900-xt",
+      "type": "Hardware",
+      "slug": "rx-6900-xt",
+      "title": "AMD Radeon RX 6900 XT (16 GB)",
+      "summary": "Local LLM memory planning for AMD Radeon RX 6900 XT with 16 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/rx-6900-xt/",
+      "status": "Draft",
+      "entityIds": [
+        "rx-6900-xt"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/rx-6950-xt",
+      "type": "Hardware",
+      "slug": "rx-6950-xt",
+      "title": "AMD Radeon RX 6950 XT (16 GB)",
+      "summary": "Local LLM memory planning for AMD Radeon RX 6950 XT with 16 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/rx-6950-xt/",
+      "status": "Draft",
+      "entityIds": [
+        "rx-6950-xt"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/rx-7600-xt",
+      "type": "Hardware",
+      "slug": "rx-7600-xt",
+      "title": "AMD Radeon RX 7600 XT (16 GB)",
+      "summary": "Local LLM memory planning for AMD Radeon RX 7600 XT with 16 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/rx-7600-xt/",
+      "status": "Draft",
+      "entityIds": [
+        "rx-7600-xt"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/rx-7700-xt",
+      "type": "Hardware",
+      "slug": "rx-7700-xt",
+      "title": "AMD Radeon RX 7700 XT (12 GB)",
+      "summary": "Local LLM memory planning for AMD Radeon RX 7700 XT with 12 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/rx-7700-xt/",
+      "status": "Draft",
+      "entityIds": [
+        "rx-7700-xt"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/rx-7900-gre",
+      "type": "Hardware",
+      "slug": "rx-7900-gre",
+      "title": "AMD Radeon RX 7900 GRE (16 GB)",
+      "summary": "Local LLM memory planning for AMD Radeon RX 7900 GRE with 16 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/rx-7900-gre/",
+      "status": "Draft",
+      "entityIds": [
+        "rx-7900-gre"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/rx-7900-xt",
+      "type": "Hardware",
+      "slug": "rx-7900-xt",
+      "title": "AMD Radeon RX 7900 XT (20 GB)",
+      "summary": "Local LLM memory planning for AMD Radeon RX 7900 XT with 20 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/rx-7900-xt/",
+      "status": "Draft",
+      "entityIds": [
+        "rx-7900-xt"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/rx-9050-4",
+      "type": "Hardware",
+      "slug": "rx-9050-4",
+      "title": "AMD Radeon RX 9050 4GB (4 GB)",
+      "summary": "Local LLM memory planning for AMD Radeon RX 9050 4GB with 4 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/rx-9050-4/",
+      "status": "Draft",
+      "entityIds": [
+        "rx-9050-4"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/rx-9050-8",
+      "type": "Hardware",
+      "slug": "rx-9050-8",
+      "title": "AMD Radeon RX 9050 8GB (8 GB)",
+      "summary": "Local LLM memory planning for AMD Radeon RX 9050 8GB with 8 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/rx-9050-8/",
+      "status": "Draft",
+      "entityIds": [
+        "rx-9050-8"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/rx-9060",
+      "type": "Hardware",
+      "slug": "rx-9060",
+      "title": "AMD Radeon RX 9060 (8 GB)",
+      "summary": "Local LLM memory planning for AMD Radeon RX 9060 with 8 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/rx-9060/",
+      "status": "Draft",
+      "entityIds": [
+        "rx-9060"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/rx-9060-xt-8",
+      "type": "Hardware",
+      "slug": "rx-9060-xt-8",
+      "title": "AMD Radeon RX 9060 XT 8GB (8 GB)",
+      "summary": "Local LLM memory planning for AMD Radeon RX 9060 XT 8GB with 8 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/rx-9060-xt-8/",
+      "status": "Draft",
+      "entityIds": [
+        "rx-9060-xt-8"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/rx-9060-xt-16",
+      "type": "Hardware",
+      "slug": "rx-9060-xt-16",
+      "title": "AMD Radeon RX 9060 XT 16GB (16 GB)",
+      "summary": "Local LLM memory planning for AMD Radeon RX 9060 XT 16GB with 16 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/rx-9060-xt-16/",
+      "status": "Draft",
+      "entityIds": [
+        "rx-9060-xt-16"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/rx-9070-gre",
+      "type": "Hardware",
+      "slug": "rx-9070-gre",
+      "title": "AMD Radeon RX 9070 GRE (12 GB)",
+      "summary": "Local LLM memory planning for AMD Radeon RX 9070 GRE with 12 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/rx-9070-gre/",
+      "status": "Draft",
+      "entityIds": [
+        "rx-9070-gre"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/rx-9070",
+      "type": "Hardware",
+      "slug": "rx-9070",
+      "title": "AMD Radeon RX 9070 (16 GB)",
+      "summary": "Local LLM memory planning for AMD Radeon RX 9070 with 16 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/rx-9070/",
+      "status": "Draft",
+      "entityIds": [
+        "rx-9070"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/rx-9070-xt",
+      "type": "Hardware",
+      "slug": "rx-9070-xt",
+      "title": "AMD Radeon RX 9070 XT (16 GB)",
+      "summary": "Local LLM memory planning for AMD Radeon RX 9070 XT with 16 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/rx-9070-xt/",
+      "status": "Draft",
+      "entityIds": [
+        "rx-9070-xt"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/w6600",
+      "type": "Hardware",
+      "slug": "w6600",
+      "title": "AMD Radeon Pro W6600 (8 GB)",
+      "summary": "Local LLM memory planning for AMD Radeon Pro W6600 with 8 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/w6600/",
+      "status": "Draft",
+      "entityIds": [
+        "w6600"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/w6800",
+      "type": "Hardware",
+      "slug": "w6800",
+      "title": "AMD Radeon Pro W6800 (32 GB)",
+      "summary": "Local LLM memory planning for AMD Radeon Pro W6800 with 32 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/w6800/",
+      "status": "Draft",
+      "entityIds": [
+        "w6800"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/w7600",
+      "type": "Hardware",
+      "slug": "w7600",
+      "title": "AMD Radeon Pro W7600 (8 GB)",
+      "summary": "Local LLM memory planning for AMD Radeon Pro W7600 with 8 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/w7600/",
+      "status": "Draft",
+      "entityIds": [
+        "w7600"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/w7700",
+      "type": "Hardware",
+      "slug": "w7700",
+      "title": "AMD Radeon Pro W7700 (16 GB)",
+      "summary": "Local LLM memory planning for AMD Radeon Pro W7700 with 16 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/w7700/",
+      "status": "Draft",
+      "entityIds": [
+        "w7700"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/w7800",
+      "type": "Hardware",
+      "slug": "w7800",
+      "title": "AMD Radeon Pro W7800 (32 GB)",
+      "summary": "Local LLM memory planning for AMD Radeon Pro W7800 with 32 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/w7800/",
+      "status": "Draft",
+      "entityIds": [
+        "w7800"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/w7900",
+      "type": "Hardware",
+      "slug": "w7900",
+      "title": "AMD Radeon Pro W7900 (48 GB)",
+      "summary": "Local LLM memory planning for AMD Radeon Pro W7900 with 48 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/w7900/",
+      "status": "Draft",
+      "entityIds": [
+        "w7900"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/mi25",
+      "type": "Hardware",
+      "slug": "mi25",
+      "title": "AMD Instinct MI25 (16 GB)",
+      "summary": "Local LLM memory planning for AMD Instinct MI25 with 16 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/mi25/",
+      "status": "Draft",
+      "entityIds": [
+        "mi25"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/mi50-16",
+      "type": "Hardware",
+      "slug": "mi50-16",
+      "title": "AMD Instinct MI50 16GB (16 GB)",
+      "summary": "Local LLM memory planning for AMD Instinct MI50 16GB with 16 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/mi50-16/",
+      "status": "Draft",
+      "entityIds": [
+        "mi50-16"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/mi50-32",
+      "type": "Hardware",
+      "slug": "mi50-32",
+      "title": "AMD Instinct MI50 32GB (32 GB)",
+      "summary": "Local LLM memory planning for AMD Instinct MI50 32GB with 32 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/mi50-32/",
+      "status": "Draft",
+      "entityIds": [
+        "mi50-32"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/mi60",
+      "type": "Hardware",
+      "slug": "mi60",
+      "title": "AMD Instinct MI60 (32 GB)",
+      "summary": "Local LLM memory planning for AMD Instinct MI60 with 32 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/mi60/",
+      "status": "Draft",
+      "entityIds": [
+        "mi60"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/mi100",
+      "type": "Hardware",
+      "slug": "mi100",
+      "title": "AMD Instinct MI100 (32 GB)",
+      "summary": "Local LLM memory planning for AMD Instinct MI100 with 32 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/mi100/",
+      "status": "Draft",
+      "entityIds": [
+        "mi100"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/mi210",
+      "type": "Hardware",
+      "slug": "mi210",
+      "title": "AMD Instinct MI210 (64 GB)",
+      "summary": "Local LLM memory planning for AMD Instinct MI210 with 64 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/mi210/",
+      "status": "Draft",
+      "entityIds": [
+        "mi210"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/mi250x",
+      "type": "Hardware",
+      "slug": "mi250x",
+      "title": "AMD Instinct MI250X (128 GB)",
+      "summary": "Local LLM memory planning for AMD Instinct MI250X with 128 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/mi250x/",
+      "status": "Draft",
+      "entityIds": [
+        "mi250x"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/mi300x",
+      "type": "Hardware",
+      "slug": "mi300x",
+      "title": "AMD Instinct MI300X (192 GB)",
+      "summary": "Local LLM memory planning for AMD Instinct MI300X with 192 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/mi300x/",
+      "status": "Draft",
+      "entityIds": [
+        "mi300x"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/arc-a310",
+      "type": "Hardware",
+      "slug": "arc-a310",
+      "title": "Intel Arc A310 (4 GB)",
+      "summary": "Local LLM memory planning for Intel Arc A310 with 4 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/arc-a310/",
+      "status": "Draft",
+      "entityIds": [
+        "arc-a310"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/arc-a380",
+      "type": "Hardware",
+      "slug": "arc-a380",
+      "title": "Intel Arc A380 (6 GB)",
+      "summary": "Local LLM memory planning for Intel Arc A380 with 6 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/arc-a380/",
+      "status": "Draft",
+      "entityIds": [
+        "arc-a380"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/arc-a580",
+      "type": "Hardware",
+      "slug": "arc-a580",
+      "title": "Intel Arc A580 (8 GB)",
+      "summary": "Local LLM memory planning for Intel Arc A580 with 8 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/arc-a580/",
+      "status": "Draft",
+      "entityIds": [
+        "arc-a580"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/arc-a770-8",
+      "type": "Hardware",
+      "slug": "arc-a770-8",
+      "title": "Intel Arc A770 8GB (8 GB)",
+      "summary": "Local LLM memory planning for Intel Arc A770 8GB with 8 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/arc-a770-8/",
+      "status": "Draft",
+      "entityIds": [
+        "arc-a770-8"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/arc-b570",
+      "type": "Hardware",
+      "slug": "arc-b570",
+      "title": "Intel Arc B570 (10 GB)",
+      "summary": "Local LLM memory planning for Intel Arc B570 with 10 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/arc-b570/",
+      "status": "Draft",
+      "entityIds": [
+        "arc-b570"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/arc-pro-a60",
+      "type": "Hardware",
+      "slug": "arc-pro-a60",
+      "title": "Intel Arc Pro A60 (12 GB)",
+      "summary": "Local LLM memory planning for Intel Arc Pro A60 with 12 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/arc-pro-a60/",
+      "status": "Draft",
+      "entityIds": [
+        "arc-pro-a60"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/arc-pro-b50",
+      "type": "Hardware",
+      "slug": "arc-pro-b50",
+      "title": "Intel Arc Pro B50 (16 GB)",
+      "summary": "Local LLM memory planning for Intel Arc Pro B50 with 16 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/arc-pro-b50/",
+      "status": "Draft",
+      "entityIds": [
+        "arc-pro-b50"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/arc-pro-b60",
+      "type": "Hardware",
+      "slug": "arc-pro-b60",
+      "title": "Intel Arc Pro B60 (24 GB)",
+      "summary": "Local LLM memory planning for Intel Arc Pro B60 with 24 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/arc-pro-b60/",
+      "status": "Draft",
+      "entityIds": [
+        "arc-pro-b60"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/arc-pro-b65",
+      "type": "Hardware",
+      "slug": "arc-pro-b65",
+      "title": "Intel Arc Pro B65 (32 GB)",
+      "summary": "Local LLM memory planning for Intel Arc Pro B65 with 32 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/arc-pro-b65/",
+      "status": "Draft",
+      "entityIds": [
+        "arc-pro-b65"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/arc-pro-b70",
+      "type": "Hardware",
+      "slug": "arc-pro-b70",
+      "title": "Intel Arc Pro B70 (32 GB)",
+      "summary": "Local LLM memory planning for Intel Arc Pro B70 with 32 GB. Draft awaiting specification and compatibility review.",
+      "url": "https://knowledge.localllmfinder.com/hardware/arc-pro-b70/",
+      "status": "Draft",
+      "entityIds": [
+        "arc-pro-b70"
+      ],
+      "modified": "2026-10-01",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": []
     }
   ]
 }

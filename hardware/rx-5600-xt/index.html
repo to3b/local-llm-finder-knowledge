@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#151719">
+  <meta name="robots" content="noindex,follow">
+  <meta name="description" content="Local LLM memory planning for AMD Radeon RX 5600 XT with 6 GB. Draft awaiting specification and compatibility review.">
+  <link rel="canonical" href="https://knowledge.localllmfinder.com/hardware/rx-5600-xt/">
+  <title>AMD Radeon RX 5600 XT (6 GB) — Draft | Local LLM Finder</title>
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="https://localllmfinder.com/dist/styles.css?v=20260929d">
+  <link rel="stylesheet" href="https://localllmfinder.com/dist/docs.css?v=20260929b">
+  <link rel="stylesheet" href="https://localllmfinder.com/dist/palette.css?v=20260929f">
+  <link rel="stylesheet" href="../../docs.css">
+  <style>
+    .article-body{padding-top:8px}
+    .article-body h2{margin:30px 0 9px;font-size:1.12rem;line-height:1.3;letter-spacing:-.015em;font-weight:620}
+    .article-body h3{margin:23px 0 7px;font-size:.98rem;line-height:1.35;font-weight:610}
+    .article-body p,.article-body li{max-width:735px;color:#c0c0bc;font-size:.88rem;line-height:1.68}
+    .article-body p{margin:0}.article-body p+p{margin-top:11px}.article-body ul{margin:9px 0 0;padding-left:21px}
+    .article-body a,.article-sources a{color:#dddcd7;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+    .article-body code{padding:2px 5px;border:1px solid var(--line);border-radius:4px;background:var(--surface);color:#dddcd7;font-size:.82em}
+  </style>
+  
+<link rel="stylesheet" href="../../sandbox-refine.css?v=cleanup-2"><link rel="stylesheet" href="../../wiki.css?v=2"></head>
+<body>
+  <main class="docs-shell">
+    <header class="site-topbar">
+      <a class="site-brand" href="https://localllmfinder.com/">Local LLM Finder</a>
+      <nav class="site-nav" aria-label="Site">
+        <a href="https://localllmfinder.com/">Finder</a>
+        <a class="knowledge-nav" href="../../">Knowledge</a>
+        <a href="https://localllmfinder.com/dist/methodology.html">Methodology</a>
+      </nav>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="../../">Knowledge</a><span> / </span><a href="../../#hardware">Hardware references</a><span> / AMD Radeon RX 5600 XT (6 GB)</span></nav><article>
+      <header class="doc-hero">
+        <p class="eyebrow">Hardware reference</p>
+        <h1>AMD Radeon RX 5600 XT (6 GB)</h1>
+        <p class="doc-lede">Local LLM memory planning for AMD Radeon RX 5600 XT with 6 GB. Draft awaiting specification and compatibility review.</p>
+        <div class="doc-meta"><span class="doc-chip">Draft</span><span>Updated 2026-10-01</span></div>
+        <aside class="draft-notice"><strong>Draft reference</strong><p>Catalogue details and planning guidance are awaiting source review.</p><a href="https://docs.google.com/spreadsheets/d/1IQvICIAWzzbTO_hTJMb-HxEYzyDQQmtvGXgY-np9Cbg/edit#gid=323200577&amp;range=A233:Q233">Edit this draft</a></aside>
+      </header>
+      <nav class="article-contents" aria-label="On this page"><strong>On this page</strong><ul><li><a href="#section-1">Catalogue starting point</a></li><li><a href="#section-2">Planning local model memory</a></li><li><a href="#section-3">What to verify before publication</a></li><li><a href="#section-4">Sources</a></li></ul></nav><div class="doc-body article-body"><h2 id="section-1">Catalogue starting point</h2>
+<p>This draft covers <strong>AMD Radeon RX 5600 XT</strong> with the catalogue&#39;s <strong>6 GB</strong> memory configuration. Verify the exact desktop, workstation or accelerator variant before relying on these specifications.</p>
+<ul>
+<li>Vendor: AMD.</li>
+<li>Architecture: RDNA 1.</li>
+<li>Dedicated memory input: 6 GB.</li>
+<li>Memory bandwidth input: 288 GB/s.</li>
+<li>Series: Radeon RX 5000.</li>
+</ul>
+<p>The <a href="https://docs.google.com/spreadsheets/d/1IQvICIAWzzbTO_hTJMb-HxEYzyDQQmtvGXgY-np9Cbg/edit#gid=1333766306&amp;range=A95:J95">Finder catalogue entry</a> supplies these figures. They are awaiting review against official specifications and are not results from a hardware benchmark.</p>
+<h2 id="section-2">Planning local model memory</h2>
+<p>A 6 GB memory configuration is a starting capacity figure. The model&#39;s weights, context cache and runtime buffers must share the memory available to the application. Display use and other applications can reduce that budget.</p>
+<p>Compare an exact model download with the free memory shown by your runtime. A file that fits on disk does not establish full GPU residency. CPU offload can change the allocation and performance, so record whether it is used.</p>
+<p>Use <a href="https://knowledge.localllmfinder.com/guides/q4-vs-q5/">Q4 vs Q5</a> to assess weight precision and <a href="https://knowledge.localllmfinder.com/guides/context-length/">context length</a> to plan cache requirements. Memory capacity and generation speed should be checked separately.</p>
+<h2 id="section-3">What to verify before publication</h2>
+<ul>
+<li>Confirm the exact board name, memory configuration and official bandwidth specification.</li>
+<li>Check driver and inference-backend support for this specific RDNA 1 architecture.</li>
+<li>Link official vendor documentation.</li>
+<li>Add tested model examples, with quantization, context and offload settings.</li>
+<li>Record runtime version, prompt processing and generation performance separately.</li>
+<li>Note any power, cooling or installation requirements relevant to this card.</li>
+</ul>
+<p><a href="https://localllmfinder.com/#d=gpu&amp;g=rx-5600-xt&amp;v=6">Open the Finder with this GPU selected</a>. Treat the displayed recommendations as planning estimates and confirm the proposed setup in a supported runtime.</p></div>
+    <section class="doc-section article-sources">
+      <h2 id="section-4">Sources</h2>
+      <ul><li><a href="https://docs.google.com/spreadsheets/d/1IQvICIAWzzbTO_hTJMb-HxEYzyDQQmtvGXgY-np9Cbg/edit#gid=1333766306&amp;range=A95:J95" rel="noopener">https://docs.google.com/spreadsheets/d/1IQvICIAWzzbTO_hTJMb-HxEYzyDQQmtvGXgY-np9Cbg/edit#gid=1333766306&amp;range=A95:J95</a></li></ul>
+    </section>
+      <section class="doc-section"><h2>Related references</h2><ul><li><a href="https://knowledge.localllmfinder.com/guides/q4-vs-q5/">Q4 vs Q5</a></li><li><a href="https://knowledge.localllmfinder.com/guides/context-length/">Context length</a></li></ul></section><div class="doc-actions"><a class="doc-button primary" href="https://localllmfinder.com/">Use the Finder</a><a class="doc-button secondary" href="../../">Back to Knowledge</a></div>
+    </article>
+
+    <footer class="doc-footer"><span>Local LLM Finder</span><nav aria-label="Footer"><a href="https://localllmfinder.com/">Finder</a><a href="../../">Knowledge</a><a href="https://localllmfinder.com/dist/privacy.html">Privacy</a><a href="https://localllmfinder.com/dist/terms.html">Terms</a></nav></footer>
+  </main>
+</body>
+</html>
