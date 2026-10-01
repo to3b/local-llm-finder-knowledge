@@ -1,11 +1,13 @@
 const LIVE_KNOWLEDGE = Object.freeze({
   base: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQrzDgQUmV8FDdt8HDHgg0YzpyJmR28TKqxRGhkg4kW2LK7-ncnt1z_nEKgg8MJecNxt0MGLcm0syD1/pub',
   copyGid: '835955627',
-  pagesGid: '1942045981'
+  pagesGid: '1942045981',
+  articlesGid: '323200577'
 });
 
 const COPY_REQUIRED = ['Key', 'Current Text', 'Enabled', 'Status'];
 const PAGE_REQUIRED = ['Enabled', 'Type', 'Slug', 'Title', 'Summary', 'Status', 'URL', 'Sort Order'];
+const ARTICLE_REQUIRED = ['Enabled', 'Slug', 'Status', 'Canonical URL'];
 
 function sheetUrl(gid) {
   return `${LIVE_KNOWLEDGE.base}?gid=${gid}&single=true&output=csv`;
@@ -114,6 +116,31 @@ function buildPages(text) {
   return pages.sort((a, b) => a.order - b.order || a.title.localeCompare(b.title));
 }
 
+function buildArticles(text) {
+  const records = recordsFromCsv(text, ARTICLE_REQUIRED, 'Knowledge Articles');
+  const articles = new Map();
+  for (const row of records) {
+    if (!enabled(row.Enabled)) continue;
+    const slug = String(row.Slug || '').trim();
+    const status = String(row.Status || '').trim() || 'Draft';
+    if (!slug) throw new Error('Enabled Knowledge Articles rows require a Slug.');
+    if (articles.has(slug)) throw new Error(`Duplicate Knowledge article slug: ${slug}`);
+    const published = /^published$/i.test(status);
+    const url = published ? safeHref(row['Canonical URL']) : '';
+    if (published && !url) throw new Error(`Published Knowledge article ${slug} requires a valid Canonical URL.`);
+    articles.set(slug, { status, url });
+  }
+  return articles;
+}
+
+function mergePublishedArticles(pages, articles) {
+  return pages.map(page => {
+    const article = articles.get(page.slug);
+    if (!article || !/^published$/i.test(article.status) || !article.url) return page;
+    return { ...page, status: 'Published', url: article.url };
+  });
+}
+
 function applyCopy(copy) {
   document.querySelectorAll('[data-copy-key]').forEach(element => {
     const value = copy.get(element.dataset.copyKey);
@@ -180,15 +207,22 @@ async function loadKnowledge() {
   const controller = new AbortController();
   const timeout = window.setTimeout(() => controller.abort(), 3500);
   try {
-    const [copyText, pagesText] = await Promise.all([
+    const [copyText, pagesText, articlesText] = await Promise.all([
       fetchCsv(LIVE_KNOWLEDGE.copyGid, controller.signal),
-      fetchCsv(LIVE_KNOWLEDGE.pagesGid, controller.signal)
+      fetchCsv(LIVE_KNOWLEDGE.pagesGid, controller.signal),
+      fetchCsv(LIVE_KNOWLEDGE.articlesGid, controller.signal)
     ]);
     const copy = buildCopy(copyText);
-    const pages = buildPages(pagesText);
+    const articles = buildArticles(articlesText);
+    const pages = mergePublishedArticles(buildPages(pagesText), articles);
     applyCopy(copy);
     renderPages(pages);
-    Object.assign(state, { source: 'live-sheet', reason: 'Validated Knowledge data loaded from the published Google Sheet.', pages: pages.length });
+    Object.assign(state, {
+      source: 'live-sheet',
+      reason: 'Validated Knowledge data loaded from the published Google Sheet.',
+      pages: pages.length,
+      articles: articles.size
+    });
     document.body.dataset.knowledgeSource = 'live-sheet';
   } catch (error) {
     Object.assign(state, { source: 'bundled', reason: error instanceof Error ? error.message : 'Live Knowledge data could not be loaded.' });
