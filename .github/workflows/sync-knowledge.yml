@@ -2,6 +2,12 @@ name: Sync Knowledge articles
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - scripts/build-articles.mjs
+      - .github/workflows/sync-knowledge.yml
   schedule:
     - cron: '17,47 * * * *'
 
