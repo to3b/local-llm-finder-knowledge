@@ -427,3 +427,19 @@ body { background-image: none; overflow-x: visible; }
 .catalog-body input,
 .doc-button,
 .doc-section code { border-radius: 2px; }
+
+/* Section rhythm: compact controls, a larger break into results, quieter support. */
+:root { --section-space: 24px; --control-space: 20px; }
+.journey-nav { margin-bottom: 0; }
+.stage-section, .stage-section.control-section { padding-block: var(--control-space); }
+.advanced-fields { padding-bottom: var(--control-space); }
+.results, .results.journey-results { padding-top: 32px; }
+.knowledge-availability { margin-top: var(--section-space); }
+.homepage-trust { margin-top: var(--section-space); padding-top: 16px; }
+.site-footer, .doc-footer { margin-top: var(--section-space); padding-top: 16px; }
+.doc-body { padding-top: 0; }
+.doc-section, .preview-section { padding-block: var(--section-space); }
+@media (max-width: 700px) {
+  :root { --control-space: 16px; }
+  .results, .results.journey-results { padding-top: var(--section-space); }
+}
