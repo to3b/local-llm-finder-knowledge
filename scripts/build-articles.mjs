@@ -89,7 +89,9 @@ function inlineMarkdown(value) {
   text = text.replace(/`([^`]+)`/g, '<code>$1</code>');
   text = text.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
   text = text.replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g, (_match, label, href) => {
-    const safe = safeUrl(href);
+    // The text was escaped above; decode ampersands before validating the URL
+    // so multi-parameter Finder links receive exactly one HTML escaping pass.
+    const safe = safeUrl(href.replaceAll('&amp;', '&'));
     return safe ? `<a href="${esc(safe)}">${label}</a>` : label;
   });
   return text;

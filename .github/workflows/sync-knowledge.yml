@@ -9,6 +9,7 @@ on:
       - scripts/build-articles.mjs
       - scripts/wiki.mjs
       - tests/wiki.test.mjs
+      - tests/article-build.test.mjs
       - .github/workflows/sync-knowledge.yml
   schedule:
     - cron: '17,47 * * * *'
@@ -33,7 +34,9 @@ jobs:
           node-version: '22'
 
       - name: Test reference connections
-        run: node tests/wiki.test.mjs
+        run: |
+          node tests/wiki.test.mjs
+          node tests/article-build.test.mjs
 
       - name: Build static Knowledge pages from Google Sheets
         run: node scripts/build-articles.mjs
