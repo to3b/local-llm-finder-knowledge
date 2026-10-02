@@ -34,7 +34,7 @@ export function enhanceArticle(html, row, data) {
   html=html.replace('<div class="doc-actions">',`${connections}<div class="doc-actions">`).replaceAll('href="/"','href="../../"');
   return html.replace('</head>','<link rel="stylesheet" href="../../wiki.css?v=2"></head>');
 }
-export function renderIndex(data) {
+export function renderIndex(data, {includeDrafts = data.articles.some(a=>a.status==='Draft')} = {}) {
   const published=data.articles.filter(a=>a.status!=='Draft').length;
   const drafts=data.articles.length-published;
   const groups=Object.entries(dirs).map(([type,dir])=>{
@@ -46,7 +46,7 @@ export function renderIndex(data) {
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="${published?'index':'noindex'},follow">
-<meta name="description" content="Model, hardware and practical guides for Local LLM Finder, with drafts available for review.">
+<meta name="description" content="Model requirements, hardware and practical guides for Local LLM Finder.">
 <link rel="canonical" href="${origin}/"><title>Knowledge — Local LLM Finder</title>
 <link rel="icon" href="./favicon.svg">
 <link rel="stylesheet" href="https://localllmfinder.com/dist/styles.css?v=20260929d">
@@ -54,10 +54,10 @@ export function renderIndex(data) {
 <link rel="stylesheet" href="./sandbox-refine.css?v=cleanup-2">
 </head><body><main class="docs-shell">
 <header class="site-topbar"><a class="site-brand" href="https://localllmfinder.com/">Local LLM Finder</a><nav class="site-nav" aria-label="Site"><a href="https://localllmfinder.com/">Finder</a><a class="knowledge-nav" href="./" aria-current="page">Knowledge</a><a href="https://localllmfinder.com/dist/methodology.html">Methodology</a></nav></header>
-<header class="doc-hero"><h1>Model and hardware references</h1><p class="doc-lede">Requirements, quantization, context and practical hardware guidance. Drafts are available to read while their sources and details are reviewed.</p><p class="reference-totals">${published} published · ${drafts} drafts</p></header>
+<header class="doc-hero"><h1>Model and hardware references</h1><p class="doc-lede">${includeDrafts ? 'Requirements, quantization, context and practical hardware guidance. Drafts are available for sandbox review.' : 'Requirements, quantization, context and practical hardware guidance.'}</p><p class="reference-totals">${published} published${includeDrafts ? ` · ${drafts} drafts` : ''}</p></header>
 <div class="reference-search"><div class="reference-controls">
 <div><label for="reference-search">Find a reference</label><input id="reference-search" type="search" placeholder="Search models, hardware or guides" aria-describedby="reference-search-status"></div>
-<div><label for="reference-status">Show</label><select id="reference-status"><option value="all">All references</option><option value="Published">Published</option><option value="Draft">Drafts</option></select></div>
+${includeDrafts ? '<div><label for="reference-status">Show</label><select id="reference-status"><option value="all">All references</option><option value="Published">Published</option><option value="Draft">Drafts</option></select></div>' : ''}
 </div><p id="reference-search-status" role="status" aria-live="polite">${data.articles.length} references</p></div>
 <nav class="reference-types" aria-label="Reference categories"><a href="#models">Models</a><a href="#hardware">Hardware</a><a href="#guides">Guides</a></nav>
 ${groups}

@@ -5,6 +5,8 @@ import { fileURLToPath } from 'node:url';
 import {registry, enhanceArticle, renderIndex} from './wiki.mjs';
 
 const SITE_ROOT = process.env.SITE_ROOT || fileURLToPath(new URL('../', import.meta.url));
+const BUILD_MODE = process.env.KNOWLEDGE_BUILD_MODE || 'production';
+if (!['production', 'sandbox'].includes(BUILD_MODE)) throw new Error('Invalid KNOWLEDGE_BUILD_MODE.');
 const SITE_ORIGIN = 'https://knowledge.localllmfinder.com';
 const SHEET_BASE = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQrzDgQUmV8FDdt8HDHgg0YzpyJmR28TKqxRGhkg4kW2LK7-ncnt1z_nEKgg8MJecNxt0MGLcm0syD1/pub';
 const ARTICLES_GID = '323200577';
@@ -188,14 +190,13 @@ function renderArticle(row) {
   const published = String(row['Date Published']).trim();
   const modified = String(row['Date Modified']).trim();
   const isPublished = /^published$/i.test(String(row.Status).trim());
-  const editUrl = `https://docs.google.com/spreadsheets/d/1IQvICIAWzzbTO_hTJMb-HxEYzyDQQmtvGXgY-np9Cbg/edit#gid=323200577&range=A${row['_Sheet Row']}:Q${row['_Sheet Row']}`;
-  const draftNotice = isPublished ? '' : `<aside class="draft-notice"><strong>Draft reference</strong><p>Catalogue details and planning guidance are awaiting source review.</p><a href="${esc(editUrl)}">Edit this draft</a></aside>`;
+  const draftNotice = isPublished ? '' : `<aside class="draft-notice"><strong>Draft reference</strong><p>Catalogue details and planning guidance are awaiting source review.</p></aside>`;
   const sources = sourceList(row);
-  const body = markdownToHtml(row['Body Markdown']);
+  const body = markdownToHtml(row['Body Markdown']).replace(/<a href="https:\/\/docs\.google\.com\/spreadsheets\/d\/[^"<>]+\/edit[^"<>]*">([\s\S]*?)<\/a>/g, '$1');
   const sourcesHtml = sources.length ? `
     <section class="doc-section article-sources">
       <h2>Sources</h2>
-      <ul>${sources.map(url => `<li><a href="${esc(url)}" rel="noopener">${esc(url)}</a></li>`).join('')}</ul>
+      <ul>${sources.map(url => /https:\/\/docs\.google\.com\/spreadsheets\/d\/[^/]+\/edit/.test(url) ? '<li>Finder catalogue (awaiting source review)</li>' : `<li><a href="${esc(url)}" rel="noopener">${esc(url)}</a></li>`).join('')}</ul>
     </section>` : '';
   const structured = JSON.stringify({
     '@context': 'https://schema.org',
@@ -299,7 +300,7 @@ async function main() {
   const csv = process.env.ARTICLES_CSV ? await readFile(process.env.ARTICLES_CSV, 'utf8') : await (async () => { const response = await fetch(sheetUrl(ARTICLES_GID), { redirect: 'follow' }); if (!response.ok) throw new Error(`Google Sheets returned HTTP ${response.status}.`); return response.text(); })();
   const records = recordsFromCsv(csv);
   const published = records.filter(row => enabled(row.Enabled) && /^published$/i.test(String(row.Status || '').trim()));
-  const available = records.filter(row => enabled(row.Enabled) && /^(published|draft)$/i.test(String(row.Status || '').trim()));
+  const available = BUILD_MODE === 'sandbox' ? records.filter(row => enabled(row.Enabled) && /^(published|draft)$/i.test(String(row.Status || '').trim())) : published;
 
   const seen = new Set();
   for (const row of available) {
@@ -318,7 +319,7 @@ async function main() {
 
   await writeRelative('sitemap.xml', sitemapXml(published));
   await writeRelative('references.json', JSON.stringify(references, null, 2) + '\n');
-  await writeRelative('index.html', renderIndex(references));
+  await writeRelative('index.html', renderIndex(references, {includeDrafts: BUILD_MODE === 'sandbox'}));
   console.log(`Built ${available.length} available Knowledge articles: ${published.length} published, ${available.length - published.length} drafts.`);
 }
 

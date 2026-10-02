@@ -39,6 +39,8 @@ jobs:
           node tests/article-build.test.mjs
 
       - name: Build static Knowledge pages from Google Sheets
+        env:
+          KNOWLEDGE_BUILD_MODE: production
         run: node scripts/build-articles.mjs
 
       - name: Commit generated changes
