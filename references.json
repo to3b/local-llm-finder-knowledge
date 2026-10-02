@@ -2,39 +2,6 @@
   "version": 1,
   "articles": [
     {
-      "key": "models/qwen3-8b",
-      "type": "Model",
-      "slug": "qwen3-8b",
-      "title": "Qwen3 8B",
-      "summary": "Official Q4/Q5/Q8 download sizes, native and extended context, and practical memory planning for Qwen3 8B.",
-      "url": "https://knowledge.localllmfinder.com/models/qwen3-8b/",
-      "status": "Published",
-      "entityIds": [
-        "model-7"
-      ],
-      "modified": "2026-10-02",
-      "related": [
-        "guides/q4-vs-q5",
-        "guides/context-length",
-        "hardware/rtx-3060-12gb",
-        "models/qwen2-5-coder-14b"
-      ],
-      "outgoing": [
-        "guides/q4-vs-q5",
-        "guides/context-length",
-        "hardware/rtx-3060-12gb",
-        "models/qwen2-5-coder-14b"
-      ],
-      "backlinks": [
-        "models/gpt-oss-20b",
-        "hardware/rtx-3060-12gb",
-        "guides/q4-vs-q5",
-        "guides/context-length",
-        "models/qwen3-4b",
-        "models/qwen3-14b"
-      ]
-    },
-    {
       "key": "models/qwen2-5-coder-14b",
       "type": "Model",
       "slug": "qwen2-5-coder-14b",
@@ -57,7 +24,6 @@
         "hardware/rtx-3060-12gb"
       ],
       "backlinks": [
-        "models/qwen3-8b",
         "hardware/rtx-3060-12gb",
         "guides/q4-vs-q5",
         "guides/context-length",
@@ -121,7 +87,6 @@
         "guides/context-length"
       ],
       "backlinks": [
-        "models/qwen3-8b",
         "models/qwen2-5-coder-14b",
         "models/gpt-oss-20b",
         "guides/q4-vs-q5",
@@ -154,7 +119,6 @@
         "hardware/rtx-3060-12gb"
       ],
       "backlinks": [
-        "models/qwen3-8b",
         "models/qwen2-5-coder-14b",
         "models/gpt-oss-20b",
         "hardware/rtx-3060-12gb",
@@ -189,7 +153,6 @@
         "hardware/rtx-3060-12gb"
       ],
       "backlinks": [
-        "models/qwen3-8b",
         "models/qwen2-5-coder-14b",
         "models/gpt-oss-20b",
         "hardware/rtx-3060-12gb",
@@ -249,9 +212,9 @@
         "guides/context-length"
       ],
       "backlinks": [
-        "hardware/rtx-4060",
         "hardware/rtx-4060-ti-16",
-        "hardware/rtx-4090"
+        "hardware/rtx-4090",
+        "hardware/rtx-4060"
       ]
     },
     {
@@ -281,36 +244,6 @@
       ]
     },
     {
-      "key": "hardware/rtx-4060",
-      "type": "Hardware",
-      "slug": "rtx-4060",
-      "title": "RTX 4060 8 GB",
-      "summary": "Use the 8 GB memory budget with compact models, short starting contexts and a check of GPU offload.",
-      "url": "https://knowledge.localllmfinder.com/hardware/rtx-4060/",
-      "status": "Published",
-      "entityIds": [
-        "rtx-4060"
-      ],
-      "modified": "2026-10-02",
-      "related": [
-        "models/qwen3-4b",
-        "models/qwen2-5-coder-7b",
-        "hardware/rtx-4060-ti-16"
-      ],
-      "outgoing": [
-        "models/qwen3-4b",
-        "models/qwen2-5-coder-7b",
-        "hardware/rtx-4060-ti-16",
-        "models/qwen3-14b",
-        "hardware/rtx-3060-12gb"
-      ],
-      "backlinks": [
-        "models/qwen3-4b",
-        "models/qwen2-5-coder-7b",
-        "hardware/rtx-4060-ti-16"
-      ]
-    },
-    {
       "key": "hardware/rtx-4060-ti-16",
       "type": "Hardware",
       "slug": "rtx-4060-ti-16",
@@ -336,8 +269,8 @@
       ],
       "backlinks": [
         "models/qwen3-14b",
-        "hardware/rtx-4060",
-        "hardware/rtx-4090"
+        "hardware/rtx-4090",
+        "hardware/rtx-4060"
       ]
     },
     {
@@ -364,6 +297,36 @@
       ],
       "backlinks": [
         "models/qwen3-14b",
+        "hardware/rtx-4060-ti-16"
+      ]
+    },
+    {
+      "key": "hardware/rtx-4060",
+      "type": "Hardware",
+      "slug": "rtx-4060",
+      "title": "RTX 4060 8 GB",
+      "summary": "Use the 8 GB memory budget with compact models, short starting contexts and a check of GPU offload.",
+      "url": "https://knowledge.localllmfinder.com/hardware/rtx-4060/",
+      "status": "Published",
+      "entityIds": [
+        "rtx-4060"
+      ],
+      "modified": "2026-10-02",
+      "related": [
+        "models/qwen3-4b",
+        "models/qwen2-5-coder-7b",
+        "hardware/rtx-4060-ti-16"
+      ],
+      "outgoing": [
+        "models/qwen3-4b",
+        "models/qwen2-5-coder-7b",
+        "hardware/rtx-4060-ti-16",
+        "models/qwen3-14b",
+        "hardware/rtx-3060-12gb"
+      ],
+      "backlinks": [
+        "models/qwen3-4b",
+        "models/qwen2-5-coder-7b",
         "hardware/rtx-4060-ti-16"
       ]
     }
