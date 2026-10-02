@@ -226,6 +226,10 @@ function renderArticle(row) {
   <link rel="stylesheet" href="https://localllmfinder.com/dist/palette.css?v=20260929f">
   <link rel="stylesheet" href="../../docs.css">
   <style>
+    .article-test-invite { margin-top: 24px; padding: 24px 0; border-top: 1px solid var(--line); }
+    .article-test-invite h2 { margin: 0 0 8px; font-size: 1.12rem; font-weight: 620; }
+    .article-test-invite p { margin: 0 0 14px; color: var(--muted); font-size: 1rem; }
+    .article-test-invite a { color: var(--accent); border-radius: 0 !important; }
     .article-body{padding-top:8px}
     .article-body h2{margin:30px 0 9px;font-size:1.12rem;line-height:1.3;letter-spacing:-.015em;font-weight:620}
     .article-body h3{margin:23px 0 7px;font-size:.98rem;line-height:1.35;font-weight:610}
@@ -314,7 +318,17 @@ async function main() {
   for (const directory of OWNED_DIRECTORIES) await rm(join(SITE_ROOT, directory), { recursive: true, force: true });
   for (const row of available) {
     const { relative } = articlePath(row);
-    await writeRelative(relative, enhanceArticle(renderArticle(row), row, references));
+    let html = enhanceArticle(renderArticle(row), row, references);
+    // Sandbox invitations are added by its existing transform; keep one per live article.
+    const article = references.articles.find(a => a.key + '/index.html' === relative);
+    if (BUILD_MODE === 'production' && ['Model', 'Hardware'].includes(article.type) && article.entityIds?.length) {
+      const p = new URLSearchParams({[article.type === 'Model' ? 'model' : 'hardware']: article.entityIds[0], from: article.key});
+      const heading = article.type === 'Model' ? 'Have you tried this LLM?' : 'Have you run a model on this GPU?';
+      const description = article.type === 'Model' ? `Share how ${article.title} ran on your hardware.` : `Share a model you tried on ${article.title}.`;
+      const invite = `<aside class="article-test-invite" aria-label="Share your experience"><h2>${heading}</h2><p>${esc(description)} A quick report is enough.</p><a class="doc-button secondary" href="https://localllmfinder.com/tests/?${esc(p)}">Share a test</a></aside>`;
+      html = html.replace('</article>', invite + '</article>');
+    }
+    await writeRelative(relative, html);
   }
 
   await writeRelative('sitemap.xml', sitemapXml(published));

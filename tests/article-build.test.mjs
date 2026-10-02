@@ -8,7 +8,7 @@ const root=fileURLToPath(new URL('../',import.meta.url));
 const temporary=await mkdtemp(path.join(root,'.article-build-test-'));
 const output=path.join(temporary,'site'), csv=path.join(temporary,'articles.csv');
 const headers=['Enabled','Type','Slug','Title','Summary','Body Markdown','Meta Title','Meta Description','Author','Date Published','Date Modified','Status','Canonical URL','Source URLs','Entity IDs','Related Articles'];
-const article=(Type,Slug,Status='Published',extra={})=>({Enabled:'TRUE',Type,Slug,Title:Slug,Summary:'Article summary','Body Markdown':'## Memory\n\nUseful article body.','Meta Title':Slug,'Meta Description':'Article description',Author:'Local LLM Finder','Date Published':'2026-10-01','Date Modified':'2026-10-01',Status,'Canonical URL':`https://knowledge.localllmfinder.com/${{Model:'models',Guide:'guides'}[Type]}/${Slug}/`,'Source URLs':'https://huggingface.co/Qwen/Qwen3-8B',...extra});
+const article=(Type,Slug,Status='Published',extra={})=>({Enabled:'TRUE',Type,Slug,Title:Slug,Summary:'Article summary','Body Markdown':'## Memory\n\nUseful article body.','Meta Title':Slug,'Meta Description':'Article description',Author:'Local LLM Finder','Date Published':'2026-10-01','Date Modified':'2026-10-01',Status,'Canonical URL':`https://knowledge.localllmfinder.com/${{Model:'models',Hardware:'hardware',Guide:'guides'}[Type]}/${Slug}/`,'Source URLs':'https://huggingface.co/Qwen/Qwen3-8B',...extra});
 const model=article('Model','example','Published',{'Entity IDs':'model-7','Related Articles':'guides/quant, guides/draft','Body Markdown':'## Memory\n\n[Compare hardware](https://localllmfinder.com/#d=gpu&g=rtx-3060&v=12) [[guides/quant|Quantization]] [[guides/draft|Draft guide]]'});
 const draft=article('Guide','draft','Draft',{'Date Published':'','Body Markdown':'## Memory\n\n[Catalogue row](https://docs.google.com/spreadsheets/d/example/edit#gid=1&range=A1)','Source URLs':'https://docs.google.com/spreadsheets/d/example/edit#gid=1'});
 const rows=[model,article('Guide','quant'),draft,article('Guide','held','Hold'),article('Guide','disabled','Draft',{Enabled:'FALSE'})];
@@ -72,5 +72,24 @@ try {
   run=spawnSync(process.execPath,[path.join(root,'scripts/build-articles.mjs')],{env,encoding:'utf8'});
   assert.equal(run.status,0,run.stderr);
   assert.equal(JSON.parse(await readFile(path.join(output,'references.json'),'utf8')).articles.length,2,'Unset build mode must default to published-only production');
+  run=await build([model,article('Hardware','example-gpu','Published',{'Entity IDs':'rtx-3060'}),article('Guide','quant')],'production');
+  assert.equal(run.status,0,run.stderr);
+  for(const [key,id,parameter,heading] of [
+    ['models/example','model-7','model','Have you tried this LLM?'],
+    ['hardware/example-gpu','rtx-3060','hardware','Have you run a model on this GPU?']
+  ]){
+    const page=await readFile(path.join(output,key,'index.html'),'utf8');
+    assert.equal((page.match(/class="article-test-invite"/g)||[]).length,1,'Exactly one contextual invitation');
+    assert.ok(page.includes(heading));
+    const href=page.match(/class="doc-button secondary" href="(https:\/\/localllmfinder.com\/tests\/\?[^"]+)"/)[1].replaceAll('&amp;','&');
+    const url=new URL(href);
+    assert.equal(url.searchParams.get(parameter),id);
+    assert.equal(url.searchParams.get('from'),key);
+    assert.ok(!page.includes('/review')&&!page.includes('docs.google.com/spreadsheets'));
+    assert.ok(page.includes('border-radius: 0 !important'));
+  }
+  assert.ok(!(await readFile(path.join(output,'guides/quant/index.html'),'utf8')).includes('class="article-test-invite"'));
+  run=await build([model],'sandbox');assert.equal(run.status,0,run.stderr);
+  assert.ok(!(await readFile(path.join(output,'models/example/index.html'),'utf8')).includes('class="article-test-invite"'),'Sandbox transform retains ownership of its invitations');
   console.log('Article build passed: published-only production, sandbox-only drafts, status promotion, held/disabled exclusion, no visitor editor links, Finder links and transactional validation.');
 } finally {await rm(temporary,{recursive:true,force:true});}
