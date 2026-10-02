@@ -29,7 +29,9 @@
         "models/gpt-oss-20b",
         "hardware/rtx-3060-12gb",
         "guides/q4-vs-q5",
-        "guides/context-length"
+        "guides/context-length",
+        "models/qwen3-4b",
+        "models/qwen3-14b"
       ]
     },
     {
@@ -58,7 +60,8 @@
         "models/qwen3-8b",
         "hardware/rtx-3060-12gb",
         "guides/q4-vs-q5",
-        "guides/context-length"
+        "guides/context-length",
+        "models/qwen2-5-coder-7b"
       ]
     },
     {
@@ -122,7 +125,8 @@
         "models/qwen2-5-coder-14b",
         "models/gpt-oss-20b",
         "guides/q4-vs-q5",
-        "guides/context-length"
+        "guides/context-length",
+        "hardware/rtx-4060"
       ]
     },
     {
@@ -154,7 +158,10 @@
         "models/qwen2-5-coder-14b",
         "models/gpt-oss-20b",
         "hardware/rtx-3060-12gb",
-        "guides/context-length"
+        "guides/context-length",
+        "models/qwen3-4b",
+        "models/qwen2-5-coder-7b",
+        "hardware/rtx-4060-ti-16"
       ]
     },
     {
@@ -186,7 +193,178 @@
         "models/qwen2-5-coder-14b",
         "models/gpt-oss-20b",
         "hardware/rtx-3060-12gb",
+        "guides/q4-vs-q5",
+        "models/qwen3-14b",
+        "hardware/rtx-4060-ti-16",
+        "hardware/rtx-4090"
+      ]
+    },
+    {
+      "key": "models/qwen3-4b",
+      "type": "Model",
+      "slug": "qwen3-4b",
+      "title": "Qwen3 4B",
+      "summary": "Official GGUF sizes, thinking-mode settings and a practical memory check for an 8 GB GPU.",
+      "url": "https://knowledge.localllmfinder.com/models/qwen3-4b/",
+      "status": "Published",
+      "entityIds": [
+        "model-6"
+      ],
+      "modified": "2026-10-02",
+      "related": [
+        "hardware/rtx-4060",
+        "models/qwen3-8b",
         "guides/q4-vs-q5"
+      ],
+      "outgoing": [
+        "hardware/rtx-4060",
+        "models/qwen3-8b",
+        "guides/q4-vs-q5"
+      ],
+      "backlinks": [
+        "hardware/rtx-4060"
+      ]
+    },
+    {
+      "key": "models/qwen3-14b",
+      "type": "Model",
+      "slug": "qwen3-14b",
+      "title": "Qwen3 14B",
+      "summary": "Choose between 9 GB Q4 and 10.5 GB Q5 files, then budget separately for the conversation cache.",
+      "url": "https://knowledge.localllmfinder.com/models/qwen3-14b/",
+      "status": "Published",
+      "entityIds": [
+        "model-8"
+      ],
+      "modified": "2026-10-02",
+      "related": [
+        "hardware/rtx-4060-ti-16",
+        "hardware/rtx-4090",
+        "models/qwen3-8b"
+      ],
+      "outgoing": [
+        "hardware/rtx-4060-ti-16",
+        "hardware/rtx-4090",
+        "models/qwen3-8b",
+        "guides/context-length"
+      ],
+      "backlinks": [
+        "hardware/rtx-4060",
+        "hardware/rtx-4060-ti-16",
+        "hardware/rtx-4090"
+      ]
+    },
+    {
+      "key": "models/qwen2-5-coder-7b",
+      "type": "Model",
+      "slug": "qwen2-5-coder-7b",
+      "title": "Qwen2.5-Coder 7B",
+      "summary": "A compact coding checkpoint: check the 4.68 GB Q4 file, complete downloads and practical context settings.",
+      "url": "https://knowledge.localllmfinder.com/models/qwen2-5-coder-7b/",
+      "status": "Published",
+      "entityIds": [
+        "model-10"
+      ],
+      "modified": "2026-10-02",
+      "related": [
+        "hardware/rtx-4060",
+        "models/qwen2-5-coder-14b",
+        "guides/q4-vs-q5"
+      ],
+      "outgoing": [
+        "hardware/rtx-4060",
+        "models/qwen2-5-coder-14b",
+        "guides/q4-vs-q5"
+      ],
+      "backlinks": [
+        "hardware/rtx-4060"
+      ]
+    },
+    {
+      "key": "hardware/rtx-4060",
+      "type": "Hardware",
+      "slug": "rtx-4060",
+      "title": "RTX 4060 8 GB",
+      "summary": "Use the 8 GB memory budget with compact models, short starting contexts and a check of GPU offload.",
+      "url": "https://knowledge.localllmfinder.com/hardware/rtx-4060/",
+      "status": "Published",
+      "entityIds": [
+        "rtx-4060"
+      ],
+      "modified": "2026-10-02",
+      "related": [
+        "models/qwen3-4b",
+        "models/qwen2-5-coder-7b",
+        "hardware/rtx-4060-ti-16"
+      ],
+      "outgoing": [
+        "models/qwen3-4b",
+        "models/qwen2-5-coder-7b",
+        "hardware/rtx-4060-ti-16",
+        "models/qwen3-14b",
+        "hardware/rtx-3060-12gb"
+      ],
+      "backlinks": [
+        "models/qwen3-4b",
+        "models/qwen2-5-coder-7b",
+        "hardware/rtx-4060-ti-16"
+      ]
+    },
+    {
+      "key": "hardware/rtx-4060-ti-16",
+      "type": "Hardware",
+      "slug": "rtx-4060-ti-16",
+      "title": "RTX 4060 Ti 16 GB",
+      "summary": "A 16 GB memory budget for 14B models, with clear tradeoffs between quantization and context.",
+      "url": "https://knowledge.localllmfinder.com/hardware/rtx-4060-ti-16/",
+      "status": "Published",
+      "entityIds": [
+        "rtx-4060-ti-16"
+      ],
+      "modified": "2026-10-02",
+      "related": [
+        "models/qwen3-14b",
+        "guides/context-length",
+        "hardware/rtx-4090"
+      ],
+      "outgoing": [
+        "models/qwen3-14b",
+        "guides/context-length",
+        "hardware/rtx-4090",
+        "guides/q4-vs-q5",
+        "hardware/rtx-4060"
+      ],
+      "backlinks": [
+        "models/qwen3-14b",
+        "hardware/rtx-4060",
+        "hardware/rtx-4090"
+      ]
+    },
+    {
+      "key": "hardware/rtx-4090",
+      "type": "Hardware",
+      "slug": "rtx-4090",
+      "title": "RTX 4090 24 GB",
+      "summary": "Understand the desktop card's 24 GB budget and why even smaller models need care at long context.",
+      "url": "https://knowledge.localllmfinder.com/hardware/rtx-4090/",
+      "status": "Published",
+      "entityIds": [
+        "rtx-4090"
+      ],
+      "modified": "2026-10-02",
+      "related": [
+        "models/qwen3-14b",
+        "hardware/rtx-4060-ti-16",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "models/qwen3-14b",
+        "hardware/rtx-4060-ti-16",
+        "guides/context-length"
+      ],
+      "backlinks": [
+        "models/qwen3-14b",
+        "hardware/rtx-4060-ti-16"
       ]
     }
   ]

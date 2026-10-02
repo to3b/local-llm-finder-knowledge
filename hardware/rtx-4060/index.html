@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#151719">
+  <meta name="robots" content="index,follow">
+  <meta name="description" content="Plan local LLMs on the RTX 4060 8 GB using official GPU specs, Qwen GGUF examples, context budgets and practical GPU-offload checks.">
+  <link rel="canonical" href="https://knowledge.localllmfinder.com/hardware/rtx-4060/">
+  <title>RTX 4060 Local LLMs: 8 GB VRAM | Local LLM Finder</title>
+  <meta property="og:type" content="article"><meta property="og:site_name" content="Local LLM Finder">
+  <meta property="og:title" content="RTX 4060 Local LLMs: 8 GB VRAM | Local LLM Finder"><meta property="og:description" content="Plan local LLMs on the RTX 4060 8 GB using official GPU specs, Qwen GGUF examples, context budgets and practical GPU-offload checks."><meta property="og:url" content="https://knowledge.localllmfinder.com/hardware/rtx-4060/">
+  <meta name="twitter:card" content="summary"><meta name="twitter:title" content="RTX 4060 Local LLMs: 8 GB VRAM | Local LLM Finder"><meta name="twitter:description" content="Plan local LLMs on the RTX 4060 8 GB using official GPU specs, Qwen GGUF examples, context budgets and practical GPU-offload checks.">
+  <meta property="article:published_time" content="2026-10-02"><meta property="article:modified_time" content="2026-10-02">
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="https://localllmfinder.com/dist/styles.css?v=20260929d">
+  <link rel="stylesheet" href="https://localllmfinder.com/dist/docs.css?v=20260929b">
+  <link rel="stylesheet" href="https://localllmfinder.com/dist/palette.css?v=20260929f">
+  <link rel="stylesheet" href="../../docs.css">
+  <style>
+    .article-test-invite { margin-top: 24px; padding: 24px 0; border-top: 1px solid var(--line); }
+    .article-test-invite h2 { margin: 0 0 8px; font-size: 1.12rem; font-weight: 620; }
+    .article-test-invite p { margin: 0 0 14px; color: var(--muted); font-size: 1rem; }
+    .article-test-invite a { color: var(--accent); border-radius: 0 !important; }
+    .article-body{padding-top:8px}
+    .article-body h2{margin:30px 0 9px;font-size:1.12rem;line-height:1.3;letter-spacing:-.015em;font-weight:620}
+    .article-body h3{margin:23px 0 7px;font-size:.98rem;line-height:1.35;font-weight:610}
+    .article-body p,.article-body li{max-width:735px;color:#c0c0bc;font-size:.88rem;line-height:1.68}
+    .article-body p{margin:0}.article-body p+p{margin-top:11px}.article-body ul{margin:9px 0 0;padding-left:21px}
+    .article-body a,.article-sources a{color:#dddcd7;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+    .article-body code{padding:2px 5px;border:1px solid var(--line);border-radius:4px;background:var(--surface);color:#dddcd7;font-size:.82em}
+  </style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","@id":"https://knowledge.localllmfinder.com/hardware/rtx-4060/#article","url":"https://knowledge.localllmfinder.com/hardware/rtx-4060/","headline":"RTX 4060 8 GB","description":"Plan local LLMs on the RTX 4060 8 GB using official GPU specs, Qwen GGUF examples, context budgets and practical GPU-offload checks.","datePublished":"2026-10-02","dateModified":"2026-10-02","author":{"@type":"Organization","name":"Local LLM Finder","@id":"https://localllmfinder.com/#organization","url":"https://localllmfinder.com/dist/methodology.html#editorial-process"},"publisher":{"@type":"Organization","@id":"https://localllmfinder.com/#organization","name":"Local LLM Finder","url":"https://localllmfinder.com/"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://knowledge.localllmfinder.com/hardware/rtx-4060/"},"isPartOf":{"@type":"WebSite","@id":"https://knowledge.localllmfinder.com/#website","url":"https://knowledge.localllmfinder.com/","name":"Local LLM Finder Knowledge"},"inLanguage":"en"}</script>
+<link rel="stylesheet" href="../../sandbox-refine.css?v=cleanup-2"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Knowledge","item":"https://knowledge.localllmfinder.com/"},{"@type":"ListItem","position":2,"name":"RTX 4060 8 GB","item":"https://knowledge.localllmfinder.com/hardware/rtx-4060/"}]}</script><link rel="stylesheet" href="../../wiki.css?v=2"></head>
+<body>
+  <main class="docs-shell">
+    <header class="site-topbar">
+      <a class="site-brand" href="https://localllmfinder.com/">Local LLM Finder</a>
+      <nav class="site-nav" aria-label="Site">
+        <a href="https://localllmfinder.com/">Finder</a>
+        <a class="knowledge-nav" href="../../">Knowledge</a>
+        <a href="https://localllmfinder.com/dist/methodology.html">Methodology</a>
+      </nav>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="../../">Knowledge</a><span> / </span><a href="../../#hardware">Hardware references</a><span> / RTX 4060 8 GB</span></nav><article>
+      <header class="doc-hero">
+        <p class="eyebrow">Hardware reference</p>
+        <h1>RTX 4060 8 GB</h1>
+        <p class="doc-lede">Use the 8 GB memory budget with compact models, short starting contexts and a check of GPU offload.</p>
+        <div class="doc-meta"><span class="doc-chip">Published</span><span><a href="https://localllmfinder.com/dist/methodology.html#editorial-process">Local LLM Finder</a></span><span>Updated <time datetime="2026-10-02">2026-10-02</time></span></div>
+        
+      </header>
+      <nav class="article-contents" aria-label="On this page"><strong>On this page</strong><ul><li><a href="#section-1">Start with a model that leaves room</a></li><li><a href="#section-2">Three useful memory checks</a></li><li><a href="#section-3">Set up a repeatable run</a></li><li><a href="#section-4">Compare capacity before upgrading</a></li><li><a href="#section-5">Sources</a></li></ul></nav><div class="doc-body article-body"><h2 id="section-1">Start with a model that leaves room</h2>
+<p>The desktop <strong>RTX 4060 has 8 GB of GDDR6</strong>. For local LLMs, begin with a compact GGUF model and 4,096 context, then check available VRAM while it runs.</p>
+<p><a href="https://www.nvidia.com/en-us/geforce/graphics-cards/40-series/rtx-4060-4060ti/">NVIDIA&#39;s specifications</a> list 3,072 CUDA cores, a 128-bit memory interface and 115 W total graphics power. That power rating is not a measurement of LLM power consumption.</p>
+<h2 id="section-2">Three useful memory checks</h2>
+<p>These examples use official download sizes. They are planning comparisons, not RTX 4060 benchmarks:</p>
+<ul>
+<li><strong><a href="https://knowledge.localllmfinder.com/models/qwen3-4b/">Qwen3 4B Q4_K_M</a>:</strong> about 2.50 GB of weights. A calculated FP16 cache adds about 0.60 GB at 4K. This leaves a useful margin for buffers and other GPU use.</li>
+<li><strong><a href="https://knowledge.localllmfinder.com/models/qwen2-5-coder-7b/">Qwen2.5-Coder 7B Q4_K_M</a>:</strong> about 4.68 GB of weights, plus roughly 0.23 GB of FP16 cache at 4K. Check full GPU offload in the app.</li>
+<li><strong><a href="https://knowledge.localllmfinder.com/models/qwen3-14b/">Qwen3 14B Q4_K_M</a>:</strong> the 9.00 GB download alone exceeds this card&#39;s nominal 8 GB capacity. Plan for CPU offload or a smaller model.</li>
+</ul>
+<p>The model pages link the files and cache calculations. Download sizes use decimal GB; monitoring tools may use GiB. Buffers, multiple conversations and your display also use memory.</p>
+<h2 id="section-3">Set up a repeatable run</h2>
+<p>Use an app with a working NVIDIA GPU backend. Load one model at 4K context, confirm GPU offload, then run the same prompt in a fresh chat when changing a setting. Keep the checkpoint, quantization and thinking mode consistent.</p>
+<p>If loading fails, close other GPU workloads and lower context first. Partial CPU offload can make a larger model usable, but the result depends on system RAM, CPU and the transfer path. A successful load does not establish an acceptable response speed.</p>
+<h2 id="section-4">Compare capacity before upgrading</h2>
+<p>The <a href="https://knowledge.localllmfinder.com/hardware/rtx-3060-12gb/">RTX 3060 12 GB</a> has a larger memory budget despite its earlier generation. The <a href="https://knowledge.localllmfinder.com/hardware/rtx-4060-ti-16/">RTX 4060 Ti 16 GB</a> offers twice this card&#39;s nominal VRAM. Compare your exact model, context and local prices before choosing a card; gaming frame rates do not measure LLM throughput.</p></div>
+    <section class="doc-section article-sources">
+      <h2 id="section-5">Sources</h2>
+      <ul><li><a href="https://www.nvidia.com/en-us/geforce/graphics-cards/40-series/rtx-4060-4060ti/" rel="noopener">https://www.nvidia.com/en-us/geforce/graphics-cards/40-series/rtx-4060-4060ti/</a></li><li><a href="https://huggingface.co/Qwen/Qwen3-4B-GGUF/tree/main" rel="noopener">https://huggingface.co/Qwen/Qwen3-4B-GGUF/tree/main</a></li><li><a href="https://huggingface.co/Qwen/Qwen2.5-Coder-7B-Instruct-GGUF/tree/main" rel="noopener">https://huggingface.co/Qwen/Qwen2.5-Coder-7B-Instruct-GGUF/tree/main</a></li><li><a href="https://huggingface.co/Qwen/Qwen3-14B-GGUF/tree/main" rel="noopener">https://huggingface.co/Qwen/Qwen3-14B-GGUF/tree/main</a></li></ul>
+    </section>
+      <section class="doc-section"><h2>Related references</h2><ul><li><a href="https://knowledge.localllmfinder.com/models/qwen3-4b/">Qwen3 4B</a></li><li><a href="https://knowledge.localllmfinder.com/models/qwen2-5-coder-7b/">Qwen2.5-Coder 7B</a></li><li><a href="https://knowledge.localllmfinder.com/hardware/rtx-4060-ti-16/">RTX 4060 Ti 16 GB</a></li><li><a href="https://knowledge.localllmfinder.com/models/qwen3-14b/">Qwen3 14B</a></li><li><a href="https://knowledge.localllmfinder.com/hardware/rtx-3060-12gb/">RTX 3060 12 GB</a></li></ul></section><section class="doc-section"><h2>Referenced by</h2><ul><li><a href="https://knowledge.localllmfinder.com/models/qwen3-4b/">Qwen3 4B</a></li><li><a href="https://knowledge.localllmfinder.com/models/qwen2-5-coder-7b/">Qwen2.5-Coder 7B</a></li><li><a href="https://knowledge.localllmfinder.com/hardware/rtx-4060-ti-16/">RTX 4060 Ti 16 GB</a></li></ul></section><div class="doc-actions"><a class="doc-button primary" href="https://localllmfinder.com/">Use the Finder</a><a class="doc-button secondary" href="../../">Back to Knowledge</a></div>
+    <aside class="article-test-invite" aria-label="Share your experience"><h2>Have you run a model on this GPU?</h2><p>Share a model you tried on RTX 4060 8 GB. A quick report is enough.</p><a class="doc-button secondary" href="https://localllmfinder.com/tests/?hardware=rtx-4060&amp;from=hardware%2Frtx-4060">Share a test</a></aside></article>
+
+    <footer class="doc-footer"><span>Local LLM Finder</span><nav aria-label="Footer"><a href="https://localllmfinder.com/">Finder</a><a href="../../">Knowledge</a><a href="https://localllmfinder.com/dist/privacy.html">Privacy</a><a href="https://localllmfinder.com/dist/terms.html">Terms</a></nav></footer>
+  </main>
+</body>
+</html>
