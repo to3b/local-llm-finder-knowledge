@@ -1,9 +1,12 @@
 const origin = 'https://knowledge.localllmfinder.com';
+// Bump only when the shared page content, links or metadata materially change.
+const templateModified = '2026-10-02';
+export const modifiedDate = value => [templateModified, String(value || '').trim()].sort().at(-1);
 const dirs = {Model:'models', Hardware:'hardware', Guide:'guides'};
 export const escape = v => String(v ?? '').replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#39;');
 const list = v => String(v || '').split(/[,\n]+/).map(x=>x.trim()).filter(Boolean);
 export function registry(rows) {
-  const articles = rows.map(r=>({key:`${dirs[r.Type]}/${r.Slug}`,type:r.Type,slug:r.Slug,title:r.Title,summary:r.Summary,url:r['Canonical URL'],status:/^draft$/i.test(String(r.Status).trim())?'Draft':'Published',entityIds:list(r['Entity IDs']),modified:r['Date Modified'],related:list(r['Related Articles']),body:r['Body Markdown']}));
+  const articles = rows.map(r=>({key:`${dirs[r.Type]}/${r.Slug}`,type:r.Type,slug:r.Slug,title:r.Title,summary:r.Summary,url:r['Canonical URL'],status:/^draft$/i.test(String(r.Status).trim())?'Draft':'Published',entityIds:list(r['Entity IDs']),modified:modifiedDate(r['Date Modified']),related:list(r['Related Articles']),body:r['Body Markdown']}));
   const keys = new Set(), ids = new Set();
   for(const a of articles) {
     if(!dirs[a.type] || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(a.slug) || a.url !== `${origin}/${a.key}/` || keys.has(a.key)) throw Error(`Invalid/duplicate reference: ${a.key}`);
@@ -32,13 +35,22 @@ export function enhanceArticle(html, row, data) {
   html=html.replace('<article>',`<nav class="breadcrumbs" aria-label="Breadcrumb"><a href="../../">Knowledge</a><span> / </span><a href="../../#${dirs[row.Type]}">${escape(row.Type)} references</a><span> / ${escape(row.Title)}</span></nav><article>`).replace('<div class="doc-body article-body">',`${nav}<div class="doc-body article-body">`);
   const connections=(related.length?`<section class="doc-section"><h2>Related references</h2>${links(related)}</section>`:'')+(current.backlinks.length?`<section class="doc-section"><h2>Referenced by</h2>${links(current.backlinks)}</section>`:'');
   html=html.replace('<div class="doc-actions">',`${connections}<div class="doc-actions">`).replaceAll('href="/"','href="../../"');
-  return html.replace('</head>','<link rel="stylesheet" href="../../wiki.css?v=2"></head>');
+  const breadcrumb = current.status === 'Published' ? `<script type="application/ld+json">${JSON.stringify({'@context':'https://schema.org','@type':'BreadcrumbList',itemListElement:[{'@type':'ListItem',position:1,name:'Knowledge',item:`${origin}/`},{'@type':'ListItem',position:2,name:current.title,item:current.url}]}).replaceAll('<','\\u003c')}</script>` : '';
+  return html.replace('</head>',`${breadcrumb}<link rel="stylesheet" href="../../wiki.css?v=2"></head>`);
 }
 export function renderIndex(data, {includeDrafts = data.articles.some(a=>a.status==='Draft')} = {}) {
-  const published=data.articles.filter(a=>a.status!=='Draft').length;
-  const drafts=data.articles.length-published;
+  const available=includeDrafts ? data.articles : data.articles.filter(a=>a.status!=='Draft');
+  const publicArticles=available.filter(a=>a.status!=='Draft');
+  const published=publicArticles.length;
+  const drafts=available.length-published;
+  const title='Local LLM Guides & VRAM Requirements | Local LLM Finder';
+  const description='Model memory requirements, GPU guides, GGUF quantization and context length explained. Check sources and compare your hardware in Local LLM Finder.';
+  const structured=JSON.stringify({'@context':'https://schema.org','@graph':[
+    {'@type':'WebSite','@id':`${origin}/#website`,url:`${origin}/`,name:'Local LLM Finder Knowledge',publisher:{'@id':'https://localllmfinder.com/#organization'}},
+    {'@type':'CollectionPage','@id':`${origin}/#webpage`,url:`${origin}/`,name:title,description,isPartOf:{'@id':`${origin}/#website`},mainEntity:{'@type':'ItemList',itemListElement:publicArticles.map((a,i)=>({'@type':'ListItem',position:i+1,name:a.title,url:a.url}))}}
+  ]}).replaceAll('<','\\u003c');
   const groups=Object.entries(dirs).map(([type,dir])=>{
-    const articles=data.articles.filter(a=>a.type===type);
+    const articles=available.filter(a=>a.type===type);
     const items=articles.map(a=>`<li data-reference-status="${a.status||'Published'}" data-reference-search="${escape(`${a.title} ${a.summary} ${a.type}`.toLowerCase())}"><a href="${escape(a.url)}">${escape(a.title)}</a>${a.status==='Draft'?'<span class="reference-draft">Draft</span>':''}<p>${escape(a.summary)}</p></li>`).join('');
     return `<section class="doc-section reference-group" id="${dir}"><h2>${type} references <span class="reference-count">(${articles.length})</span></h2>${items?`<ul class="reference-list">${items}</ul>`:'<p>No references yet.</p>'}</section>`;
   }).join('');
@@ -46,8 +58,12 @@ export function renderIndex(data, {includeDrafts = data.articles.some(a=>a.statu
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="${published?'index':'noindex'},follow">
-<meta name="description" content="Model requirements, hardware and practical guides for Local LLM Finder.">
-<link rel="canonical" href="${origin}/"><title>Knowledge — Local LLM Finder</title>
+<meta name="description" content="${escape(description)}">
+<link rel="canonical" href="${origin}/"><title>${escape(title)}</title>
+<meta property="og:type" content="website"><meta property="og:site_name" content="Local LLM Finder">
+<meta property="og:title" content="${escape(title)}"><meta property="og:description" content="${escape(description)}"><meta property="og:url" content="${origin}/">
+<meta name="twitter:card" content="summary"><meta name="twitter:title" content="${escape(title)}"><meta name="twitter:description" content="${escape(description)}">
+${published ? `<script type="application/ld+json">${structured}</script>` : ''}
 <link rel="icon" href="./favicon.svg">
 <link rel="stylesheet" href="https://localllmfinder.com/dist/styles.css?v=20260929d">
 <link rel="stylesheet" href="./docs.css"><link rel="stylesheet" href="./wiki.css?v=2">
@@ -58,7 +74,7 @@ export function renderIndex(data, {includeDrafts = data.articles.some(a=>a.statu
 <div class="reference-search"><div class="reference-controls">
 <div><label for="reference-search">Find a reference</label><input id="reference-search" type="search" placeholder="Search models, hardware or guides" aria-describedby="reference-search-status"></div>
 ${includeDrafts ? '<div><label for="reference-status">Show</label><select id="reference-status"><option value="all">All references</option><option value="Published">Published</option><option value="Draft">Drafts</option></select></div>' : ''}
-</div><p id="reference-search-status" role="status" aria-live="polite">${data.articles.length} references</p></div>
+</div><p id="reference-search-status" role="status" aria-live="polite">${available.length} references</p></div>
 <nav class="reference-types" aria-label="Reference categories"><a href="#models">Models</a><a href="#hardware">Hardware</a><a href="#guides">Guides</a></nav>
 ${groups}
 <footer class="doc-footer"><span>Local LLM Finder</span><nav aria-label="Footer"><a href="https://localllmfinder.com/">Finder</a><a href="https://localllmfinder.com/dist/privacy.html">Privacy</a><a href="https://localllmfinder.com/dist/terms.html">Terms</a></nav></footer>

@@ -38,10 +38,20 @@ try {
   assert.ok(!draftHtml.includes('application/ld+json'),'Drafts must not claim published Article metadata');
   assert.ok(html.includes('<meta name="robots" content="index,follow">'));
   assert.ok(html.includes('application/ld+json'));
+  const schemas=[...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map(m=>JSON.parse(m[1]));
+  const publishedSchema=schemas.find(s=>s['@type']==='Article');
+  assert.equal(publishedSchema.url,model['Canonical URL']);
+  assert.equal(publishedSchema.datePublished,model['Date Published']);
+  assert.equal(publishedSchema.dateModified,'2026-10-02','Shared template updates use a fixed real update date, not a daily clock');
+  assert.equal(publishedSchema.author.url,'https://localllmfinder.com/dist/methodology.html#editorial-process');
+  const breadcrumb=schemas.find(s=>s['@type']==='BreadcrumbList');
+  assert.deepEqual(breadcrumb.itemListElement.map(i=>i.position),[1,2]);
+  assert.equal(breadcrumb.itemListElement[1].item,model['Canonical URL']);
+  assert.ok(html.includes('property="og:url" content="'+model['Canonical URL']+'"'));
   assert.ok(!(await readFile(path.join(output,'sitemap.xml'),'utf8')).includes('/guides/draft/'));
   await assert.rejects(access(path.join(output,'guides/held/index.html')));
   await assert.rejects(access(path.join(output,'guides/disabled/index.html')));
-  for(const invalid of [article('Guide','invalid','Published',{'Body Markdown':''}),article('Model','duplicate','Draft',{'Entity IDs':'model-7'}),article('Guide','invalid-draft','Draft',{'Body Markdown':''})]){
+  for(const invalid of [article('Guide','invalid','Published',{'Body Markdown':''}),article('Model','duplicate','Draft',{'Entity IDs':'model-7'}),article('Guide','invalid-draft','Draft',{'Body Markdown':''}),article('Guide','invalid-date','Published',{'Date Modified':'2026-02-30'}),article('Guide','reversed-dates','Published',{'Date Modified':'2026-09-30'}),article('Guide','unsourced','Published',{'Source URLs':''}),article('Guide','internal-source','Published',{'Source URLs':'https://docs.google.com/spreadsheets/d/example/edit'})]){
     run=await build([...rows,invalid]);
     assert.notEqual(run.status,0,'Invalid publication must fail');
     assert.equal(await readFile(path.join(output,'models/example/index.html'),'utf8'),html,'Failed validation must preserve existing article pages');
@@ -65,6 +75,9 @@ try {
   await assert.rejects(access(path.join(output,'guides/draft-only/index.html')));
   const publicIndex=await readFile(path.join(output,'index.html'),'utf8');
   assert.ok(!publicIndex.includes('Drafts')&&!publicIndex.includes('id="reference-status"'));
+  const collection=JSON.parse(publicIndex.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1])['@graph'].find(s=>s['@type']==='CollectionPage');
+  assert.equal(collection.mainEntity.itemListElement.length,2);
+  assert.ok(collection.mainEntity.itemListElement.every(i=>!i.url.endsWith('/guides/draft/')));
   const publicModel=await readFile(path.join(output,'models/example/index.html'),'utf8');
   assert.ok(!publicModel.includes('href="https://knowledge.localllmfinder.com/guides/draft/"'));
   run=await build(rows,'invalid');assert.notEqual(run.status,0);

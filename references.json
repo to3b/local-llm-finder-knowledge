@@ -12,7 +12,7 @@
       "entityIds": [
         "model-7"
       ],
-      "modified": "2026-10-01",
+      "modified": "2026-10-02",
       "related": [
         "guides/q4-vs-q5",
         "guides/context-length",
@@ -43,7 +43,7 @@
       "entityIds": [
         "model-11"
       ],
-      "modified": "2026-10-01",
+      "modified": "2026-10-02",
       "related": [
         "guides/q4-vs-q5",
         "guides/context-length",
@@ -72,7 +72,7 @@
       "entityIds": [
         "extra-gpt-oss-20b"
       ],
-      "modified": "2026-10-01",
+      "modified": "2026-10-02",
       "related": [
         "guides/context-length",
         "guides/q4-vs-q5",
@@ -102,7 +102,7 @@
       "entityIds": [
         "rtx-3060"
       ],
-      "modified": "2026-10-01",
+      "modified": "2026-10-02",
       "related": [
         "models/qwen3-8b",
         "models/qwen2-5-coder-14b",
@@ -134,7 +134,7 @@
       "url": "https://knowledge.localllmfinder.com/guides/q4-vs-q5/",
       "status": "Published",
       "entityIds": [],
-      "modified": "2026-10-01",
+      "modified": "2026-10-02",
       "related": [
         "guides/context-length",
         "models/qwen3-8b",
@@ -166,7 +166,7 @@
       "url": "https://knowledge.localllmfinder.com/guides/context-length/",
       "status": "Published",
       "entityIds": [],
-      "modified": "2026-10-01",
+      "modified": "2026-10-02",
       "related": [
         "guides/q4-vs-q5",
         "models/qwen3-8b",

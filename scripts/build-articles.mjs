@@ -2,7 +2,7 @@ import { mkdir, readFile, rm, writeFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import {registry, enhanceArticle, renderIndex} from './wiki.mjs';
+import {registry, enhanceArticle, renderIndex, modifiedDate} from './wiki.mjs';
 
 const SITE_ROOT = process.env.SITE_ROOT || fileURLToPath(new URL('../', import.meta.url));
 const BUILD_MODE = process.env.KNOWLEDGE_BUILD_MODE || 'production';
@@ -167,8 +167,12 @@ function validateArticle(row) {
   if (canonical !== expected) throw new Error(`Canonical URL for ${slug} must be ${expected}`);
   for (const field of ['Date Published', 'Date Modified']) {
     if (!published && field === 'Date Published' && !String(row[field] || '').trim()) continue;
-    if (!/^\d{4}-\d{2}-\d{2}$/.test(String(row[field]).trim())) throw new Error(`${field} for ${slug} must use YYYY-MM-DD.`);
+    const value = String(row[field]).trim();
+    const date = new Date(`${value}T00:00:00Z`);
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(value) || Number.isNaN(date.getTime()) || date.toISOString().slice(0,10) !== value) throw new Error(`${field} for ${slug} must be a real date in YYYY-MM-DD format.`);
   }
+  if (published && String(row['Date Modified']).trim() < String(row['Date Published']).trim()) throw new Error(`Date Modified for ${slug} must not precede Date Published.`);
+  if (published && !sourceList(row).some(url => !/^https?:\/\/docs\.google\.com\/spreadsheets\//.test(url))) throw new Error(`Published article ${slug} needs a public documentation source.`);
 }
 
 function sourceList(row) {
@@ -188,7 +192,7 @@ function renderArticle(row) {
   const metaDescription = String(row['Meta Description']).trim();
   const author = String(row.Author).trim();
   const published = String(row['Date Published']).trim();
-  const modified = String(row['Date Modified']).trim();
+  const modified = modifiedDate(row['Date Modified']);
   const isPublished = /^published$/i.test(String(row.Status).trim());
   const draftNotice = isPublished ? '' : `<aside class="draft-notice"><strong>Draft reference</strong><p>Catalogue details and planning guidance are awaiting source review.</p></aside>`;
   const sources = sourceList(row);
@@ -201,13 +205,17 @@ function renderArticle(row) {
   const structured = JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'Article',
+    '@id': `${canonical}#article`,
+    url: canonical,
     headline: title,
     description: metaDescription,
     datePublished: published,
     dateModified: modified,
-    author: { '@type': 'Organization', name: author },
-    publisher: { '@type': 'Organization', name: 'Local LLM Finder', url: 'https://localllmfinder.com/' },
-    mainEntityOfPage: canonical
+    author: { '@type': 'Organization', name: author, ...(author === 'Local LLM Finder' ? { '@id': 'https://localllmfinder.com/#organization', url: 'https://localllmfinder.com/dist/methodology.html#editorial-process' } : {}) },
+    publisher: { '@type': 'Organization', '@id': 'https://localllmfinder.com/#organization', name: 'Local LLM Finder', url: 'https://localllmfinder.com/' },
+    mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
+    isPartOf: { '@type': 'WebSite', '@id': `${SITE_ORIGIN}/#website`, url: `${SITE_ORIGIN}/`, name: 'Local LLM Finder Knowledge' },
+    inLanguage: 'en'
   }).replaceAll('<', '\\u003c');
 
   return `<!doctype html>
@@ -220,6 +228,10 @@ function renderArticle(row) {
   <meta name="description" content="${esc(metaDescription)}">
   <link rel="canonical" href="${esc(canonical)}">
   <title>${esc(metaTitle)}</title>
+  <meta property="og:type" content="article"><meta property="og:site_name" content="Local LLM Finder">
+  <meta property="og:title" content="${esc(metaTitle)}"><meta property="og:description" content="${esc(metaDescription)}"><meta property="og:url" content="${esc(canonical)}">
+  <meta name="twitter:card" content="summary"><meta name="twitter:title" content="${esc(metaTitle)}"><meta name="twitter:description" content="${esc(metaDescription)}">
+  ${isPublished ? `<meta property="article:published_time" content="${esc(published)}"><meta property="article:modified_time" content="${esc(modified)}">` : ''}
   <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="https://localllmfinder.com/dist/styles.css?v=20260929d">
   <link rel="stylesheet" href="https://localllmfinder.com/dist/docs.css?v=20260929b">
@@ -256,7 +268,7 @@ function renderArticle(row) {
         <p class="eyebrow">${esc(row.Type)} reference</p>
         <h1>${esc(title)}</h1>
         <p class="doc-lede">${esc(summary)}</p>
-        <div class="doc-meta"><span class="doc-chip">${isPublished ? 'Published' : 'Draft'}</span><span>Updated ${esc(modified)}</span></div>
+        <div class="doc-meta"><span class="doc-chip">${isPublished ? 'Published' : 'Draft'}</span><span>${author === 'Local LLM Finder' ? `<a href="https://localllmfinder.com/dist/methodology.html#editorial-process">${esc(author)}</a>` : esc(author)}</span><span>Updated <time datetime="${esc(modified)}">${esc(modified)}</time></span></div>
         ${draftNotice}
       </header>
       <div class="doc-body article-body">${body}</div>${sourcesHtml}
@@ -272,12 +284,12 @@ function renderArticle(row) {
 function sitemapXml(rows) {
   const urls = [];
   if (rows.length) {
-    const latest = rows.map(row => String(row['Date Modified'] || row['Date Published']).trim()).filter(Boolean).sort().at(-1);
+    const latest = rows.map(row => modifiedDate(row['Date Modified'] || row['Date Published'])).filter(Boolean).sort().at(-1);
     urls.push(`  <url><loc>${SITE_ORIGIN}/</loc>${latest ? `<lastmod>${esc(latest)}</lastmod>` : ''}</url>`);
   }
   for (const row of rows) {
     const canonical = safeUrl(row['Canonical URL']);
-    const modified = String(row['Date Modified'] || row['Date Published']).trim();
+    const modified = modifiedDate(row['Date Modified'] || row['Date Published']);
     urls.push(`  <url><loc>${esc(canonical)}</loc><lastmod>${esc(modified)}</lastmod></url>`);
   }
   return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.join('\n')}${urls.length ? '\n' : ''}</urlset>\n`;
