@@ -1,0 +1,55 @@
+// Additional well-known and niche open/local model profiles.
+// Capability scores and Q4/Q5/Q8 footprints remain prototype planning estimates.
+const rows = [
+['gpt-oss-20b','gpt-oss-20b',21,'GPT-OSS',13.5,64,0.09,[90,92,95,83,89],null,3.6],
+['gpt-oss-120b','gpt-oss-120b',117,'GPT-OSS',65,64,0.26,[97,97,99,91,95],null,5.1],
+['qwen3-30b-a3b','Qwen3 30B-A3B Instruct',30,'Qwen3 MoE',19.5,64,0.11,[92,92,94,85,89],null,3.3],
+['qwen3-235b-a22b-2507','Qwen3 235B-A22B Instruct 2507',235,'Qwen3 MoE',148,64,0.32,[98,97,99,92,97],null,22],
+['qwen3-coder-30b-a3b','Qwen3-Coder 30B-A3B Instruct',30,'Qwen3 Coder',19.5,64,0.11,[87,98,94,76,91],null,3.3],
+['qwen3-coder-480b-a35b','Qwen3-Coder 480B-A35B Instruct',480,'Qwen3 Coder',300,64,0.48,[94,100,98,83,96],null,35],
+['deepseek-r1-0528-qwen3-8b','DeepSeek-R1-0528-Qwen3-8B',8,'DeepSeek',5.9,64,0.058,[82,88,96,71,80],null,null],
+['deepseek-r1-0528','DeepSeek-R1-0528',671,'DeepSeek',405,64,0.6,[98,98,100,89,96],'MIT; check publisher terms',37],
+['deepseek-v3-0324','DeepSeek-V3-0324',671,'DeepSeek',405,64,0.6,[99,98,98,94,97],'Check publisher terms',37],
+['glm-4.5-air','GLM-4.5-Air',106,'GLM',67,64,0.25,[96,96,97,90,94],null,12],
+['glm-4.5','GLM-4.5',355,'GLM',220,64,0.42,[99,99,99,94,97],null,32],
+['minimax-m2','MiniMax-M2',230,'MiniMax',145,64,0.36,[97,99,97,89,96],'Modified MIT; check publisher terms',10],
+['llama4-scout','Llama 4 Scout 17B-16E Instruct',109,'Llama 4',69,64,0.24,[94,91,92,93,96],'Llama 4 Community License',17],
+['llama4-maverick','Llama 4 Maverick 17B-128E Instruct',400,'Llama 4',250,64,0.44,[98,96,96,97,98],'Llama 4 Community License',17],
+['mistral-small-3.1-24b','Mistral Small 3.1 24B Instruct',24,'Mistral',16,64,0.12,[91,87,88,90,90],null,null],
+['magistral-small-24b','Magistral Small 24B',24,'Mistral',16,64,0.12,[86,90,96,77,86],null,null],
+['mixtral-8x7b','Mixtral 8x7B Instruct v0.1',46.7,'Mixtral',29,32,0.15,[86,81,82,85,80],null,12.9],
+['mixtral-8x22b','Mixtral 8x22B Instruct v0.1',141,'Mixtral',88,64,0.3,[93,89,91,92,89],null,39],
+['deepseek-coder-v2-lite','DeepSeek-Coder-V2-Lite-Instruct',16,'DeepSeek Coder',10.2,64,0.08,[76,92,84,64,80],'Check publisher terms',2.4],
+['deepseek-coder-v2','DeepSeek-Coder-V2-Instruct',236,'DeepSeek Coder',148,64,0.34,[88,98,93,73,90],'Check publisher terms',21],
+['jamba-1.5-mini','Jamba 1.5 Mini',52,'Jamba',33,64,0.1,[88,83,84,86,94],'Apache 2.0 / check model card',12],
+['jamba-1.5-large','Jamba 1.5 Large',398,'Jamba',248,64,0.28,[96,91,93,95,98],'Apache 2.0 / check model card',94],
+['gemma-3n-e2b','Gemma 3n E2B IT',5,'Gemma 3n',3.5,32,0.035,[74,65,69,72,70],'Gemma terms',2],
+['gemma-3n-e4b','Gemma 3n E4B IT',8,'Gemma 3n',5.6,32,0.05,[81,72,76,80,77],'Gemma terms',4],
+['lfm2-350m','LFM2.5 350M',0.35,'LFM',0.5,32,0.008,[46,34,36,44,37],null,null],
+['lfm2-700m','LFM2 700M',0.7,'LFM',0.8,32,0.012,[56,44,47,53,47],null,null],
+['lfm2-1.2b','LFM2.5 1.2B Instruct',1.2,'LFM',1.3,32,0.018,[66,57,60,62,58],null,null],
+['lfm2-2.6b','LFM2.5 2.6B',2.6,'LFM',2.5,64,0.03,[74,66,69,69,66],null,null],
+['lfm2-8b-a1b','LFM2.5 8B-A1B',8,'LFM MoE',5.8,64,0.05,[84,77,80,79,78],null,1],
+['lfm2-24b-a2b','LFM2 24B-A2B',24,'LFM MoE',15.5,64,0.08,[89,84,87,84,84],null,2],
+['exaone-4-1.2b','EXAONE 4.0 1.2B',1.2,'EXAONE',1.3,32,0.018,[66,58,63,60,58],'EXAONE license; check terms',null],
+['exaone-4-32b','EXAONE 4.0 32B',32,'EXAONE',20.5,64,0.14,[93,90,95,87,89],'EXAONE license; check terms',null],
+['internlm3-8b','InternLM3 8B Instruct',8,'InternLM',5.8,32,0.055,[84,80,87,78,76],null,null],
+['granite-4-350m','Granite 4.0 350M',0.35,'Granite 4',0.5,32,0.008,[49,42,43,45,44],null,null],
+['granite-4-micro','Granite 4.0 Micro 3B',3,'Granite 4',2.8,64,0.035,[76,74,75,70,73],null,null],
+['granite-4-h-micro','Granite 4.0 H Micro 3B',3,'Granite 4',2.8,64,0.035,[77,75,77,70,74],null,null],
+['phi-3-mini','Phi-3 Mini 3.8B Instruct',3.8,'Phi',3.7,32,0.042,[72,68,72,65,67],null,null],
+['phi-3-medium','Phi-3 Medium 14B Instruct',14,'Phi',9.4,32,0.085,[83,78,82,76,75],null,null],
+['solar-10.7b','SOLAR 10.7B Instruct',10.7,'SOLAR',7.4,16,0.07,[80,70,74,80,67],null,null],
+['zephyr-7b-beta','Zephyr 7B Beta',7,'Zephyr',5.4,32,0.054,[76,65,67,78,65],null,null],
+['openchat-3.5-7b','OpenChat 3.5 7B',7,'OpenChat',5.4,16,0.054,[78,71,72,76,65],'Check model card',null],
+['nous-hermes-3-8b','Nous Hermes 3 Llama 3.1 8B',8,'Nous Hermes',5.9,64,0.055,[84,79,80,85,76],'Llama-based; check terms',null],
+['nous-hermes-3-70b','Nous Hermes 3 Llama 3.1 70B',70,'Nous Hermes',42,64,0.24,[95,91,93,95,87],'Llama-based; check terms',null],
+['dolphin-3-8b','Dolphin 3.0 Llama 3.1 8B',8,'Dolphin',5.9,64,0.055,[82,78,79,82,75],'Community fine-tune; check upstream license',null],
+['starling-7b','Starling LM 7B Beta',7,'Starling',5.4,16,0.054,[78,65,69,80,64],'Check model card',null],
+];
+const makeModel=([key,name,parametersB,family,baseGB,contextK,kvGBPer1K,scores,licenseNote,activeParametersB])=>{
+ const activeRatio=activeParametersB&&parametersB?activeParametersB/parametersB:null;
+ const q=(name,multiplier,qualityBonus=0)=>{const weightsGB=+(baseGB*multiplier).toFixed(1);const speedWeightsGB=activeRatio?+Math.max(.25,weightsGB*activeRatio).toFixed(1):undefined;return {name,weightsGB,...(qualityBonus?{qualityBonus}:{}),...(speedWeightsGB?{speedWeightsGB}:{})};};
+ return {id:`extra-${key}`,name,parametersB,activeParametersB,family,contextK,kvGBPer1K,quality:Object.fromEntries(['chat','coding','reasoning','writing','longContext'].map((k,i)=>[k,scores[i]])),licenseNote,quantizations:[q('Q4_K_M',1),q('Q5_K_M',1.22,2),...(parametersB>=27?[q('Q8_0',1.85,4)]:[])],provenance:'prototype-sample'};
+};
+export const EXTRA_MODELS=rows.map(makeModel);

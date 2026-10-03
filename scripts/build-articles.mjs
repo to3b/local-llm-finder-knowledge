@@ -3,9 +3,11 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import {registry, enhanceArticle, renderIndex, modifiedDate} from './wiki.mjs';
+import {recommendationContext, renderRecommendation, renderRecommendationHome} from './recommendation-pages.mjs';
 
 const SITE_ROOT = process.env.SITE_ROOT || fileURLToPath(new URL('../', import.meta.url));
 const BUILD_MODE = process.env.KNOWLEDGE_BUILD_MODE || 'production';
+const PREVIEW = BUILD_MODE === 'sandbox';
 if (!['production', 'sandbox'].includes(BUILD_MODE)) throw new Error('Invalid KNOWLEDGE_BUILD_MODE.');
 const SITE_ORIGIN = 'https://knowledge.localllmfinder.com';
 const SHEET_BASE = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQrzDgQUmV8FDdt8HDHgg0YzpyJmR28TKqxRGhkg4kW2LK7-ncnt1z_nEKgg8MJecNxt0MGLcm0syD1/pub';
@@ -315,8 +317,15 @@ async function setHomepageIndexable(hasPublishedArticles) {
 async function main() {
   const csv = process.env.ARTICLES_CSV ? await readFile(process.env.ARTICLES_CSV, 'utf8') : await (async () => { const response = await fetch(sheetUrl(ARTICLES_GID), { redirect: 'follow' }); if (!response.ok) throw new Error(`Google Sheets returned HTTP ${response.status}.`); return response.text(); })();
   const records = recordsFromCsv(csv);
+  // Reject malformed statuses before touching any generated pages. A date pasted
+  // into Status must not silently remove a previously published URL.
+  for (const row of records) {
+    if (enabled(row.Enabled) && !/^(published|draft|hold)$/i.test(String(row.Status || '').trim())) {
+      throw new Error(`Knowledge Articles row ${row['_Sheet Row']} has invalid Status: ${row.Status}`);
+    }
+  }
   const published = records.filter(row => enabled(row.Enabled) && /^published$/i.test(String(row.Status || '').trim()));
-  const available = BUILD_MODE === 'sandbox' ? records.filter(row => enabled(row.Enabled) && /^(published|draft)$/i.test(String(row.Status || '').trim())) : published;
+  const available = PREVIEW && process.env.PREVIEW_PUBLISHED_ONLY !== '1' ? records.filter(row => enabled(row.Enabled) && /^(published|draft)$/i.test(String(row.Status || '').trim())) : published;
 
   const seen = new Set();
   for (const row of available) {
@@ -327,25 +336,48 @@ async function main() {
   }
 
   const references = registry(available);
-  for (const directory of OWNED_DIRECTORIES) await rm(join(SITE_ROOT, directory), { recursive: true, force: true });
+  // All catalogue parsing, calibration and recommendation validation happens
+  // before deleting generated directories, preserving the last good output.
+  const recommendations = await recommendationContext(published);
+  const outputs=[];
   for (const row of available) {
     const { relative } = articlePath(row);
-    let html = enhanceArticle(renderArticle(row), row, references);
+    const recommendation = renderRecommendation(row,recommendations,markdownToHtml(row['Body Markdown']),PREVIEW);
+    let html = recommendation || enhanceArticle(renderArticle(row), row, references);
     // Sandbox invitations are added by its existing transform; keep one per live article.
     const article = references.articles.find(a => a.key + '/index.html' === relative);
-    if (BUILD_MODE === 'production' && ['Model', 'Hardware'].includes(article.type) && article.entityIds?.length) {
+    if (!recommendation && ['Model', 'Hardware'].includes(article.type) && article.entityIds?.length) {
       const p = new URLSearchParams({[article.type === 'Model' ? 'model' : 'hardware']: article.entityIds[0], from: article.key});
       const heading = article.type === 'Model' ? 'Have you tried this LLM?' : 'Have you run a model on this GPU?';
       const description = article.type === 'Model' ? `Share how ${article.title} ran on your hardware.` : `Share a model you tried on ${article.title}.`;
       const invite = `<aside class="article-test-invite" aria-label="Share your experience"><h2>${heading}</h2><p>${esc(description)} A quick report is enough.</p><a class="doc-button secondary" href="https://localllmfinder.com/tests/?${esc(p)}">Share a test</a></aside>`;
       html = html.replace('</article>', invite + '</article>');
     }
-    await writeRelative(relative, html);
+    if (!recommendation) {
+      html=html.replace('</head>','<link rel="stylesheet" href="../../recommendations.css"></head>');
+      if (PREVIEW) {
+        html=html.replace(/content="index,follow"/g,'content="noindex,follow"')
+          .replaceAll('href="https://knowledge.localllmfinder.com/','href="/')
+          .replaceAll('href="https://localllmfinder.com/dist/','href="/finder/')
+          .replaceAll('href="https://localllmfinder.com/#','href="/finder/#')
+          .replaceAll('href="https://localllmfinder.com/"','href="/finder/"')
+          .replace(/<a class="knowledge-nav" href="[^"]+">/,'<a class="knowledge-nav" href="/">')
+          .replace('<article>','<div class="preview-notice">Sandbox preview · Production is unchanged</div><article>');
+        // Canonicals remain the existing production URLs, never preview paths.
+        html=html.replace(/<link rel="canonical" href="[^"]+">/,`<link rel="canonical" href="${esc(row['Canonical URL'])}">`);
+      }
+    }
+    outputs.push({relative,html});
   }
 
-  await writeRelative('sitemap.xml', sitemapXml(published));
+  let homepage=recommendations?renderRecommendationHome(recommendations,PREVIEW):renderIndex(references, {includeDrafts: PREVIEW});
+  if (PREVIEW) homepage=homepage.replace(/content="index,follow"/g,'content="noindex,follow"');
+  // Finish rendering before touching the last good generated pages.
+  for (const directory of OWNED_DIRECTORIES) await rm(join(SITE_ROOT, directory), { recursive: true, force: true });
+  for (const {relative,html} of outputs) await writeRelative(relative, html);
+  await writeRelative('sitemap.xml', sitemapXml(PREVIEW ? [] : published));
   await writeRelative('references.json', JSON.stringify(references, null, 2) + '\n');
-  await writeRelative('index.html', renderIndex(references, {includeDrafts: BUILD_MODE === 'sandbox'}));
+  await writeRelative('index.html', homepage);
   console.log(`Built ${available.length} available Knowledge articles: ${published.length} published, ${available.length - published.length} drafts.`);
 }
 

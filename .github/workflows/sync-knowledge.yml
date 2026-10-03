@@ -8,8 +8,14 @@ on:
     paths:
       - scripts/build-articles.mjs
       - scripts/wiki.mjs
+      - scripts/recommendation-pages.mjs
+      - scripts/finder/**
+      - recommendations.css
+      - recommendations-ui.js
+      - package.json
       - tests/wiki.test.mjs
       - tests/article-build.test.mjs
+      - tests/recommendation-pages.test.mjs
       - .github/workflows/sync-knowledge.yml
   schedule:
     - cron: '17,47 * * * *'
@@ -33,14 +39,33 @@ jobs:
         with:
           node-version: '22'
 
+      - name: Read the current main Finder rules
+        uses: actions/checkout@v4
+        with:
+          repository: to3b/local-llm-finder
+          ref: main
+          path: .finder-source
+          persist-credentials: false
+
       - name: Test reference connections
+        env:
+          FINDER_SOURCE_ROOT: ${{ github.workspace }}/.finder-source/dist
         run: |
           node tests/wiki.test.mjs
           node tests/article-build.test.mjs
+          node tests/recommendation-pages.test.mjs
+
+      - name: Sync the shared design assets
+        run: |
+          cp .finder-source/dist/styles.css styles.css
+          cp .finder-source/dist/docs.css docs.css
+          cp .finder-source/dist/palette.css palette.css
+          cp .finder-source/dist/sandbox-refine.css sandbox-refine.css
 
       - name: Build static Knowledge pages from Google Sheets
         env:
           KNOWLEDGE_BUILD_MODE: production
+          FINDER_SOURCE_ROOT: ${{ github.workspace }}/.finder-source/dist
         run: node scripts/build-articles.mjs
 
       - name: Commit generated changes

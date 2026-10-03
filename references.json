@@ -2,6 +2,39 @@
   "version": 1,
   "articles": [
     {
+      "key": "models/qwen3-8b",
+      "type": "Model",
+      "slug": "qwen3-8b",
+      "title": "Qwen3 8B",
+      "summary": "Official Q4/Q5/Q8 download sizes, native and extended context, and practical memory planning for Qwen3 8B.",
+      "url": "https://knowledge.localllmfinder.com/models/qwen3-8b/",
+      "status": "Published",
+      "entityIds": [
+        "model-7"
+      ],
+      "modified": "2026-10-03",
+      "related": [
+        "guides/q4-vs-q5",
+        "guides/context-length",
+        "hardware/rtx-3060-12gb",
+        "models/qwen2-5-coder-14b"
+      ],
+      "outgoing": [
+        "guides/q4-vs-q5",
+        "guides/context-length",
+        "hardware/rtx-3060-12gb",
+        "models/qwen2-5-coder-14b"
+      ],
+      "backlinks": [
+        "models/gpt-oss-20b",
+        "hardware/rtx-3060-12gb",
+        "guides/q4-vs-q5",
+        "guides/context-length",
+        "models/qwen3-4b",
+        "models/qwen3-14b"
+      ]
+    },
+    {
       "key": "models/qwen2-5-coder-14b",
       "type": "Model",
       "slug": "qwen2-5-coder-14b",
@@ -12,7 +45,7 @@
       "entityIds": [
         "model-11"
       ],
-      "modified": "2026-10-02",
+      "modified": "2026-10-03",
       "related": [
         "guides/q4-vs-q5",
         "guides/context-length",
@@ -21,9 +54,11 @@
       "outgoing": [
         "guides/q4-vs-q5",
         "guides/context-length",
-        "hardware/rtx-3060-12gb"
+        "hardware/rtx-3060-12gb",
+        "models/qwen2-5-coder-7b"
       ],
       "backlinks": [
+        "models/qwen3-8b",
         "hardware/rtx-3060-12gb",
         "guides/q4-vs-q5",
         "guides/context-length",
@@ -41,7 +76,7 @@
       "entityIds": [
         "extra-gpt-oss-20b"
       ],
-      "modified": "2026-10-02",
+      "modified": "2026-10-03",
       "related": [
         "guides/context-length",
         "guides/q4-vs-q5",
@@ -71,7 +106,7 @@
       "entityIds": [
         "rtx-3060"
       ],
-      "modified": "2026-10-02",
+      "modified": "2026-10-03",
       "related": [
         "models/qwen3-8b",
         "models/qwen2-5-coder-14b",
@@ -87,6 +122,7 @@
         "guides/context-length"
       ],
       "backlinks": [
+        "models/qwen3-8b",
         "models/qwen2-5-coder-14b",
         "models/gpt-oss-20b",
         "guides/q4-vs-q5",
@@ -119,13 +155,13 @@
         "hardware/rtx-3060-12gb"
       ],
       "backlinks": [
+        "models/qwen3-8b",
         "models/qwen2-5-coder-14b",
         "models/gpt-oss-20b",
         "hardware/rtx-3060-12gb",
         "guides/context-length",
         "models/qwen3-4b",
-        "models/qwen2-5-coder-7b",
-        "hardware/rtx-4060-ti-16"
+        "models/qwen2-5-coder-7b"
       ]
     },
     {
@@ -153,6 +189,7 @@
         "hardware/rtx-3060-12gb"
       ],
       "backlinks": [
+        "models/qwen3-8b",
         "models/qwen2-5-coder-14b",
         "models/gpt-oss-20b",
         "hardware/rtx-3060-12gb",
@@ -173,7 +210,7 @@
       "entityIds": [
         "model-6"
       ],
-      "modified": "2026-10-02",
+      "modified": "2026-10-03",
       "related": [
         "hardware/rtx-4060",
         "models/qwen3-8b",
@@ -199,7 +236,7 @@
       "entityIds": [
         "model-8"
       ],
-      "modified": "2026-10-02",
+      "modified": "2026-10-03",
       "related": [
         "hardware/rtx-4060-ti-16",
         "hardware/rtx-4090",
@@ -213,8 +250,7 @@
       ],
       "backlinks": [
         "hardware/rtx-4060-ti-16",
-        "hardware/rtx-4090",
-        "hardware/rtx-4060"
+        "hardware/rtx-4090"
       ]
     },
     {
@@ -228,7 +264,7 @@
       "entityIds": [
         "model-10"
       ],
-      "modified": "2026-10-02",
+      "modified": "2026-10-03",
       "related": [
         "hardware/rtx-4060",
         "models/qwen2-5-coder-14b",
@@ -240,6 +276,7 @@
         "guides/q4-vs-q5"
       ],
       "backlinks": [
+        "models/qwen2-5-coder-14b",
         "hardware/rtx-4060"
       ]
     },
@@ -254,7 +291,7 @@
       "entityIds": [
         "rtx-4060-ti-16"
       ],
-      "modified": "2026-10-02",
+      "modified": "2026-10-03",
       "related": [
         "models/qwen3-14b",
         "guides/context-length",
@@ -263,9 +300,7 @@
       "outgoing": [
         "models/qwen3-14b",
         "guides/context-length",
-        "hardware/rtx-4090",
-        "guides/q4-vs-q5",
-        "hardware/rtx-4060"
+        "hardware/rtx-4090"
       ],
       "backlinks": [
         "models/qwen3-14b",
@@ -284,7 +319,7 @@
       "entityIds": [
         "rtx-4090"
       ],
-      "modified": "2026-10-02",
+      "modified": "2026-10-03",
       "related": [
         "models/qwen3-14b",
         "hardware/rtx-4060-ti-16",
@@ -311,7 +346,7 @@
       "entityIds": [
         "rtx-4060"
       ],
-      "modified": "2026-10-02",
+      "modified": "2026-10-03",
       "related": [
         "models/qwen3-4b",
         "models/qwen2-5-coder-7b",
@@ -321,13 +356,11 @@
         "models/qwen3-4b",
         "models/qwen2-5-coder-7b",
         "hardware/rtx-4060-ti-16",
-        "models/qwen3-14b",
         "hardware/rtx-3060-12gb"
       ],
       "backlinks": [
         "models/qwen3-4b",
-        "models/qwen2-5-coder-7b",
-        "hardware/rtx-4060-ti-16"
+        "models/qwen2-5-coder-7b"
       ]
     }
   ]
