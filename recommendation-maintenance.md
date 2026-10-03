@@ -5,7 +5,9 @@ pages are removed.
 
 Models, GPUs and Quant Calibrations are read together through the main Finder’s
 unchanged parsers. The same minimum catalogue coverage and calibration validation
-apply. Recommendations call its `recommend` and `estimate` functions. Production
+apply. Recommendations call its `recommend` and `estimate` functions.
+Hardware shortlists use task selection; model pages compare memory tiers using
+the estimate. Neither establishes measured speed or output quality. Production
 CI checks out `to3b/local-llm-finder` at main for each build. The byte-pinned copy
 in `scripts/finder` supports offline checks and records its original commit.
 
