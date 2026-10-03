@@ -325,7 +325,8 @@ async function main() {
     }
   }
   const published = records.filter(row => enabled(row.Enabled) && /^published$/i.test(String(row.Status || '').trim()));
-  const available = PREVIEW && process.env.PREVIEW_PUBLISHED_ONLY !== '1' ? records.filter(row => enabled(row.Enabled) && /^(published|draft)$/i.test(String(row.Status || '').trim())) : published;
+  const draftSlugs=new Set(String(process.env.PREVIEW_DRAFT_SLUGS||'').split(',').filter(Boolean));
+  const available = PREVIEW && process.env.PREVIEW_PUBLISHED_ONLY !== '1' ? records.filter(row => enabled(row.Enabled) && ( /^published$/i.test(String(row.Status || '').trim()) || /^draft$/i.test(String(row.Status || '').trim()) && (!draftSlugs.size||draftSlugs.has(row.Slug)) )) : published;
 
   const seen = new Set();
   for (const row of available) {
@@ -338,7 +339,7 @@ async function main() {
   const references = registry(available);
   // All catalogue parsing, calibration and recommendation validation happens
   // before deleting generated directories, preserving the last good output.
-  const recommendations = await recommendationContext(published);
+  const recommendations = await recommendationContext(PREVIEW?available:published,{includeDrafts:PREVIEW});
   const outputs=[];
   for (const row of available) {
     const { relative } = articlePath(row);

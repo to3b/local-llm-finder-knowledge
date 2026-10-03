@@ -1,1 +1,1 @@
-{"private":true,"type":"module","scripts":{"test":"node tests/wiki.test.mjs && node tests/article-build.test.mjs && node tests/recommendation-pages.test.mjs"}}
+{"private":true,"type":"module","scripts":{"test":"node tests/wiki.test.mjs && node tests/article-build.test.mjs && node tests/recommendation-pages.test.mjs && node tests/draft-batch.test.mjs"}}

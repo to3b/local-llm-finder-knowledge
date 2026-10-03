@@ -16,6 +16,9 @@ on:
       - tests/wiki.test.mjs
       - tests/article-build.test.mjs
       - tests/recommendation-pages.test.mjs
+      - tests/draft-batch.test.mjs
+      - draft-batch.json
+      - tests/fixtures/**
       - .github/workflows/sync-knowledge.yml
   schedule:
     - cron: '17,47 * * * *'
@@ -54,6 +57,7 @@ jobs:
           node tests/wiki.test.mjs
           node tests/article-build.test.mjs
           node tests/recommendation-pages.test.mjs
+          node tests/draft-batch.test.mjs
 
       - name: Sync the shared design assets
         run: |

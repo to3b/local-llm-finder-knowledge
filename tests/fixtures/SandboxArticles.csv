@@ -250,3 +250,153 @@ Close other GPU workloads or lower context first. CPU offload changes the fit an
 https://huggingface.co/Qwen/Qwen3-4B-GGUF/tree/main
 https://huggingface.co/Qwen/Qwen2.5-Coder-7B-Instruct-GGUF/tree/main
 https://huggingface.co/Qwen/Qwen3-14B-GGUF/tree/main","Primary sources reviewed 2026-10-02. Download sizes are rounded decimal GB; cache calculations assume one conversation and FP16 K/V. Page build, metadata, reference links and form-prefill checks passed. No local hardware benchmarks performed.","rtx-4060","models/qwen3-4b, models/qwen2-5-coder-7b, hardware/rtx-4060-ti-16"
+"true","Model","llama-3-2-3b-instruct","Llama 3.2 3B Instruct","A small text model for limited GPU memory. Compare Q4 and Q5 planning profiles, the original checkpoint and Meta’s separate quantised editions.","## Which Llama checkpoint is this?
+
+Use **Llama-3.2-3B-Instruct**, the text-only assistant model. LM Studio Community provides a matching Q4_K_M GGUF conversion. Its file is about 2.02 GB; the Finder uses a conservative 2.70 GB weight input before cache and buffers. Check the chat template.
+
+## Why do different downloads list different context limits?
+
+Meta lists 128K for the original text checkpoint and 8K for its separate quantised editions. A converted GGUF is not automatically that official quantised edition. Start at 4K; the listed maximum does not establish a memory fit.
+
+## What licence applies?
+
+The Llama 3.2 Community License and Acceptable Use Policy apply. Review Meta’s terms before distributing a model or building a service. This page’s Q4 weight input is a planning estimate, not a verified download size.","Llama 3.2 3B Instruct: GPU memory and setup","Plan GPU memory for Llama 3.2 3B Instruct at Q4 or Q5, compare short and longer context, and check checkpoint and licence requirements.","Local LLM Finder","","2026-10-03","Draft","https://knowledge.localllmfinder.com/models/llama-3-2-3b-instruct/","https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct
+https://github.com/ggml-org/llama.cpp/blob/master/docs/build.md
+https://huggingface.co/lmstudio-community/Llama-3.2-3B-Instruct-GGUF/tree/main","Source review: 2026-10-03. Prepared for sandbox review; publication awaits user approval. Calculations are planning estimates; no hardware measurements reproduced. Deploy the reviewed renderer before promoting this row.","model-5","hardware/rtx-2060, models/phi-4-mini-instruct, guides/q4-vs-q5, guides/context-length"
+"true","Model","qwen3-32b","Qwen3 32B","A larger general-purpose model for 24 GB and higher memory tiers. Compare Q4, Q5 and longer-context estimates without treating fit as a speed claim.","## Which file should I start with?
+
+Use the publisher’s **Qwen3-32B-GGUF** files at Q4_K_M. Download every shard belonging to the chosen quantisation. The table uses the Finder’s weight input; compare it with the exact files and your runtime’s reported memory.
+
+## Should thinking mode be on?
+
+This checkpoint supports thinking and non-thinking modes. Choose one explicitly and keep it fixed when comparing answers or timings. Thinking consumes output tokens and time before the final answer.
+
+## Can I use the advertised long context?
+
+Qwen lists 32,768 native tokens and up to 131,072 with YaRN. Extended context needs runtime support and extra cache memory. The short-context fit here does not verify YaRN or the full window. The model uses Apache 2.0.","Qwen3 32B: GPU memory, Q4 and Q5 requirements","Compare GPU memory tiers for Qwen3 32B at Q4 and Q5, including 4K and 16K context, runtime overhead and thinking-mode settings.","Local LLM Finder","","2026-10-03","Draft","https://knowledge.localllmfinder.com/models/qwen3-32b/","https://huggingface.co/Qwen/Qwen3-32B
+https://huggingface.co/Qwen/Qwen3-32B-GGUF","Source review: 2026-10-03. Prepared for sandbox review; publication awaits user approval. Calculations are planning estimates; no hardware measurements reproduced. Deploy the reviewed renderer before promoting this row.","model-9","hardware/rtx-5090, hardware/rtx-6000-ada, models/qwen3-14b, guides/context-length"
+"true","Model","qwen2-5-coder-32b","Qwen2.5-Coder 32B","A larger dense coding model. Compare the GPU memory needed at Q4 and Q5, and the trade-off against the smaller Coder models.","## Which Coder version is this?
+
+Use **Qwen2.5-Coder-32B-Instruct**, not the base checkpoint. Qwen provides GGUF files under Apache 2.0. Keep the Instruct chat template and download all shards for the chosen quantisation.
+
+## When should I choose the smaller Coder?
+
+Try the [[models/qwen2-5-coder-14b|14B Coder]] if 32B leaves too little memory or responds too slowly. Model size does not establish which writes better code for your repository. Compare the same task and run the generated code’s tests.
+
+## Does 128K context fit this hardware?
+
+The publisher describes 131,072-token support with YaRN; the default configuration is 32,768. Our 4K and 16K calculations do not verify the full window. Longer inputs increase cache memory and prompt-processing work.","Qwen2.5-Coder 32B: hardware and GPU memory","Plan hardware for Qwen2.5-Coder 32B Instruct with Q4 and Q5 memory estimates, 4K and 16K context, and smaller coding-model alternatives.","Local LLM Finder","","2026-10-03","Draft","https://knowledge.localllmfinder.com/models/qwen2-5-coder-32b/","https://huggingface.co/Qwen/Qwen2.5-Coder-32B-Instruct
+https://huggingface.co/Qwen/Qwen2.5-Coder-32B-Instruct-GGUF","Source review: 2026-10-03. Prepared for sandbox review; publication awaits user approval. Calculations are planning estimates; no hardware measurements reproduced. Deploy the reviewed renderer before promoting this row.","model-12","hardware/rtx-5090, models/qwen2-5-coder-14b, models/qwen3-coder-30b-a3b-instruct, guides/context-length"
+"true","Model","gemma-3-12b","Gemma 3 12B","Memory planning for Gemma 3 12B instruction tuning with text input. Image support needs additional runtime components and memory beyond these estimates.","## Does this estimate include images?
+
+No. **Gemma-3-12b-it** accepts text and images, but this page estimates text inference only. In llama.cpp, vision also needs a matching multimodal projector and additional buffers. Measure that configuration separately; a text fit is not a vision fit.
+
+## Which quantisation matches the table?
+
+ggml-org provides a **Q4_K_M GGUF** conversion, about 7.30 GB before cache and buffers. The Finder uses an 8.50 GB weight input. Its Q5 table is a planning profile; the linked repository has no Q5 file. Google’s QAT Q4_0 edition is a different profile.
+
+## What should I check before loading it?
+
+Use a current runtime with Gemma 3 support and the correct chat template. The 128K model window does not guarantee a hardware fit. Google’s Gemma Terms apply to the checkpoint and its distribution.","Gemma 3 12B: text-only GPU memory and setup","Compare Gemma 3 12B text-only memory estimates at Q4 and Q5. Check 12 GB versus 16 GB tiers, vision overhead, context and Gemma terms.","Local LLM Finder","","2026-10-03","Draft","https://knowledge.localllmfinder.com/models/gemma-3-12b/","https://huggingface.co/google/gemma-3-12b-it
+https://ai.google.dev/gemma/terms
+https://github.com/ggml-org/llama.cpp/blob/master/docs/multimodal/gemma3.md
+https://huggingface.co/ggml-org/gemma-3-12b-it-GGUF/tree/main","Source review: 2026-10-03. Prepared for sandbox review; publication awaits user approval. Calculations are planning estimates; no hardware measurements reproduced. Deploy the reviewed renderer before promoting this row.","model-16","hardware/arc-b580, hardware/rtx-4060-ti-16, guides/q4-vs-q5, guides/context-length"
+"true","Model","phi-4-mini-instruct","Phi-4-mini-instruct","A small text assistant with a 3.8B-parameter checkpoint. Compare modest GPU memory tiers, Q4/Q5 settings and context overhead.","## Which Phi model is this?
+
+Use Microsoft’s **Phi-4-mini-instruct**, a 3.8B-parameter text model under MIT. Phi-4-mini-reasoning and Phi-4-multimodal are different checkpoints; these memory estimates do not cover them.
+
+## Which file should I use?
+
+LM Studio Community provides a matching **Q4_K_M GGUF** conversion of Microsoft’s checkpoint, about 2.49 GB before cache and buffers. The Finder uses a conservative 3.80 GB weight input. The Q5 table is a planning profile, not a file in that repository. Keep the correct chat template.
+
+## Why start at 4K when the model supports 128K?
+
+The model’s 128K limit describes supported sequence length, not free memory. More context increases the cache. Start small, check runtime memory and compare answers on your task before increasing it. A small model can still give incorrect facts.","Phi-4-mini-instruct: GPU memory and runtime setup","Plan GPU memory for Phi-4-mini-instruct at Q4 and Q5, compare 4K and 16K context, and check the exact checkpoint and chat template.","Local LLM Finder","","2026-10-03","Draft","https://knowledge.localllmfinder.com/models/phi-4-mini-instruct/","https://huggingface.co/microsoft/Phi-4-mini-instruct
+https://github.com/ggml-org/llama.cpp/blob/master/docs/build.md
+https://huggingface.co/lmstudio-community/Phi-4-mini-instruct-GGUF/tree/main","Source review: 2026-10-03. Prepared for sandbox review; publication awaits user approval. Calculations are planning estimates; no hardware measurements reproduced. Deploy the reviewed renderer before promoting this row.","model-22","hardware/rtx-2060, models/llama-3-2-3b-instruct, models/qwen3-4b, guides/context-length"
+"true","Model","qwen3-coder-30b-a3b-instruct","Qwen3-Coder 30B-A3B Instruct","A coding mixture-of-experts model with 30.5B total parameters and 3.3B active. Plan for its full weight footprint, not a 3B model’s memory.","## Why does A3B need so much memory?
+
+Qwen lists **30.5B total parameters and 3.3B activated**. Routing selects experts during inference, but full GPU residency still needs the model’s full weights. Active parameters are not the weight footprint and do not establish measured speed.
+
+## Which runtime and file should I use?
+
+LM Studio Community provides a matching **Q4_K_M GGUF** conversion, about 18.60 GB before cache and buffers. Use a current runtime with this MoE architecture and tool-call format. The original checkpoint is Apache 2.0 and non-thinking-only. The Q5 table is a planning profile; the linked repository has no Q5 file.
+
+## Can I load an entire repository?
+
+The publisher lists 262,144 native tokens. Our 4K and 16K estimates do not verify that window. Increase context only after checking available memory, prompt-processing time and whether the model handles your repository’s task correctly.","Qwen3-Coder 30B-A3B: hardware and memory","Plan Q4 and Q5 GPU memory for Qwen3-Coder 30B-A3B Instruct. Compare 24 GB and 32 GB tiers, full MoE weights, context and runtime support.","Local LLM Finder","","2026-10-03","Draft","https://knowledge.localllmfinder.com/models/qwen3-coder-30b-a3b-instruct/","https://huggingface.co/Qwen/Qwen3-Coder-30B-A3B-Instruct
+https://github.com/ggml-org/llama.cpp/blob/master/docs/build.md
+https://huggingface.co/lmstudio-community/Qwen3-Coder-30B-A3B-Instruct-GGUF/tree/main","Source review: 2026-10-03. Prepared for sandbox review; publication awaits user approval. Calculations are planning estimates; no hardware measurements reproduced. Deploy the reviewed renderer before promoting this row.","extra-qwen3-coder-30b-a3b","hardware/rtx-5090, hardware/rtx-6000-ada, models/qwen2-5-coder-32b, guides/context-length"
+"true","Hardware","rtx-5090","RTX 5090 32 GB","Model starting points for 32 GB of dedicated VRAM. Compare larger chat and coding choices, with Blackwell runtime support checked separately from memory fit.","## Which RTX 5090 does this cover?
+
+The desktop **RTX 5090 has 32 GB GDDR7** and uses Blackwell. This page does not cover the laptop GPU. Compare the dedicated memory on your exact card before following the shortlist.
+
+## Why might a model fit but fail to use the GPU?
+
+Use an NVIDIA driver and a runtime build that support Blackwell. Older CUDA builds can lack the required GPU support. Check that the runtime detects your card and reports layers loaded onto it; memory fit alone cannot establish compatibility.
+
+## What does 32 GB change?
+
+It leaves more space around the 30–32B Q4 planning profiles than a 24 GB card. Compare Q5 or longer context in the Finder before increasing either. This site has no reviewed RTX 5090 timing measurements to establish how fast those settings run.","RTX 5090 32 GB: local LLM starting points","Compare local LLM planning profiles for the RTX 5090 32 GB, including larger chat and coding models, 4K context and Blackwell runtime requirements.","Local LLM Finder","","2026-10-03","Draft","https://knowledge.localllmfinder.com/hardware/rtx-5090/","https://www.nvidia.com/en-us/geforce/graphics-cards/50-series/rtx-5090/
+https://github.com/ggml-org/llama.cpp/blob/master/docs/build.md","Source review: 2026-10-03. Prepared for sandbox review; publication awaits user approval. Calculations are planning estimates; no hardware measurements reproduced. Deploy the reviewed renderer before promoting this row.","rtx-5090","models/qwen3-32b, models/qwen2-5-coder-32b, models/qwen3-coder-30b-a3b-instruct, guides/context-length"
+"true","Hardware","rtx-6000-ada","RTX 6000 Ada 48 GB","Local-model planning for 48 GB of dedicated GPU memory. Compare larger model profiles and context headroom without treating workstation specifications as benchmarks.","## Is this the same as an RTX A6000?
+
+No. This page covers **RTX 6000 Ada Generation**, with 48 GB GDDR6 ECC and Ada architecture. RTX A6000 and RTX PRO 6000 are separate products. Select the exact card in the Finder rather than matching only the name.
+
+## Should I immediately choose the largest model?
+
+More VRAM expands the available memory budget; it does not establish better answers or quicker inference. Compare a larger model with a smaller one on the same task. The shortlist is limited to the reviewed page subjects; the Finder covers more models.
+
+## Is 32 GB system RAM enough?
+
+That is the assumption for the profiles shown, not a universal workstation recommendation. Large files, other applications, conversion and CPU offloading may need more. Check the exact runtime’s peak host memory before planning a larger setup.","RTX 6000 Ada 48 GB: local LLM memory planning","Compare local LLM starting points for RTX 6000 Ada 48 GB, including larger chat and coding profiles, context headroom and system-memory assumptions.","Local LLM Finder","","2026-10-03","Draft","https://knowledge.localllmfinder.com/hardware/rtx-6000-ada/","https://www.nvidia.com/en-us/products/workstations/rtx-6000/
+https://github.com/ggml-org/llama.cpp/blob/master/docs/build.md","Source review: 2026-10-03. Prepared for sandbox review; publication awaits user approval. Calculations are planning estimates; no hardware measurements reproduced. Deploy the reviewed renderer before promoting this row.","rtx-6000-ada","models/qwen3-32b, models/qwen2-5-coder-32b, models/qwen3-coder-30b-a3b-instruct, hardware/rtx-5090"
+"true","Hardware","rx-7900-xtx","RX 7900 XTX 24 GB","Local-model starting points for AMD’s 24 GB card. Check the chosen AMD backend, operating system and runtime before treating a memory fit as usable GPU inference.","## Which AMD card is this?
+
+The **RX 7900 XTX has 24 GB GDDR6**. The RX 7900 XT is a different card. These comparisons use dedicated VRAM; they do not add system RAM to the full-GPU budget.
+
+## Which backend should I choose?
+
+Use a runtime with an AMD backend, such as llama.cpp HIP or Vulkan. For ROCm, check AMD’s matrix for your exact GPU, operating system and software version. A Linux support entry does not establish the same support on Windows or WSL.
+
+## How do I know inference is on the GPU?
+
+Check the runtime log for GPU detection and offloaded layers. A model can load through CPU fallback without using the expected backend. Record that backend when sharing a test; results from a different GPU or software stack do not establish this card’s speed.","RX 7900 XTX 24 GB: local LLMs and AMD setup","Compare local LLM memory estimates for RX 7900 XTX 24 GB, with chat and coding options, AMD backend checks and operating-system limitations.","Local LLM Finder","","2026-10-03","Draft","https://knowledge.localllmfinder.com/hardware/rx-7900-xtx/","https://www.amd.com/en/products/graphics/desktops/radeon/7000-series/amd-radeon-rx-7900xtx.html
+https://rocm.docs.amd.com/projects/radeon-ryzen/en/latest/docs/compatibility/compatibilityrad/native_linux/native_linux_compatibility.html
+https://github.com/ggml-org/llama.cpp/blob/master/docs/build.md","Source review: 2026-10-03. Prepared for sandbox review; publication awaits user approval. Calculations are planning estimates; no hardware measurements reproduced. Deploy the reviewed renderer before promoting this row.","rx-7900-xtx","models/qwen3-32b, models/qwen3-coder-30b-a3b-instruct, models/qwen3-14b, guides/context-length"
+"true","Hardware","arc-b580","Intel Arc B580 12 GB","Local-model memory planning for Intel’s 12 GB desktop GPU. Compare modest model profiles and verify a compatible Intel runtime and driver.","## Which Arc card does this cover?
+
+Intel’s desktop **Arc B580 has 12 GB GDDR6** and uses Xe2. This page does not cover the B570 or an integrated Arc GPU. Check the exact product and dedicated memory when selecting hardware.
+
+## Can I use a CUDA download?
+
+CUDA is NVIDIA’s backend. Choose a build supporting Intel instead. llama.cpp’s SYCL documentation lists Arc B580 among verified devices, but the correct driver and oneAPI/runtime combination still matter. Follow the current backend instructions for your operating system.
+
+## Why does the model load but respond slowly?
+
+Check the log for GPU detection and offloaded layers before changing the model. CPU fallback can load the same file with very different performance. This page establishes planning memory fit only; no reviewed B580 speed measurements are available here.","Intel Arc B580 12 GB: local LLMs and setup","Compare local LLM planning profiles for Intel Arc B580 12 GB, including chat and coding choices, Intel backend checks and context headroom.","Local LLM Finder","","2026-10-03","Draft","https://knowledge.localllmfinder.com/hardware/arc-b580/","https://www.intel.com/content/www/us/en/products/sku/241598/intel-arc-b580-graphics/specifications.html
+https://github.com/ggml-org/llama.cpp/blob/master/docs/backend/SYCL.md","Source review: 2026-10-03. Prepared for sandbox review; publication awaits user approval. Calculations are planning estimates; no hardware measurements reproduced. Deploy the reviewed renderer before promoting this row.","arc-b580","models/qwen3-8b, models/qwen2-5-coder-14b, models/gemma-3-12b, guides/context-length"
+"true","Hardware","rtx-2060","RTX 2060 6 GB","Small-model starting points for a 6 GB GPU. Compare memory headroom, keep context modest and treat CPU offloading as a separate configuration.","## Which RTX 2060 is this?
+
+This page covers the original **6 GB RTX 2060**. Other 2060 variants have different memory. Match the exact VRAM shown by your hardware; a shared family name is not enough.
+
+## What should I change if memory is tight?
+
+Start at 4K context, close other GPU-heavy applications and check the runtime’s reported allocation. Try a smaller model before adding a larger cache. Display use and runtime buffers can take more memory than the planning reserve.
+
+## Can CPU offloading make a larger model usable?
+
+It can move some weights into system RAM when the runtime supports it. That is a different setup from this full-GPU table and can slow generation. Use the Finder to compare smaller models, then test your exact configuration rather than treating a successful load as useful speed.","RTX 2060 6 GB: small local LLM starting points","Find small local LLM planning profiles for RTX 2060 6 GB, compare memory headroom at 4K, and understand context and CPU-offloading limits.","Local LLM Finder","","2026-10-03","Draft","https://knowledge.localllmfinder.com/hardware/rtx-2060/","https://nvidianews.nvidia.com/news/nvidia-geforce-rtx-2060-is-here-next-gen-gaming-takes-off
+https://github.com/ggml-org/llama.cpp/blob/master/docs/build.md","Source review: 2026-10-03. Prepared for sandbox review; publication awaits user approval. Calculations are planning estimates; no hardware measurements reproduced. Deploy the reviewed renderer before promoting this row.","rtx-2060","models/llama-3-2-3b-instruct, models/phi-4-mini-instruct, models/qwen3-4b, guides/context-length"
+"true","Hardware","rtx-3080-10","RTX 3080 10 GB","Local-model starting points for the 10 GB RTX 3080. Compare 7–8B choices and memory headroom without applying the 12 GB variant’s budget.","## Why does the exact RTX 3080 variant matter?
+
+NVIDIA lists **10 GB and 12 GB RTX 3080 variants**. This page uses 10 GB. A recommendation calculated for the 12 GB version can exceed this card’s budget; select the exact model in the Finder.
+
+## Should I try a 14B model?
+
+At the Q4 and 4K settings shown, the reviewed 14B profiles exceed this full-GPU budget. Start with the listed smaller models. More GPU compute does not make weights and cache fit into less VRAM.
+
+## Can I increase Q4 to Q5?
+
+Check the exact model’s Q5 profile in the Finder first, keeping context fixed. It uses more weight memory and reduces headroom. Compare answers on your own task; higher precision does not guarantee a useful improvement, and this page does not establish inference speed.","RTX 3080 10 GB: local LLM starting points","Compare local LLM planning profiles for RTX 3080 10 GB, including chat and coding choices, Q4 memory, context and variant-specific limits.","Local LLM Finder","","2026-10-03","Draft","https://knowledge.localllmfinder.com/hardware/rtx-3080-10/","https://www.nvidia.com/en-us/geforce/graphics-cards/30-series/rtx-3080-3080ti/
+https://github.com/ggml-org/llama.cpp/blob/master/docs/build.md","Source review: 2026-10-03. Prepared for sandbox review; publication awaits user approval. Calculations are planning estimates; no hardware measurements reproduced. Deploy the reviewed renderer before promoting this row.","rtx-3080-10","models/qwen3-8b, models/qwen2-5-coder-7b, hardware/rtx-3060-12gb, guides/q4-vs-q5"

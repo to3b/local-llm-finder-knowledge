@@ -6,6 +6,10 @@ body { margin:0; }
 .site-topbar { min-height:62px; }
 .site-nav a { display:inline-block !important; font-size:.875rem; }
 .preview-notice { padding:12px 0 0; color:var(--quiet); font-size:.75rem; }
+.draft-review { display:flex; flex-wrap:wrap; justify-content:space-between; gap:12px; padding:14px 16px; margin-top:18px; border:1px solid var(--line); background:var(--surface); font-size:.875rem; line-height:1.5; }
+.draft-review strong { font-weight:550; }
+.draft-review a { color:var(--text); text-underline-offset:3px; }
+.profile-note { padding:12px 14px; border-left:2px solid var(--selection); color:var(--muted); font-size:.875rem; line-height:1.6; margin:16px 0 0; }
 .breadcrumbs { display:flex; flex-wrap:wrap; gap:10px; color:var(--quiet); font-size:.875rem; padding-top:20px; }
 .breadcrumbs a { color:var(--muted); text-decoration:none; }
 .doc-hero { padding:30px 0 24px; }
