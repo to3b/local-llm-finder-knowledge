@@ -31,7 +31,9 @@
         "guides/q4-vs-q5",
         "guides/context-length",
         "models/qwen3-4b",
-        "models/qwen3-14b"
+        "models/qwen3-14b",
+        "hardware/arc-b580",
+        "hardware/rtx-3080-10"
       ]
     },
     {
@@ -62,7 +64,9 @@
         "hardware/rtx-3060-12gb",
         "guides/q4-vs-q5",
         "guides/context-length",
-        "models/qwen2-5-coder-7b"
+        "models/qwen2-5-coder-7b",
+        "models/qwen2-5-coder-32b",
+        "hardware/arc-b580"
       ]
     },
     {
@@ -127,6 +131,7 @@
         "models/gpt-oss-20b",
         "guides/q4-vs-q5",
         "guides/context-length",
+        "hardware/rtx-3080-10",
         "hardware/rtx-4060"
       ]
     },
@@ -160,8 +165,11 @@
         "models/gpt-oss-20b",
         "hardware/rtx-3060-12gb",
         "guides/context-length",
+        "models/llama-3-2-3b-instruct",
         "models/qwen3-4b",
-        "models/qwen2-5-coder-7b"
+        "models/qwen2-5-coder-7b",
+        "models/gemma-3-12b",
+        "hardware/rtx-3080-10"
       ]
     },
     {
@@ -194,9 +202,48 @@
         "models/gpt-oss-20b",
         "hardware/rtx-3060-12gb",
         "guides/q4-vs-q5",
+        "models/llama-3-2-3b-instruct",
         "models/qwen3-14b",
+        "models/qwen3-32b",
+        "models/qwen2-5-coder-32b",
+        "models/gemma-3-12b",
+        "models/phi-4-mini-instruct",
+        "models/qwen3-coder-30b-a3b-instruct",
         "hardware/rtx-4060-ti-16",
-        "hardware/rtx-4090"
+        "hardware/rtx-4090",
+        "hardware/rtx-5090",
+        "hardware/rx-7900-xtx",
+        "hardware/arc-b580",
+        "hardware/rtx-2060"
+      ]
+    },
+    {
+      "key": "models/llama-3-2-3b-instruct",
+      "type": "Model",
+      "slug": "llama-3-2-3b-instruct",
+      "title": "Llama 3.2 3B Instruct",
+      "summary": "A small text model for limited GPU memory. Compare Q4 and Q5 planning profiles, the original checkpoint and Meta’s separate quantised editions.",
+      "url": "https://knowledge.localllmfinder.com/models/llama-3-2-3b-instruct/",
+      "status": "Published",
+      "entityIds": [
+        "model-5"
+      ],
+      "modified": "2026-10-03",
+      "related": [
+        "hardware/rtx-2060",
+        "models/phi-4-mini-instruct",
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "hardware/rtx-2060",
+        "models/phi-4-mini-instruct",
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": [
+        "models/phi-4-mini-instruct",
+        "hardware/rtx-2060"
       ]
     },
     {
@@ -222,6 +269,8 @@
         "guides/q4-vs-q5"
       ],
       "backlinks": [
+        "models/phi-4-mini-instruct",
+        "hardware/rtx-2060",
         "hardware/rtx-4060"
       ]
     },
@@ -249,8 +298,40 @@
         "guides/context-length"
       ],
       "backlinks": [
+        "models/qwen3-32b",
         "hardware/rtx-4060-ti-16",
-        "hardware/rtx-4090"
+        "hardware/rtx-4090",
+        "hardware/rx-7900-xtx"
+      ]
+    },
+    {
+      "key": "models/qwen3-32b",
+      "type": "Model",
+      "slug": "qwen3-32b",
+      "title": "Qwen3 32B",
+      "summary": "A larger general-purpose model for 24 GB and higher memory tiers. Compare Q4, Q5 and longer-context estimates without treating fit as a speed claim.",
+      "url": "https://knowledge.localllmfinder.com/models/qwen3-32b/",
+      "status": "Published",
+      "entityIds": [
+        "model-9"
+      ],
+      "modified": "2026-10-03",
+      "related": [
+        "hardware/rtx-5090",
+        "hardware/rtx-6000-ada",
+        "models/qwen3-14b",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "hardware/rtx-5090",
+        "hardware/rtx-6000-ada",
+        "models/qwen3-14b",
+        "guides/context-length"
+      ],
+      "backlinks": [
+        "hardware/rtx-5090",
+        "hardware/rtx-6000-ada",
+        "hardware/rx-7900-xtx"
       ]
     },
     {
@@ -277,7 +358,126 @@
       ],
       "backlinks": [
         "models/qwen2-5-coder-14b",
+        "hardware/rtx-3080-10",
         "hardware/rtx-4060"
+      ]
+    },
+    {
+      "key": "models/qwen2-5-coder-32b",
+      "type": "Model",
+      "slug": "qwen2-5-coder-32b",
+      "title": "Qwen2.5-Coder 32B",
+      "summary": "A larger dense coding model. Compare the GPU memory needed at Q4 and Q5, and the trade-off against the smaller Coder models.",
+      "url": "https://knowledge.localllmfinder.com/models/qwen2-5-coder-32b/",
+      "status": "Published",
+      "entityIds": [
+        "model-12"
+      ],
+      "modified": "2026-10-03",
+      "related": [
+        "hardware/rtx-5090",
+        "models/qwen2-5-coder-14b",
+        "models/qwen3-coder-30b-a3b-instruct",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "hardware/rtx-5090",
+        "models/qwen2-5-coder-14b",
+        "models/qwen3-coder-30b-a3b-instruct",
+        "guides/context-length"
+      ],
+      "backlinks": [
+        "models/qwen3-coder-30b-a3b-instruct",
+        "hardware/rtx-5090",
+        "hardware/rtx-6000-ada"
+      ]
+    },
+    {
+      "key": "models/gemma-3-12b",
+      "type": "Model",
+      "slug": "gemma-3-12b",
+      "title": "Gemma 3 12B",
+      "summary": "Memory planning for Gemma 3 12B instruction tuning with text input. Image support needs additional runtime components and memory beyond these estimates.",
+      "url": "https://knowledge.localllmfinder.com/models/gemma-3-12b/",
+      "status": "Published",
+      "entityIds": [
+        "model-16"
+      ],
+      "modified": "2026-10-03",
+      "related": [
+        "hardware/arc-b580",
+        "hardware/rtx-4060-ti-16",
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "hardware/arc-b580",
+        "hardware/rtx-4060-ti-16",
+        "guides/q4-vs-q5",
+        "guides/context-length"
+      ],
+      "backlinks": [
+        "hardware/arc-b580"
+      ]
+    },
+    {
+      "key": "models/phi-4-mini-instruct",
+      "type": "Model",
+      "slug": "phi-4-mini-instruct",
+      "title": "Phi-4-mini-instruct",
+      "summary": "A small text assistant with a 3.8B-parameter checkpoint. Compare modest GPU memory tiers, Q4/Q5 settings and context overhead.",
+      "url": "https://knowledge.localllmfinder.com/models/phi-4-mini-instruct/",
+      "status": "Published",
+      "entityIds": [
+        "model-22"
+      ],
+      "modified": "2026-10-03",
+      "related": [
+        "hardware/rtx-2060",
+        "models/llama-3-2-3b-instruct",
+        "models/qwen3-4b",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "hardware/rtx-2060",
+        "models/llama-3-2-3b-instruct",
+        "models/qwen3-4b",
+        "guides/context-length"
+      ],
+      "backlinks": [
+        "models/llama-3-2-3b-instruct",
+        "hardware/rtx-2060"
+      ]
+    },
+    {
+      "key": "models/qwen3-coder-30b-a3b-instruct",
+      "type": "Model",
+      "slug": "qwen3-coder-30b-a3b-instruct",
+      "title": "Qwen3-Coder 30B-A3B Instruct",
+      "summary": "A coding mixture-of-experts model with 30.5B total parameters and 3.3B active. Plan for its full weight footprint, not a 3B model’s memory.",
+      "url": "https://knowledge.localllmfinder.com/models/qwen3-coder-30b-a3b-instruct/",
+      "status": "Published",
+      "entityIds": [
+        "extra-qwen3-coder-30b-a3b"
+      ],
+      "modified": "2026-10-03",
+      "related": [
+        "hardware/rtx-5090",
+        "hardware/rtx-6000-ada",
+        "models/qwen2-5-coder-32b",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "hardware/rtx-5090",
+        "hardware/rtx-6000-ada",
+        "models/qwen2-5-coder-32b",
+        "guides/context-length"
+      ],
+      "backlinks": [
+        "models/qwen2-5-coder-32b",
+        "hardware/rtx-5090",
+        "hardware/rtx-6000-ada",
+        "hardware/rx-7900-xtx"
       ]
     },
     {
@@ -304,6 +504,7 @@
       ],
       "backlinks": [
         "models/qwen3-14b",
+        "models/gemma-3-12b",
         "hardware/rtx-4090",
         "hardware/rtx-4060"
       ]
@@ -334,6 +535,175 @@
         "models/qwen3-14b",
         "hardware/rtx-4060-ti-16"
       ]
+    },
+    {
+      "key": "hardware/rtx-5090",
+      "type": "Hardware",
+      "slug": "rtx-5090",
+      "title": "RTX 5090 32 GB",
+      "summary": "Model starting points for 32 GB of dedicated VRAM. Compare larger chat and coding choices, with Blackwell runtime support checked separately from memory fit.",
+      "url": "https://knowledge.localllmfinder.com/hardware/rtx-5090/",
+      "status": "Published",
+      "entityIds": [
+        "rtx-5090"
+      ],
+      "modified": "2026-10-03",
+      "related": [
+        "models/qwen3-32b",
+        "models/qwen2-5-coder-32b",
+        "models/qwen3-coder-30b-a3b-instruct",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "models/qwen3-32b",
+        "models/qwen2-5-coder-32b",
+        "models/qwen3-coder-30b-a3b-instruct",
+        "guides/context-length"
+      ],
+      "backlinks": [
+        "models/qwen3-32b",
+        "models/qwen2-5-coder-32b",
+        "models/qwen3-coder-30b-a3b-instruct",
+        "hardware/rtx-6000-ada"
+      ]
+    },
+    {
+      "key": "hardware/rtx-6000-ada",
+      "type": "Hardware",
+      "slug": "rtx-6000-ada",
+      "title": "RTX 6000 Ada 48 GB",
+      "summary": "Local-model planning for 48 GB of dedicated GPU memory. Compare larger model profiles and context headroom without treating workstation specifications as benchmarks.",
+      "url": "https://knowledge.localllmfinder.com/hardware/rtx-6000-ada/",
+      "status": "Published",
+      "entityIds": [
+        "rtx-6000-ada"
+      ],
+      "modified": "2026-10-03",
+      "related": [
+        "models/qwen3-32b",
+        "models/qwen2-5-coder-32b",
+        "models/qwen3-coder-30b-a3b-instruct",
+        "hardware/rtx-5090"
+      ],
+      "outgoing": [
+        "models/qwen3-32b",
+        "models/qwen2-5-coder-32b",
+        "models/qwen3-coder-30b-a3b-instruct",
+        "hardware/rtx-5090"
+      ],
+      "backlinks": [
+        "models/qwen3-32b",
+        "models/qwen3-coder-30b-a3b-instruct"
+      ]
+    },
+    {
+      "key": "hardware/rx-7900-xtx",
+      "type": "Hardware",
+      "slug": "rx-7900-xtx",
+      "title": "RX 7900 XTX 24 GB",
+      "summary": "Local-model starting points for AMD’s 24 GB card. Check the chosen AMD backend, operating system and runtime before treating a memory fit as usable GPU inference.",
+      "url": "https://knowledge.localllmfinder.com/hardware/rx-7900-xtx/",
+      "status": "Published",
+      "entityIds": [
+        "rx-7900-xtx"
+      ],
+      "modified": "2026-10-03",
+      "related": [
+        "models/qwen3-32b",
+        "models/qwen3-coder-30b-a3b-instruct",
+        "models/qwen3-14b",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "models/qwen3-32b",
+        "models/qwen3-coder-30b-a3b-instruct",
+        "models/qwen3-14b",
+        "guides/context-length"
+      ],
+      "backlinks": []
+    },
+    {
+      "key": "hardware/arc-b580",
+      "type": "Hardware",
+      "slug": "arc-b580",
+      "title": "Intel Arc B580 12 GB",
+      "summary": "Local-model memory planning for Intel’s 12 GB desktop GPU. Compare modest model profiles and verify a compatible Intel runtime and driver.",
+      "url": "https://knowledge.localllmfinder.com/hardware/arc-b580/",
+      "status": "Published",
+      "entityIds": [
+        "arc-b580"
+      ],
+      "modified": "2026-10-03",
+      "related": [
+        "models/qwen3-8b",
+        "models/qwen2-5-coder-14b",
+        "models/gemma-3-12b",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "models/qwen3-8b",
+        "models/qwen2-5-coder-14b",
+        "models/gemma-3-12b",
+        "guides/context-length"
+      ],
+      "backlinks": [
+        "models/gemma-3-12b"
+      ]
+    },
+    {
+      "key": "hardware/rtx-2060",
+      "type": "Hardware",
+      "slug": "rtx-2060",
+      "title": "RTX 2060 6 GB",
+      "summary": "Small-model starting points for a 6 GB GPU. Compare memory headroom, keep context modest and treat CPU offloading as a separate configuration.",
+      "url": "https://knowledge.localllmfinder.com/hardware/rtx-2060/",
+      "status": "Published",
+      "entityIds": [
+        "rtx-2060"
+      ],
+      "modified": "2026-10-03",
+      "related": [
+        "models/llama-3-2-3b-instruct",
+        "models/phi-4-mini-instruct",
+        "models/qwen3-4b",
+        "guides/context-length"
+      ],
+      "outgoing": [
+        "models/llama-3-2-3b-instruct",
+        "models/phi-4-mini-instruct",
+        "models/qwen3-4b",
+        "guides/context-length"
+      ],
+      "backlinks": [
+        "models/llama-3-2-3b-instruct",
+        "models/phi-4-mini-instruct"
+      ]
+    },
+    {
+      "key": "hardware/rtx-3080-10",
+      "type": "Hardware",
+      "slug": "rtx-3080-10",
+      "title": "RTX 3080 10 GB",
+      "summary": "Local-model starting points for the 10 GB RTX 3080. Compare 7–8B choices and memory headroom without applying the 12 GB variant’s budget.",
+      "url": "https://knowledge.localllmfinder.com/hardware/rtx-3080-10/",
+      "status": "Published",
+      "entityIds": [
+        "rtx-3080-10"
+      ],
+      "modified": "2026-10-03",
+      "related": [
+        "models/qwen3-8b",
+        "models/qwen2-5-coder-7b",
+        "hardware/rtx-3060-12gb",
+        "guides/q4-vs-q5"
+      ],
+      "outgoing": [
+        "models/qwen3-8b",
+        "models/qwen2-5-coder-7b",
+        "hardware/rtx-3060-12gb",
+        "guides/q4-vs-q5"
+      ],
+      "backlinks": []
     },
     {
       "key": "hardware/rtx-4060",
