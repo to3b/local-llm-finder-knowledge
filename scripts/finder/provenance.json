@@ -5,9 +5,9 @@
     "recommend.js": "3af2e90ca14afd482536690a67f5b5d646c7abbbe95a523e0d6c05b63f788b54",
     "live-data.js": "e116c999d2d8d638e1178de1609283a04b63b16080498b99f4ccbb224081eeb9",
     "data.js": "ec17cd0b55288da7ddc160eaab9491e7b51228e0c34d88dc680e3d1c4fb194ea",
-    "catalog-extra.js": "16c595ee56e6aa538375bedc23c9a5bb9f60151ed84cee1231728e3c2be288a3",
-    "gpu-extra.js": "755d55ffa6446f111e20cd0b219dbdc06620ae15c8ae4aedea6857814b9daddc",
-    "model-extra.js": "ce9c9e2c00d48bace2919dd047693a6a2173d84ff45573e3cd302e80691aedb9",
+    "catalog-extra.js": "49a3b5a80924c2d7f3938a8439e2ccff7a1bbf0479d3c1da8e40dfe8583a8e81",
+    "gpu-extra.js": "3afa011d83b497715a89543b22eaa3aff93b03c5d159750b0c7b66fa7f8e6ea4",
+    "model-extra.js": "9b02b4c4e3852842b16a12ea7b3a2fceddad3fdafc6d11b718b1e6b68b1bbb39",
     "model-calibrations.js": "1b808d4feb44eab4b7d820a70400f4ebd86c6edcfca6cf0670f6cf5332219826",
     "model-memory-profiles.js": "d94d46b457531b4f5f3cf8c080926f1d7ecfac4478cbc00ba015d50b68f07e52"
   },
