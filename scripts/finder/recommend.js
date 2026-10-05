@@ -8,12 +8,22 @@ export const USE_CASES = {
 
 const QUANTIZATIONS = new Set(['auto', 'Q4_K_M', 'Q5_K_M', 'Q8_0']);
 
+export const MEMORY_UNITS = Object.freeze({ decimalGB: 1e9, GiB: 2 ** 30 });
+export const RUNTIME_ALLOWANCE_GB = 0.9; // Decimal GB; a planning allowance, not a measurement.
+
 // All values below are planning estimates, not device/model benchmarks.
 // Keep the calculation pure so a future data source can replace these inputs.
 export function estimate(model, quant, hardware, contextK) {
-  const requiredGB = +(quant.weightsGB + 0.9 + model.kvGBPer1K * contextK).toFixed(1);
-  const hostRAMGB = +(quant.weightsGB + 4).toFixed(1);
-  const reserveGB = +(Math.max(.15, Math.min(1.5, hardware.vramGB * .03))).toFixed(2);
+  // Catalogue weight/cache inputs use decimal GB. Installed memory budgets use
+  // GiB. Convert once, and decide fit before rounding any displayed figure.
+  const weightsBytes = quant.weightsGB * MEMORY_UNITS.decimalGB;
+  const cacheBytes = model.kvGBPer1K * contextK * MEMORY_UNITS.decimalGB;
+  const requiredBytes = weightsBytes + RUNTIME_ALLOWANCE_GB * MEMORY_UNITS.decimalGB + cacheBytes;
+  const requiredGiB = requiredBytes / MEMORY_UNITS.GiB;
+  const hostRAMGiB = (quant.weightsGB + 4) * MEMORY_UNITS.decimalGB / MEMORY_UNITS.GiB;
+  const reserveGiB = +(Math.max(.15, Math.min(1.5, hardware.vramGB * .03))).toFixed(2);
+  const headroomGiB = hardware.vramGB - requiredGiB - reserveGiB;
+  const fits = headroomGiB >= 0;
   // Bandwidth proxy with a gentle cap: real inference depends on more than bandwidth.
   // MoE profiles can provide an active-weight hint; cap the benefit because attention,
   // shared layers, runtime overhead and expert routing still cost time.
@@ -24,11 +34,16 @@ export function estimate(model, quant, hardware, contextK) {
   const contextPenalty = Math.max(0.7, 1 - contextK / 320);
   const middle = Math.max(1, nominal * contextPenalty);
   return {
-    requiredGB, hostRAMGB, reserveGB,
+    requiredGiB, hostRAMGiB, reserveGiB, headroomGiB,
+    // Compatibility aliases for existing callers; all allocation metrics are GiB.
+    requiredGB: requiredGiB, hostRAMGB: hostRAMGiB, reserveGB: reserveGiB,
+    requiredBytes, cacheBytes, requiredDecimalGB: requiredBytes / MEMORY_UNITS.decimalGB,
+    cacheType: model.cacheType || 'planning',
+    memoryFit: !fits ? 'exceeds' : headroomGiB < 0.5 ? 'tight' : 'fits',
     speedLow: Math.round(middle * .85), speedHigh: Math.round(middle * 1.15),
     // Host RAM is advisory: memory-mapped loaders can behave differently.
-    fits: requiredGB + reserveGB <= hardware.vramGB,
-    ramAdvisory: hostRAMGB <= hardware.ramGB
+    fits,
+    ramAdvisory: hostRAMGiB <= hardware.ramGB
   };
 }
 
@@ -155,7 +170,7 @@ if (typeof window !== 'undefined' && typeof document !== 'undefined') {
   }
 
   queueMicrotask(() => {
-    import('./journeys.js?v=20261001-approved-1');
+    import('./journeys.js?v=20261005-memory-1');
   });
 }
 

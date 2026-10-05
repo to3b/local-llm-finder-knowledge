@@ -1,3 +1,5 @@
+import { REVIEWED_MEMORY_PROFILES } from './model-memory-profiles.js';
+
 // Prototype catalogue. Model scores, memory profiles and throughput coefficients are
 // illustrative planning inputs, not measured benchmarks. Replace with sourced records.
 export const GPUs = [
@@ -34,13 +36,13 @@ export const GPUs = [
 const profiles = [
   ['Qwen3 0.6B', 0.6, 'Qwen3', 0.7, 32, .012, [56, 49, 53, 49, 51]],
   ['Gemma 3 1B', 1, 'Gemma', 1.1, 32, .016, [61, 52, 56, 61, 54]],
-  ['Qwen3 1.7B', 1.7, 'Qwen3', 1.7, 64, .024, [67, 61, 65, 60, 61]],
+  ['Qwen3 1.7B', 1.7, 'Qwen3', 1.7, 32, .114688, [67, 61, 65, 60, 61]],
   ['SmolLM2 1.7B Instruct', 1.7, 'SmolLM2', 1.7, 16, .024, [63, 54, 55, 62, 52]],
   ['Llama 3.2 3B Instruct', 3, 'Llama', 2.7, 64, .032, [72, 62, 65, 70, 65]],
-  ['Qwen3 4B', 4, 'Qwen3', 4.0, 64, .038, [76, 71, 75, 72, 73]],
-  ['Qwen3 8B', 8, 'Qwen3', 5.9, 64, .055, [84, 82, 84, 78, 80]],
-  ['Qwen3 14B', 14, 'Qwen3', 9.5, 64, .082, [89, 87, 89, 82, 85]],
-  ['Qwen3 32B', 32, 'Qwen3', 20.2, 64, .135, [93, 92, 94, 86, 89]],
+  ['Qwen3 4B', 4, 'Qwen3', 4.0, 32, .147456, [76, 71, 75, 72, 73]],
+  ['Qwen3 8B', 8, 'Qwen3', 5.9, 32, .147456, [84, 82, 84, 78, 80]],
+  ['Qwen3 14B', 14, 'Qwen3', 9.5, 32, .16384, [89, 87, 89, 82, 85]],
+  ['Qwen3 32B', 32, 'Qwen3', 20.2, 32, .262144, [93, 92, 94, 86, 89]],
   ['Qwen2.5-Coder 7B', 7, 'Qwen2.5 Coder', 5.5, 64, .055, [76, 86, 77, 68, 77]],
   ['Qwen2.5-Coder 14B', 14, 'Qwen2.5 Coder', 9.4, 64, .085, [81, 92, 83, 73, 82]],
   ['Qwen2.5-Coder 32B', 32, 'Qwen2.5 Coder', 20.5, 64, .14, [86, 96, 89, 76, 86]],
@@ -136,6 +138,7 @@ const profiles = [
 export const MODELS = profiles.map(([name, parametersB, family, baseGB, contextK, kvGBPer1K, scores, licenseNote], i) => ({
   id: `model-${i + 1}`,
   name, parametersB, family, contextK, kvGBPer1K,
+  ...(REVIEWED_MEMORY_PROFILES[name] || {}),
   quality: Object.fromEntries(['chat', 'coding', 'reasoning', 'writing', 'longContext'].map((key, index) => [key, scores[index]])),
   licenseNote,
   quantizations: [

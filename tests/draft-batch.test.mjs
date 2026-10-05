@@ -36,7 +36,8 @@ const coder7=shortlist(ctx,gpu6,'coding',{includeDrafts:true}).find(x=>x.model.i
 assert.ok(coder7?.fits,'The existing calibrated 7B Coder fits narrowly in 6 GB at 4K');
 assert.ok(gpu6.vramGB-coder7.requiredGB-coder7.reserveGB<0.5,'It must be described as a tight estimate');
 const gpu10=ctx.gpus.find(g=>g.id==='rtx-3080-10');
-assert.ok(!shortlist(ctx,gpu10,'chat',{includeDrafts:true}).some(x=>['model-8','model-11'].includes(x.model.id)));
+assert.ok(!shortlist(ctx,gpu10,'chat',{includeDrafts:true}).some(x=>x.model.id==='model-8'),'Qwen3 14B FP16 cache exceeds 10 GiB');
+assert.equal(shortlist(ctx,gpu10,'coding',{includeDrafts:true}).find(x=>x.model.id==='model-11')?.memoryFit,'tight','14B Coder is only a tight planning fit in 10 GiB');
 const body='<h2>First question</h2><p>Short answer.</p>';
 const moeHtml=renderRecommendation(rows.find(r=>r.Slug==='qwen3-coder-30b-a3b-instruct'),ctx,body,true);
 assert.ok(moeHtml.includes('30.5B weights must fit'));
@@ -79,3 +80,4 @@ try{
   }
 }finally{await rm(temporary,{recursive:true,force:true});}
 console.log('Draft batch passed: shared recommendation parity, 6/10 GB boundaries, MoE and vision caveats, production exclusion and isolated publication readiness.');
+
