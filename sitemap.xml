@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://knowledge.localllmfinder.com/</loc><lastmod>2026-10-03</lastmod></url>
-  <url><loc>https://knowledge.localllmfinder.com/models/qwen3-8b/</loc><lastmod>2026-10-03</lastmod></url>
-  <url><loc>https://knowledge.localllmfinder.com/models/qwen2-5-coder-14b/</loc><lastmod>2026-10-03</lastmod></url>
-  <url><loc>https://knowledge.localllmfinder.com/models/gpt-oss-20b/</loc><lastmod>2026-10-03</lastmod></url>
-  <url><loc>https://knowledge.localllmfinder.com/hardware/rtx-3060-12gb/</loc><lastmod>2026-10-03</lastmod></url>
+  <url><loc>https://knowledge.localllmfinder.com/</loc><lastmod>2026-10-05</lastmod></url>
+  <url><loc>https://knowledge.localllmfinder.com/models/qwen3-8b/</loc><lastmod>2026-10-05</lastmod></url>
+  <url><loc>https://knowledge.localllmfinder.com/models/qwen2-5-coder-14b/</loc><lastmod>2026-10-05</lastmod></url>
+  <url><loc>https://knowledge.localllmfinder.com/models/gpt-oss-20b/</loc><lastmod>2026-10-05</lastmod></url>
+  <url><loc>https://knowledge.localllmfinder.com/hardware/rtx-3060-12gb/</loc><lastmod>2026-10-05</lastmod></url>
   <url><loc>https://knowledge.localllmfinder.com/guides/q4-vs-q5/</loc><lastmod>2026-10-02</lastmod></url>
   <url><loc>https://knowledge.localllmfinder.com/guides/context-length/</loc><lastmod>2026-10-02</lastmod></url>
-  <url><loc>https://knowledge.localllmfinder.com/models/llama-3-2-3b-instruct/</loc><lastmod>2026-10-03</lastmod></url>
-  <url><loc>https://knowledge.localllmfinder.com/models/qwen3-4b/</loc><lastmod>2026-10-03</lastmod></url>
-  <url><loc>https://knowledge.localllmfinder.com/models/qwen3-14b/</loc><lastmod>2026-10-03</lastmod></url>
-  <url><loc>https://knowledge.localllmfinder.com/models/qwen3-32b/</loc><lastmod>2026-10-03</lastmod></url>
-  <url><loc>https://knowledge.localllmfinder.com/models/qwen2-5-coder-7b/</loc><lastmod>2026-10-03</lastmod></url>
-  <url><loc>https://knowledge.localllmfinder.com/models/qwen2-5-coder-32b/</loc><lastmod>2026-10-03</lastmod></url>
-  <url><loc>https://knowledge.localllmfinder.com/models/gemma-3-12b/</loc><lastmod>2026-10-03</lastmod></url>
-  <url><loc>https://knowledge.localllmfinder.com/models/phi-4-mini-instruct/</loc><lastmod>2026-10-03</lastmod></url>
-  <url><loc>https://knowledge.localllmfinder.com/models/qwen3-coder-30b-a3b-instruct/</loc><lastmod>2026-10-03</lastmod></url>
-  <url><loc>https://knowledge.localllmfinder.com/hardware/rtx-4060-ti-16/</loc><lastmod>2026-10-03</lastmod></url>
-  <url><loc>https://knowledge.localllmfinder.com/hardware/rtx-4090/</loc><lastmod>2026-10-03</lastmod></url>
-  <url><loc>https://knowledge.localllmfinder.com/hardware/rtx-5090/</loc><lastmod>2026-10-03</lastmod></url>
-  <url><loc>https://knowledge.localllmfinder.com/hardware/rtx-6000-ada/</loc><lastmod>2026-10-03</lastmod></url>
-  <url><loc>https://knowledge.localllmfinder.com/hardware/rx-7900-xtx/</loc><lastmod>2026-10-03</lastmod></url>
-  <url><loc>https://knowledge.localllmfinder.com/hardware/arc-b580/</loc><lastmod>2026-10-03</lastmod></url>
-  <url><loc>https://knowledge.localllmfinder.com/hardware/rtx-2060/</loc><lastmod>2026-10-03</lastmod></url>
-  <url><loc>https://knowledge.localllmfinder.com/hardware/rtx-3080-10/</loc><lastmod>2026-10-03</lastmod></url>
-  <url><loc>https://knowledge.localllmfinder.com/hardware/rtx-4060/</loc><lastmod>2026-10-03</lastmod></url>
+  <url><loc>https://knowledge.localllmfinder.com/models/llama-3-2-3b-instruct/</loc><lastmod>2026-10-05</lastmod></url>
+  <url><loc>https://knowledge.localllmfinder.com/models/qwen3-4b/</loc><lastmod>2026-10-05</lastmod></url>
+  <url><loc>https://knowledge.localllmfinder.com/models/qwen3-14b/</loc><lastmod>2026-10-05</lastmod></url>
+  <url><loc>https://knowledge.localllmfinder.com/models/qwen3-32b/</loc><lastmod>2026-10-05</lastmod></url>
+  <url><loc>https://knowledge.localllmfinder.com/models/qwen2-5-coder-7b/</loc><lastmod>2026-10-05</lastmod></url>
+  <url><loc>https://knowledge.localllmfinder.com/models/qwen2-5-coder-32b/</loc><lastmod>2026-10-05</lastmod></url>
+  <url><loc>https://knowledge.localllmfinder.com/models/gemma-3-12b/</loc><lastmod>2026-10-05</lastmod></url>
+  <url><loc>https://knowledge.localllmfinder.com/models/phi-4-mini-instruct/</loc><lastmod>2026-10-05</lastmod></url>
+  <url><loc>https://knowledge.localllmfinder.com/models/qwen3-coder-30b-a3b-instruct/</loc><lastmod>2026-10-05</lastmod></url>
+  <url><loc>https://knowledge.localllmfinder.com/hardware/rtx-4060-ti-16/</loc><lastmod>2026-10-05</lastmod></url>
+  <url><loc>https://knowledge.localllmfinder.com/hardware/rtx-4090/</loc><lastmod>2026-10-05</lastmod></url>
+  <url><loc>https://knowledge.localllmfinder.com/hardware/rtx-5090/</loc><lastmod>2026-10-05</lastmod></url>
+  <url><loc>https://knowledge.localllmfinder.com/hardware/rtx-6000-ada/</loc><lastmod>2026-10-05</lastmod></url>
+  <url><loc>https://knowledge.localllmfinder.com/hardware/rx-7900-xtx/</loc><lastmod>2026-10-05</lastmod></url>
+  <url><loc>https://knowledge.localllmfinder.com/hardware/arc-b580/</loc><lastmod>2026-10-05</lastmod></url>
+  <url><loc>https://knowledge.localllmfinder.com/hardware/rtx-2060/</loc><lastmod>2026-10-05</lastmod></url>
+  <url><loc>https://knowledge.localllmfinder.com/hardware/rtx-3080-10/</loc><lastmod>2026-10-05</lastmod></url>
+  <url><loc>https://knowledge.localllmfinder.com/hardware/rtx-4060/</loc><lastmod>2026-10-05</lastmod></url>
 </urlset>

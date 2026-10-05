@@ -1,13 +1,15 @@
 {
   "repository": "to3b/local-llm-finder",
-  "commit": "4dff6f335498a3bb18eded8e4e55b308dc9653d6",
+  "commit": "8ec151bd19ca52b1a88188033a094edf01f52783",
   "files": {
-    "recommend.js": "68f12a66af4e439fc02f9b509355485b0b54dc799dfb2284e13f4a32259ca8e2",
-    "live-data.js": "11c732b2fbcb6d4a192ac3a827afc2c324b2cba892877d5e1700be91473ccb53",
-    "data.js": "722bbc2d336296eb5ddf3c19fbd74e4110c4145f2804ab0d227b2adee7eda865",
+    "recommend.js": "3af2e90ca14afd482536690a67f5b5d646c7abbbe95a523e0d6c05b63f788b54",
+    "live-data.js": "e116c999d2d8d638e1178de1609283a04b63b16080498b99f4ccbb224081eeb9",
+    "data.js": "ec17cd0b55288da7ddc160eaab9491e7b51228e0c34d88dc680e3d1c4fb194ea",
     "catalog-extra.js": "49a3b5a80924c2d7f3938a8439e2ccff7a1bbf0479d3c1da8e40dfe8583a8e81",
     "gpu-extra.js": "3afa011d83b497715a89543b22eaa3aff93b03c5d159750b0c7b66fa7f8e6ea4",
     "model-extra.js": "9b02b4c4e3852842b16a12ea7b3a2fceddad3fdafc6d11b718b1e6b68b1bbb39",
-    "model-calibrations.js": "4b972d54c720ab7352703b4994c8515a75dd030007ea241751af147441915f26"
-  }
+    "model-calibrations.js": "1b808d4feb44eab4b7d820a70400f4ebd86c6edcfca6cf0670f6cf5332219826",
+    "model-memory-profiles.js": "d94d46b457531b4f5f3cf8c080926f1d7ecfac4478cbc00ba015d50b68f07e52"
+  },
+  "staged_changes": "Snapshot of the Finder review branch; production CI continues to read the approved main branch through FINDER_SOURCE_ROOT."
 }

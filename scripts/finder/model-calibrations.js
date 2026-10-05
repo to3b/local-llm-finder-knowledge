@@ -3,12 +3,6 @@
 // contradicts an older planning input. Quant sizes are representative GGUF artifacts;
 // different conversions can vary slightly.
 export const MODEL_CALIBRATIONS = Object.freeze({
-  'Mistral Medium 3.5 128B': {
-    quality: { coding: 100 },
-    source: 'https://huggingface.co/mistralai/Mistral-Medium-3.5-128B',
-    verifiedAt: '2026-09-28',
-    note: 'Mistral states Medium 3.5 supersedes its previous coding models and replaces Devstral 2 in Vibe.'
-  },
   'Llama 3.1 8B Instruct': {
     quantWeightsGB: { Q4_K_M: 4.92, Q5_K_M: 5.73 },
     source: 'https://huggingface.co/lmstudio-community/Meta-Llama-3.1-8B-Instruct-GGUF',

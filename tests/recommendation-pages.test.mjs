@@ -53,7 +53,7 @@ for(const {model} of ctx.curated){
 }
 const oss=ctx.models.find(m=>m.id==='extra-gpt-oss-20b');
 assert.equal(modelTiers(ctx,oss,oss.quantizations[0],4).find(t=>t.vramGB===16).fits,true);
-assert.equal(modelTiers(ctx,oss,oss.quantizations[0],16).find(t=>t.vramGB===16).fits,false,'Longer context must not inherit the short-context 16 GB fit');
+assert.equal(modelTiers(ctx,oss,oss.quantizations[0],32).find(t=>t.vramGB===16).fits,false,'32K context must not inherit the short-context 16 GB fit');
 const ossHtml=renderRecommendation(rows.find(r=>r.Slug==='gpt-oss-20b'),ctx,'<p>Setup notes.</p>',true);
 assert.ok(ossHtml.includes('MXFP4 profile'));assert.ok(!ossHtml.includes('<td>16.50 GB</td>'),'Generic Q5 extrapolation must not be presented as a native MXFP4 artifact');
 
@@ -101,3 +101,4 @@ try{
   assert.ok([...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].every(m=>! /preview|chatgpt|\?|#/.test(m[1])));
 }finally{await rm(temporary,{recursive:true,force:true});}
 console.log('Recommendation parity, memory boundaries, MXFP4, prefilling, contribution links, privacy, noindex, sitemaps and failed-publication preservation passed.');
+

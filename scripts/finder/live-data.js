@@ -71,7 +71,7 @@ function enabled(value) {
 }
 
 function number(value, label, { min = -Infinity, max = Infinity, optional = false } = {}) {
-  if (optional && String(value).trim() === '') return null;
+  if (optional && String(value ?? '').trim() === '') return null;
   const parsed = Number(value);
   if (!Number.isFinite(parsed) || parsed < min || parsed > max) throw new Error(`${label} must be between ${min} and ${max}.`);
   return parsed;
@@ -85,6 +85,21 @@ function quant(name, weightsGB, qualityBonus = 0, activeRatio = null) {
     ...(qualityBonus ? { qualityBonus } : {}),
     ...(speedWeightsGB ? { speedWeightsGB } : {})
   };
+}
+
+function memoryMetadata(row, name, contextK) {
+  const cacheType = row['Cache Type']?.trim() || 'planning';
+  if (!['planning', 'f16'].includes(cacheType)) throw new Error(`${name} Cache Type must be planning or f16.`);
+  const nativeContextTokens = number(row['Native Context Tokens'] || '', `${name} Native Context Tokens`, { min: 1000, max: 2000000, optional: true });
+  if (nativeContextTokens !== null && (!Number.isInteger(nativeContextTokens) || contextK * 1000 > nativeContextTokens)) {
+    throw new Error(`${name} default context must stay within its documented native context.`);
+  }
+  const memorySource = row['Memory Source']?.trim() || null;
+  const memoryReviewedAt = row['Memory Reviewed At']?.trim() || null;
+  if (memorySource && (!/^https:\/\//.test(memorySource) || /docs\.google\.com\/spreadsheets/.test(memorySource))) throw new Error(`${name} Memory Source must be a public publisher or runtime URL.`);
+  if (memoryReviewedAt && !/^\d{4}-\d{2}-\d{2}$/.test(memoryReviewedAt)) throw new Error(`${name} Memory Reviewed At must use YYYY-MM-DD.`);
+  if (cacheType === 'f16' && (!memorySource || !memoryReviewedAt)) throw new Error(`${name} FP16 cache needs a source and review date.`);
+  return { cacheType, ...(nativeContextTokens !== null ? { nativeContextTokens } : {}), ...(memorySource ? { memorySource } : {}), ...(memoryReviewedAt ? { memoryReviewedAt } : {}) };
 }
 
 export function buildModelsFromCsv(text) {
@@ -120,6 +135,7 @@ export function buildModelsFromCsv(text) {
       id, name, parametersB,
       ...(activeParametersB ? { activeParametersB } : {}),
       family, contextK, kvGBPer1K, quality, licenseNote,
+      ...memoryMetadata(row, name, contextK),
       quantizations: [quant('Q4_K_M', q4, 0, activeRatio), quant('Q5_K_M', q5, 2, activeRatio), ...(parametersB >= 27 ? [quant('Q8_0', q8, 4, activeRatio)] : [])],
       provenance: row.Provenance?.trim() || 'live-sheet'
     });
